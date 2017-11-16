@@ -9,13 +9,23 @@
 import UIKit
 
 class ViewController: UIViewController {
+   
+    
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBAction func startBtn(_ sender: UIButton) {
+    }
+    @IBAction func listBtn(_ sender: UIButton) {
+    }
     
     @IBOutlet weak var myImageView: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    //背景イメージ画像
+        myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
+        
         
         // Do any additional setup after loading the view, typically from a nib.
     }

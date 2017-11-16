@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fvH-EI-vGh">
     <device id="retina4_0" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,42 +11,45 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Title Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Title Controller" id="BYZ-38-t0r" customClass="ViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download-2.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-JE-HqW">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="a5Z-JE-HqW">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="download.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Oqk-mO-TRb">
-                                <rect key="frame" x="24" y="192" width="274" height="184"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="Oqk-mO-TRb">
+                                <rect key="frame" x="67" y="150" width="188" height="268"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fps-Av-PNZ">
-                                <rect key="frame" x="30" y="405" width="261" height="60"/>
+                                <rect key="frame" x="30" y="427" width="261" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.65003525845882537" blue="0.27228986357292173" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="START">
                                     <color key="titleColor" red="0.79832625527144241" green="1" blue="0.83906925505979113" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
+                                    <action selector="startBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1x-4B-cd2"/>
                                     <segue destination="cYA-1P-neA" kind="presentation" id="48b-nu-kSF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-6L-hhE">
-                                <rect key="frame" x="30" y="473" width="261" height="60"/>
+                                <rect key="frame" x="30" y="495" width="261" height="60"/>
                                 <color key="backgroundColor" red="1" green="0.65003525849999999" blue="0.27228986360000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <state key="normal" title="God List">
                                     <color key="titleColor" red="0.79832625530000001" green="1" blue="0.83906925509999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
+                                <connections>
+                                    <action selector="listBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXF-W3-KQb"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hindo Quizm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crY-26-8Ge">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hindo Quizm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crY-26-8Ge">
                                 <rect key="frame" x="30" y="91" width="255" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="46"/>
                                 <color key="textColor" red="1" green="0.75753853595080445" blue="0.1159126979599413" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
@@ -54,34 +57,37 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="centerX" secondItem="Fps-Av-PNZ" secondAttribute="centerX" id="1CZ-HF-pYO"/>
-                            <constraint firstAttribute="trailing" secondItem="a5Z-JE-HqW" secondAttribute="trailing" id="1ce-mj-w5E"/>
-                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Chl-v0-vTZ"/>
-                            <constraint firstItem="V2S-6L-hhE" firstAttribute="top" secondItem="Fps-Av-PNZ" secondAttribute="bottom" constant="8" symbolic="YES" id="TP4-R9-me5"/>
-                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="centerY" secondItem="Oqk-mO-TRb" secondAttribute="centerY" id="ZZq-Te-DPW"/>
-                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="trailing" secondItem="V2S-6L-hhE" secondAttribute="trailing" id="cwm-aO-Tda"/>
-                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="ddN-TK-esK"/>
-                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="leading" secondItem="V2S-6L-hhE" secondAttribute="leading" id="gaH-Gl-vJh"/>
-                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="l2m-3a-hsC"/>
-                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="top" secondItem="Oqk-mO-TRb" secondAttribute="bottom" constant="29" id="pdY-zO-mHL"/>
-                            <constraint firstItem="Oqk-mO-TRb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="24" id="psN-MF-pJD"/>
-                            <constraint firstItem="Oqk-mO-TRb" firstAttribute="centerX" secondItem="Fps-Av-PNZ" secondAttribute="centerX" id="qc5-LA-992"/>
-                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uFb-Bz-dIS"/>
+                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="top" secondItem="Oqk-mO-TRb" secondAttribute="bottom" constant="9" id="8vw-Qi-fD3"/>
+                            <constraint firstItem="crY-26-8Ge" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="27" id="B0z-Dp-VTt"/>
+                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="DLD-Gd-V4O"/>
+                            <constraint firstItem="V2S-6L-hhE" firstAttribute="top" secondItem="Fps-Av-PNZ" secondAttribute="bottom" constant="8" symbolic="YES" id="Ijo-ZI-L7O"/>
+                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Ljo-n6-adT"/>
+                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="centerY" secondItem="Oqk-mO-TRb" secondAttribute="centerY" id="MGe-6i-Qfy"/>
+                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="trailing" secondItem="V2S-6L-hhE" secondAttribute="trailing" id="MoK-kg-19W"/>
+                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="centerX" secondItem="V2S-6L-hhE" secondAttribute="centerX" id="PYb-j6-e3F"/>
+                            <constraint firstItem="Fps-Av-PNZ" firstAttribute="leading" secondItem="V2S-6L-hhE" secondAttribute="leading" id="Xdz-kY-54l"/>
+                            <constraint firstItem="crY-26-8Ge" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="gDn-aB-H2f"/>
+                            <constraint firstItem="crY-26-8Ge" firstAttribute="leading" secondItem="Fps-Av-PNZ" secondAttribute="leading" id="i26-RD-eem"/>
+                            <constraint firstAttribute="trailing" secondItem="a5Z-JE-HqW" secondAttribute="trailing" id="lng-f2-sda"/>
+                            <constraint firstItem="a5Z-JE-HqW" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="poI-ZP-6NT"/>
+                            <constraint firstItem="Oqk-mO-TRb" firstAttribute="centerX" secondItem="Fps-Av-PNZ" secondAttribute="centerX" id="ykm-Xp-otK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="y3T-CV-sLf"/>
                     <connections>
                         <outlet property="myImageView" destination="a5Z-JE-HqW" id="79b-a5-4qZ"/>
+                        <outlet property="titleLabel" destination="crY-26-8Ge" id="jmw-wu-bcy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.875" y="130.98591549295776"/>
+            <point key="canvasLocation" x="534.375" y="130.98591549295776"/>
         </scene>
-        <!--View Controller-->
+        <!--Question Controller-->
         <scene sceneID="Qyl-OB-DeI">
             <objects>
-                <viewController id="cYA-1P-neA" sceneMemberID="viewController">
+                <viewController title="Question Controller" id="cYA-1P-neA" customClass="questionViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="VUH-bM-nRd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -101,6 +107,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" red="0.18496504050000001" green="0.8051633883" blue="0.22761596749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="④"/>
+                                <connections>
+                                    <action selector="answerBtn4:" destination="cYA-1P-neA" eventType="touchUpInside" id="wfj-KY-VYG"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PFO-f0-fpl">
                                 <rect key="frame" x="16" y="438" width="288" height="60"/>
@@ -108,6 +117,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" red="0.18496504050000001" green="0.8051633883" blue="0.22761596749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="③"/>
+                                <connections>
+                                    <action selector="answerBtn3:" destination="cYA-1P-neA" eventType="touchUpInside" id="auv-iT-zJW"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BxZ-pb-LzO">
                                 <rect key="frame" x="16" y="378" width="288" height="60"/>
@@ -115,6 +127,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" red="0.18496504050000001" green="0.8051633883" blue="0.22761596749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="②"/>
+                                <connections>
+                                    <action selector="answerBtn2:" destination="cYA-1P-neA" eventType="touchUpInside" id="bul-tO-IaZ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qj4-rc-NEl">
                                 <rect key="frame" x="16" y="318" width="288" height="60"/>
@@ -122,6 +137,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="40"/>
                                 <color key="tintColor" red="0.18496504050000001" green="0.8051633883" blue="0.22761596749999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="①"/>
+                                <connections>
+                                    <action selector="answerBtn1:" destination="cYA-1P-neA" eventType="touchUpInside" id="ksa-SE-H29"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -150,11 +168,29 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vtc-0P-vwW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="930" y="130.98591549295776"/>
+            <point key="canvasLocation" x="1327.5" y="130.98591549295776"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="4Nb-XH-vPc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fvH-EI-vGh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EQU-kV-NK9">
+                        <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="V8D-hP-dbF"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ypR-H9-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-296" y="131"/>
         </scene>
     </scenes>
     <resources>
-        <image name="download-2.jpg" width="188" height="268"/>
-        <image name="download.jpg" width="274" height="184"/>
+        <image name="background.jpg" width="600" height="800"/>
+        <image name="title.jpg" width="188" height="268"/>
     </resources>
 </document>

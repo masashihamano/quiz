@@ -54,7 +54,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="startBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a1x-4B-cd2"/>
-                                    <segue destination="cYA-1P-neA" kind="show" action="showDetailViewController:sender:" id="48b-nu-kSF"/>
+                                    <segue destination="cYA-1P-neA" kind="show" identifier="showStart" action="showDetailViewController:sender:" id="48b-nu-kSF"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V2S-6L-hhE" customClass="Button_Custom" customModule="quiz" customModuleProvider="target">
@@ -80,7 +80,7 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="listBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="gXF-W3-KQb"/>
-                                    <segue destination="Zsz-4r-eXr" kind="show" action="showDetailViewController:sender:" id="ooM-X5-PwW"/>
+                                    <segue destination="Zsz-4r-eXr" kind="show" identifier="showList" action="showDetailViewController:sender:" id="ooM-X5-PwW"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -257,7 +257,7 @@
             </objects>
             <point key="canvasLocation" x="1656" y="130"/>
         </scene>
-        <!--List View Controller-->
+        <!--Title-->
         <scene sceneID="Hm0-8o-V7t">
             <objects>
                 <viewController id="Zsz-4r-eXr" customClass="ListViewController" customModule="quiz" customModuleProvider="target" sceneMemberID="viewController">
@@ -265,9 +265,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XsE-jn-m6Q">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="XsE-jn-m6Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="MyCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="yVC-3V-qjZ">
@@ -284,9 +283,8 @@
                                     <outlet property="delegate" destination="Zsz-4r-eXr" id="NYb-Bq-Lhb"/>
                                 </connections>
                             </tableView>
-                            <tabBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3TM-jy-6UT">
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3TM-jy-6UT">
                                 <rect key="frame" x="0.0" y="519" width="320" height="49"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem systemItem="favorites" id="HoD-Vm-ZQq"/>
@@ -295,9 +293,19 @@
                             </tabBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XsE-jn-m6Q" firstAttribute="trailing" secondItem="3TM-jy-6UT" secondAttribute="trailing" id="JiP-Mh-iAa"/>
+                            <constraint firstItem="3TM-jy-6UT" firstAttribute="bottom" secondItem="XsE-jn-m6Q" secondAttribute="bottom" id="PzS-Ch-8G7"/>
+                            <constraint firstAttribute="trailing" secondItem="XsE-jn-m6Q" secondAttribute="trailing" id="VZp-B0-etI"/>
+                            <constraint firstItem="3TM-jy-6UT" firstAttribute="top" secondItem="nkV-IY-hic" secondAttribute="bottom" id="a0S-lt-1Be"/>
+                            <constraint firstItem="XsE-jn-m6Q" firstAttribute="leading" secondItem="Qfb-JE-Dqb" secondAttribute="leading" id="hQA-j8-wSa"/>
+                            <constraint firstItem="XsE-jn-m6Q" firstAttribute="leading" secondItem="3TM-jy-6UT" secondAttribute="leading" id="lKO-y0-yqa"/>
+                            <constraint firstItem="XsE-jn-m6Q" firstAttribute="top" secondItem="Qfb-JE-Dqb" secondAttribute="top" id="uNZ-Pd-G6o"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nkV-IY-hic"/>
                     </view>
                     <tabBarItem key="tabBarItem" systemItem="bookmarks" id="87t-H1-IJR"/>
+                    <navigationItem key="navigationItem" title="Title" id="GUp-On-gAg"/>
                     <connections>
                         <outlet property="listTableView" destination="XsE-jn-m6Q" id="pj9-9d-LjN"/>
                         <segue destination="9hX-p3-Rdv" kind="show" identifier="showDetail" action="showDetailViewController:sender:" id="3Rm-so-Dew"/>
@@ -315,20 +323,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-FJ-fqJ">
-                                <rect key="frame" x="16" y="318" width="288" height="188"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-FJ-fqJ">
+                                <rect key="frame" x="16" y="367" width="288" height="188"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="188" id="jg1-tW-chg"/>
+                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mJk-xm-Kuw">
-                                <rect key="frame" x="16" y="88" width="288" height="216"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mJk-xm-Kuw">
+                                <rect key="frame" x="16" y="44" width="288" height="309"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.50196081400000003" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="mJk-xm-Kuw" firstAttribute="trailing" secondItem="ago-tx-HTu" secondAttribute="trailingMargin" id="IC7-ZS-eli"/>
+                            <constraint firstItem="mJk-xm-Kuw" firstAttribute="leading" secondItem="LOA-FJ-fqJ" secondAttribute="leading" id="JPS-kd-1ox"/>
+                            <constraint firstItem="mJk-xm-Kuw" firstAttribute="leading" secondItem="ago-tx-HTu" secondAttribute="leadingMargin" id="S10-Wr-msd"/>
+                            <constraint firstItem="mJk-xm-Kuw" firstAttribute="top" secondItem="ymE-LT-ahG" secondAttribute="top" constant="24" id="cei-vZ-9tA"/>
+                            <constraint firstItem="LOA-FJ-fqJ" firstAttribute="top" secondItem="mJk-xm-Kuw" secondAttribute="bottom" constant="14" id="g83-1t-JcS"/>
+                            <constraint firstItem="ymE-LT-ahG" firstAttribute="bottom" secondItem="LOA-FJ-fqJ" secondAttribute="bottom" constant="13" id="lPp-s2-eOc"/>
+                            <constraint firstItem="mJk-xm-Kuw" firstAttribute="trailing" secondItem="LOA-FJ-fqJ" secondAttribute="trailing" id="wB4-SM-Uot"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="ymE-LT-ahG"/>
                     </view>
                     <connections>
@@ -357,7 +375,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ypR-H9-i8q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="206" y="130"/>
+            <point key="canvasLocation" x="197" y="130"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="LRb-aS-9uI">
@@ -376,13 +394,13 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uiu-Md-QJi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-504" y="130"/>
+            <point key="canvasLocation" x="-714" y="131"/>
         </scene>
     </scenes>
     <resources>
         <image name="next.png" width="404" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ooM-X5-PwW"/>
+        <segue reference="PsK-Xj-4Sg"/>
     </inferredMetricsTieBreakers>
 </document>

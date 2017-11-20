@@ -31,16 +31,20 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         for(key,data) in dic!{
             print(data)
             print(key)
-
+        var godinfo:NSDictionary = ["name":key]
+            
+            GodList.append(godinfo)
+        
+            
         }
     }
     
-    //2行数の決定
+    //行数の決定
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GodList.count
     }
     
-    //3表示する文字列を決定
+    //表示する文字列を決定
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //文字列を表示するセルの取得
@@ -48,14 +52,18 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
             , for: indexPath)
         
         //表示したい文字の設定
-        cell.textLabel?.text = GodList[indexPath.row] as! String
+        var godinfo = GodList[indexPath.row] as! NSDictionary
+        print(godinfo["name"])
+        
+        cell.textLabel?.text = godinfo["name"] as! String
         
         //文字色、矢印
         cell.textLabel?.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
         
         //文字を設定したセルを返す
-        cell.textLabel!.text = GodList[(indexPath as NSIndexPath).row] as! String
+        
+//        cell.textLabel!.text = GodList[(indexPath as NSIndexPath).row] as! String
         
         return cell
 
@@ -65,7 +73,9 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
             //タップされた行のエリア名を保存
-            godName = GodList[(indexPath.row)]  as! String
+            var godinfo = GodList[indexPath.row] as! NSDictionary
+            
+            godName = godinfo["name"]  as! String
     
             //セグエのidentifierを指定して、画面移動
             performSegue(withIdentifier: "showDetail",sender: nil)
@@ -73,8 +83,13 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     // Segueで画面遷移する時
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
         //次の画面のインスタンスを取得
-//        var dvc = segue.destination as! DetailViewController
+        let secondinfo = segue.destination as!
+        DetailViewController
+        
+        // 次の画面のプロパティに選択されたエリア名を設定
+        secondinfo.getGodName = godName
 
     }
     

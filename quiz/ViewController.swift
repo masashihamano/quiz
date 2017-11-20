@@ -60,6 +60,18 @@ class ViewController: UIViewController {
         print("1画面目 count=\(myAp.myCount)")
     }
     
+    
+    
+    //セルがタップされたとき
+    func button(_ button: UIButton, didSelectRowAt indexPath: IndexPath) {
+        
+        //セグエのidentifierを指定して、画面移動
+        performSegue(withIdentifier: "showList",sender: nil)
+        performSegue(withIdentifier: "showStart",sender: nil)
+        
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

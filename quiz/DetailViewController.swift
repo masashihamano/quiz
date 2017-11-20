@@ -36,10 +36,12 @@ class DetailViewController: UIViewController {
         print(detailInfo["image"] as! String)
         
         //タイトルをナビゲーションバーの真ん中に表示
+        self.title = getGodName
         navigationItem.title = getGodName
         
         //説明、画像
         detailTextView.text = detailInfo["description"] as! String
+//        detailTextView.text = detailInfo["trait"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
         
     }

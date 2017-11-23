@@ -11,7 +11,7 @@
 		<key>image</key>
 		<string>Shiva.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>http://www.wikipedia.org/</string>
 	</dict>
 	<key>ブラフマー（Brahma）</key>
 	<dict>
@@ -22,7 +22,7 @@
 		<key>image</key>
 		<string>Brahma.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>http://www.wikipedia.org/</string>
 	</dict>
 	<key>ドゥルガー（Durga）</key>
 	<dict>
@@ -44,7 +44,7 @@
 		<key>image</key>
 		<string>Ganesa.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>http://www.wikipedia.org/</string>
 	</dict>
 	<key>ラクシュミー（Lakshmi）</key>
 	<dict>
@@ -55,7 +55,7 @@
 		<key>image</key>
 		<string>Lakshmi.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>http://www.wikipedia.org/</string>
 	</dict>
 	<key>ナンディン（Nandin）</key>
 	<dict>
@@ -154,7 +154,7 @@
 		<key>image</key>
 		<string>Jagannatha.gif</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>http://www.wikipedia.org/</string>
 	</dict>
 	<key>カーリー（Kali）</key>
 	<dict>

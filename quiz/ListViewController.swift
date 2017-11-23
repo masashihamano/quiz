@@ -34,8 +34,6 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         var godinfo:NSDictionary = ["name":key]
             
             GodList.append(godinfo)
-        
-            
         }
     }
     

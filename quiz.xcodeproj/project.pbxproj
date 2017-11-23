@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B600C1B21FC1D4AF005A4CC9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */; };
+		B605C0851FC673F700CA98F8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605C0841FC673F700CA98F8 /* ScoreViewController.swift */; };
 		B608AF091FC17E50009869EB /* Skanda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF081FC17E4F009869EB /* Skanda.jpg */; };
 		B608AF0B1FC191F7009869EB /* Matsya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF0A1FC191F7009869EB /* Matsya.jpg */; };
 		B608AF0F1FC19545009869EB /* Kurma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF0E1FC19545009869EB /* Kurma.jpg */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B605C0841FC673F700CA98F8 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		B608AF081FC17E4F009869EB /* Skanda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Skanda.jpg; sourceTree = "<group>"; };
 		B608AF0A1FC191F7009869EB /* Matsya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Matsya.jpg; sourceTree = "<group>"; };
 		B608AF0E1FC19545009869EB /* Kurma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kurma.jpg; sourceTree = "<group>"; };
@@ -263,6 +265,7 @@
 				B61227BB1FBDEB140063B159 /* QuestionViewController.swift */,
 				B6ADB5A11FBE871C00AB940A /* ListViewController.swift */,
 				B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */,
+				B605C0841FC673F700CA98F8 /* ScoreViewController.swift */,
 				B6109EA31FB87585007B0776 /* Main.storyboard */,
 				B6109EA61FB87585007B0776 /* Assets.xcassets */,
 				B6109EA81FB87585007B0776 /* LaunchScreen.storyboard */,
@@ -493,6 +496,7 @@
 				B600C1B21FC1D4AF005A4CC9 /* DetailViewController.swift in Sources */,
 				B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */,
 				B6109EA01FB87585007B0776 /* AppDelegate.swift in Sources */,
+				B605C0851FC673F700CA98F8 /* ScoreViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

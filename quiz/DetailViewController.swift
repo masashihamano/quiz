@@ -13,6 +13,8 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var detailImageView: UIImageView!
     
+    @IBOutlet weak var wikiLabel: UILabel!
+    
     
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
@@ -33,16 +35,18 @@ class DetailViewController: UIViewController {
         //今画面に表示したいデータの取得
         let detailInfo = dic![getGodName] as! NSDictionary
         
-        // TableViewで扱いやすい配列（エリア名の入ってる配列）を作成
-        for(key,data) in dic!{
-        var godinfo:NSDictionary = ["name":key]
-        GodList.append(godinfo)
         
-        }
-            
+        
+//        // TableViewで扱いやすい配列（エリア名の入ってる配列）を作成
+//        for(key,data) in dic!{
+//        var godinfo:NSDictionary = ["name":key]
+//        GodList.append(godinfo)
+//
+//        }
+        
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["description"] as! String)
-        print(detailInfo["tarait"] as! String)
+//        print(detailInfo["tarait"] as! String)
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
@@ -54,7 +58,14 @@ class DetailViewController: UIViewController {
         detailTextView.text = detailInfo["description"] as! String
 //        detailTextView.text = detailInfo["trait"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
-//        detailTextView.text = detailInfo["wikipedia"] as! String
+        
+        //ウィキぺディア
+//        wikiLabel.text = detailInfo["wikipwdia"] as! String
+        
+        
+//        let wikiLabel = NSMutableAttributedString(
+//            string: string,
+//            attributes: [wikipedia: NSURL(string: "http://www.wikipedia.org/")!])
         
         
         

@@ -30,7 +30,7 @@ class Button_Custom: UIButton {
 }
 
 
-class ViewController: UIViewController {
+class TitleViewController: UIViewController {
    
     
     @IBOutlet weak var titleLabel: UILabel!

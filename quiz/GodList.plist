@@ -5,343 +5,404 @@
 	<key>シヴァ（Shiva）</key>
 	<dict>
 		<key>description</key>
-		<string>三大神の一人で「破壊の神」</string>
-		<key>trait</key>
-		<string>額には第三の目がある</string>
+		<string>【シヴァ（Shiva）】
+三大神の一人で「破壊の神」。世界の破壊と再生・生殖を司る。「天地創造」「自然からの恩恵」「強敵を倒す」などの神話に絡めてよく語られる。
+シヴァの妻はパールヴァティーで、その間の子供がガネーシャ。
+&lt;特徴&gt;
+額に第三の目がある。三叉槍が持っている。</string>
 		<key>image</key>
 		<string>Shiva.jpg</string>
 		<key>wikipedia</key>
-		<string>http://www.wikipedia.org/</string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B4%E3%82%A1</string>
 	</dict>
 	<key>ブラフマー（Brahma）</key>
 	<dict>
 		<key>description</key>
-		<string>三大神の一人で、”世界の創造”を司る神。</string>
-		<key>tarait</key>
-		<string>四つの頭を持った白髭の神</string>
+		<string>【ブラフマー（Brahma）】
+三大神の一人で、”世界の創造”を司る神。世界の創造と次の破壊の後の再創造を担当している。 ヒンドゥー教の教典にのっとって苦行を行ったものにはブラフマーが恩恵を与える。
+妻はサラスバティー。
+&lt;特徴&gt;
+四つの頭を持った白髭の神</string>
 		<key>image</key>
 		<string>Brahma.jpg</string>
 		<key>wikipedia</key>
-		<string>http://www.wikipedia.org/</string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%A9%E3%83%95%E3%83%9E%E3%83%BC</string>
 	</dict>
 	<key>ドゥルガー（Durga）</key>
 	<dict>
 		<key>description</key>
-		<string>シヴァの第二の妻で、戦いの女神</string>
-		<key>tarait</key>
-		<string>獅子に乗り、武器を持つ美しい美女と</string>
+		<string>【ドゥルガー（Durga）】
+ヒンドゥー教の女神。その名は「近づき難い者」を意味する。外見は優美で美しいが、実際は戦いの女神様。
+パールヴァティーの化身。
+&lt;特徴&gt;
+虎かライオンに乗っている。10本の腕に大量の武器を持つ。</string>
 		<key>image</key>
 		<string>Durga.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A5%E3%83%AB%E3%82%AC%E3%83%BC</string>
 	</dict>
 	<key>ガネーシャ（Ganesa）</key>
 	<dict>
 		<key>description</key>
-		<string>富、学問、幸運を司る。父はシヴァ、母はパールヴァティー</string>
-		<key>tarait</key>
-		<string>頭が象で身体が人間。太鼓腹で片方の牙が欠けている。</string>
+		<string>【ガネーシャ（Ganesa）】
+知恵・学問・商売の神様。修行者が歩む道のすべての障害を取り除き、世俗的な成功を授ける神様。
+父はシヴァ、母はパールヴァティー。
+&lt;特徴&gt;
+頭が象で身体が人間。太鼓腹で片方の牙が欠けている。乗り物はネズミ。</string>
 		<key>image</key>
 		<string>Ganesa.jpg</string>
 		<key>wikipedia</key>
-		<string>http://www.wikipedia.org/</string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A3</string>
 	</dict>
 	<key>ラクシュミー（Lakshmi）</key>
 	<dict>
 		<key>description</key>
-		<string>美と富の女神ヴィシュヌ神の妻。</string>
-		<key>tarait</key>
-		<string>4本の腕に蓮の花を持つ</string>
+		<string>【ラクシュミー（Lakshmi）】
+美と富の女神。神様や悪魔たちが不死の薬「アムリタ」を作り出すために世界創造した海の泡から生まれた。
+ヴィシュヌ神の妻。
+&lt;特徴&gt;
+4本の腕に蓮の花を持つ。</string>
 		<key>image</key>
 		<string>Lakshmi.jpg</string>
 		<key>wikipedia</key>
-		<string>http://www.wikipedia.org/</string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%BC</string>
 	</dict>
 	<key>ナンディン（Nandin）</key>
 	<dict>
 		<key>description</key>
-		<string>シヴァの乗り物とされる聖なる牛。</string>
-		<key>tarait</key>
-		<string>乳白色の牡牛</string>
+		<string>【ナンディン（Nandin）】
+全ての四足動物の守り神。シヴァが踊りを舞うとき、そのための音楽を奏でる役を担う。
+シヴァの乗り物とされる牡牛。
+&lt;特徴&gt;
+乳白色の牡牛</string>
 		<key>image</key>
 		<string>Nandin.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3</string>
 	</dict>
 	<key>スカンダ（Skanda）</key>
 	<dict>
 		<key>description</key>
-		<string>戦いの神。韋駄天様。ムルガン（Murugan）とも呼ばれる。</string>
-		<key>tarait</key>
-		<string>槍を携え、孔雀を騎乗獣にしている</string>
+		<string>【スカンダ（Skanda）】
+戦いの神。韋駄天様。ムルガン（Murugan）とも呼ばれる。無類の強さを誇る山の児童神。
+シヴァの息子であり、ガーネーシャと兄弟。
+&lt;特徴&gt;
+槍を携え、孔雀を騎乗獣にしている</string>
 		<key>image</key>
 		<string>Skanda.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%80</string>
 	</dict>
 	<key>パールヴァティ（Parvathi）</key>
 	<dict>
 		<key>description</key>
-		<string>シヴァの奥さん。軍神スカンダや、学問の神ガネーシャの母。</string>
-		<key>tarait</key>
-		<string>シヴァと一緒になって描かれることがほとんど。</string>
+		<string>【パールヴァティ（Parvathi）】
+サティー（シヴァの最初の奥さん）の生まれ変わり。ヒマラヤ山脈の山神ヒマヴァットの娘で、ガンジス川の女神であるガンガーの姉。
+シヴァの奥さん。学問の神ガネーシャと軍神スカンダの母。
+&lt;特徴&gt;
+シヴァと一緒になって描かれることがほとんど。</string>
 		<key>image</key>
 		<string>Parvathi.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%AB%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
 	</dict>
 	<key>ヴィシュヌ（Vishnu）</key>
 	<dict>
 		<key>description</key>
-		<string>三大神の一人で、世界の維持神。</string>
-		<key>tarait</key>
-		<string>４本の手にシンボルの武具を持つ</string>
+		<string>【ヴィシュヌ（Vishnu）】
+三大神の一人で、愛と犠牲の神。クールマ、マツヤ、ヴァーマナ、ナラシンハ、ラーマ、パラシュラーマ、クリシュナ、ブッダなど10の化身を持つ。
+奥さんはラクシュミー
+&lt;特徴&gt;
+４本の手にシンボルの武具（チャクラ、棍棒、ホラ貝、蓮の花）を持つ</string>
 		<key>image</key>
 		<string>Vishnu.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%82%B7%E3%83%A5%E3%83%8C</string>
 	</dict>
 	<key>アグニ（Agni）</key>
 	<dict>
 		<key>description</key>
-		<string>インド神話の火神</string>
-		<key>tarait</key>
-		<string>赤色の体に炎の衣を纏い、三つの頭と腕</string>
+		<string>【アグニ（Agni）】
+インド神話の火神火の神様。燃え上がる炎は天に昇り、 ほかの神々への供物も願いも一緒に届けてくれる。
+神々の世界と人間の世界を結ぶ橋渡し的な存在として、お祀りなどには欠かせない神様。
+&lt;特徴&gt;
+赤色の体に炎の衣を纏い、三つの頭と腕</string>
 		<key>image</key>
 		<string>Agni.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B0%E3%83%8B</string>
 	</dict>
 	<key>ダーキニー（Dakini）</key>
 	<dict>
 		<key>description</key>
-		<string>インドの魔女</string>
-		<key>tarait</key>
-		<string>日本とも縁が深く、お稲荷さんのご本尊</string>
+		<string>【ダーキニー（Dakini）】
+知恵を与える女神。日本では、ダキニ天として、狐に乗る女神としてお稲荷様のご本尊。
+インドの魔女とされ、大女神であり血に飢えたカーリーの従者
+&lt;特徴&gt;
+ドクロの首飾りと杯を身につけている</string>
 		<key>image</key>
 		<string>Dakini.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E8%8D%BC%E6%9E%B3%E5%B0%BC%E5%A4%A9</string>
 	</dict>
 	<key>ハヌマーン（Hanuman）</key>
 	<dict>
 		<key>description</key>
-		<string>インド神話におけるヴァナラ（猿族）の1人</string>
-		<key>tarait</key>
-		<string>西遊記の孫悟空のモデル</string>
+		<string>【ハヌマーン（Hanuman）】
+風神ヴァーユと猿王の元妻アンジャナーの子。俊敏で、姿や大きさを自由に変えられる。
+ヒンドゥー教の聖典ともなっている叙事詩『ラーマーヤナ』では、ラーマ（Rama）の妻シーターを救うために協力して戦う。
+&lt;特徴&gt;
+西遊記の孫悟空のモデル</string>
 		<key>image</key>
 		<string>Hanuman.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8C%E3%83%9E%E3%83%BC%E3%83%B3</string>
 	</dict>
 	<key>インドラ（Indra）</key>
 	<dict>
 		<key>description</key>
-		<string>ヒンドゥー教の神話の主神。仏教での漢訳では「帝釈天」。</string>
-		<key>tarait</key>
-		<string>白像（アイラーヴァタ）に乗る</string>
+		<string>【インドラ（Indra）】
+雷を操る雷霆神。インドの古代聖典「リグ・ヴェーダ」から登場する戦いの神様。
+もともとはアーリア人がインドに持ち込んできた神様だが、ヒンドゥー教が発展していくうちに、インドラの役割がシヴァに代わる。 
+&lt;特徴&gt;
+武器（ヴァジュラ）を持ち、白像（アイラーヴァタ）に乗っている。</string>
 		<key>image</key>
 		<string>Indra.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E3%83%A9</string>
 	</dict>
 	<key>ジャガンナート（Jagannatha）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の化身の一つとしてヒンドゥー教に吸収された神様</string>
-		<key>tarait</key>
-		<string>元々は土着の神様</string>
+		<string>【ジャガンナート（Jagannatha）】
+ヴィシュヌ神の化身の一つとしてヒンドゥー教に吸収された神様
+元々は土着の神様 。インドの四大聖地の一つ東インドのプリーという海辺の町の神様。
+&lt;特徴&gt;
+お祈りするときに「じゃい、じゃい、じゃがんなーと！」 と言うらしい。</string>
 		<key>image</key>
 		<string>Jagannatha.gif</string>
 		<key>wikipedia</key>
-		<string>http://www.wikipedia.org/</string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%82%AC%E3%83%B3%E3%83%8A%E3%83%BC%E3%83%88</string>
 	</dict>
 	<key>カーリー（Kali）</key>
 	<dict>
 		<key>description</key>
-		<string>パールヴァティーの憤怒相とされる</string>
-		<key>tarait</key>
-		<string>生首もって踊りまくっている女神様</string>
+		<string>【カーリー（Kali）】
+インド神話の血と酒と殺戮を好む戦いの女神。
+シヴァの妻の一人であり、カーリー・マー(黒い母)とも呼ばれ、パールヴァティーの憤怒相とされる。
+&lt;特徴&gt;
+生首を持ちながら、シヴァの上で踊っている。</string>
 		<key>image</key>
 		<string>Kali.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%AA%E3%83%BC</string>
 	</dict>
 	<key>カーマ（Kama）</key>
 	<dict>
 		<key>description</key>
-		<string>ヒンドゥー教における愛の神</string>
-		<key>tarait</key>
-		<string>オウムに乗り、サトウキビの弓と花の矢を持つ。</string>
+		<string>【カーマ（Kama）】
+ヒンドゥー教における愛の神。カーマは元来「愛」の意で、マンマタ、カンダルパ、マーラなどとも呼ばれる。
+ダルマ（正義）とスラッダ（信仰）の息子だが、ブラフマーの息子とする説もある。
+&lt;特徴&gt;
+オウムに乗り、サトウキビの弓と花の矢を持つ。</string>
 		<key>image</key>
 		<string>Kama.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%9E_(%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99)</string>
 	</dict>
 	<key>クリシュナ（Krsna）</key>
 	<dict>
 		<key>description</key>
-		<string>インド神話に登場する英雄。</string>
-		<key>tarait</key>
-		<string>クジャク羽ついた冠と笛を持っている</string>
+		<string>【クリシュナ（Krsna）】
+インド神話に登場する英雄。悪王カンサを滅ぼすために、ヴィシュヌの化身としてこの世に生まれた。
+ヴィシュヌ神の第8の化身（アヴァターラ）。ハンサムで、女泣かせの神様。
+&lt;特徴&gt;
+クジャク羽ついた冠と笛を持っている</string>
 		<key>image</key>
 		<string>Krsna.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B7%E3%83%A5%E3%83%8A</string>
 	</dict>
 	<key>ミーナクシー（Minakshi）</key>
 	<dict>
 		<key>description</key>
-		<string>南インドのマドゥライを護る女神様</string>
-		<key>tarait</key>
-		<string>魚の目を持つお魚の女神様</string>
+		<string>【ミーナクシー（Minakshi）】
+南インドのマドゥライを護る女神様。海の神様でもあり海に行く前にお祈りするのが良い。
+シヴァの奥さんの一人。
+&lt;特徴&gt;
+魚の目を持つお魚の女神様</string>
 		<key>image</key>
 		<string>Minakshi.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://en.wikipedia.org/wiki/Meenakshi</string>
 	</dict>
 	<key>ナーガ（Naga）</key>
 	<dict>
 		<key>description</key>
-		<string>男はナーガ。女はナーギーと呼ばれる。</string>
-		<key>tarait</key>
-		<string>インドの蛇神様</string>
+		<string>【ナーガ（Naga）】
+男はナーガ。女はナーギーと呼ばれる。ヒンドゥー教が始まる前からずっと印度の神様として信仰されてきた重要な存在。
+生命力と豊饒のシンボル。
+&lt;特徴&gt;
+インドの蛇神様</string>
 		<key>image</key>
 		<string>Naga.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%BC%E3%82%AC</string>
 	</dict>
 	<key>ラーマ（Rama）</key>
 	<dict>
 		<key>description</key>
-		<string> ヴィシュヌ神が人間として生まれ変わった姿</string>
-		<key>tarait</key>
-		<string>弓矢を持ってる。叙事詩「ラーマーヤナ」の主人公</string>
+		<string>【ラーマ（Rama）】
+ ヴィシュヌ神が人間として生まれ変わった姿。アヴァターラ（化身）の一つ。
+叙事詩「ラーマーヤナ」の主人公。「ラーマーヤナ」は、悪魔に誘拐された妻シーターを取り返すためにラーマ王子が戦う物語。
+&lt;特徴&gt;
+弓矢を持ってる王子様。</string>
 		<key>image</key>
 		<string>Rama.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%9E</string>
 	</dict>
 	<key>サラスヴァティ（Sarasvati）</key>
 	<dict>
 		<key>description</key>
-		<string>もとは河の神、のちに学問・芸術の女神</string>
-		<key>tarait</key>
-		<string>楽器（ヴィーナ）を持ち、蓮の花に乗ってる。</string>
+		<string>【サラスヴァティ（Sarasvati）】
+ 学問などの知を司るヒンドゥー教の女神。水辺にすわり、白鳥か、孔雀を従え、ヴィーナを弾く姿で描かれることが多い。
+ブラフマーの奥さん。日本では七福神のひとり、弁天様。
+&lt;特徴&gt;
+楽器（ヴィーナ）を持ち、蓮の花に乗ってる。</string>
 		<key>image</key>
 		<string>Sarasvati.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%A9%E3%82%B9%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
 	</dict>
 	<key>マツヤ（Matsya）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第1のアヴァターラ（化身）</string>
-		<key>tarait</key>
-		<string>半魚人</string>
+		<string>【マツヤ（Matsya）】
+ヴィシュヌ神の第1のアヴァターラ（化身）
+マツヤは大洪水の予言をして、世界中の植物の種などを乗せた船を用意させ、人類の滅亡を防いだ。
+&lt;特徴&gt;
+下半身が魚</string>
 		<key>image</key>
 		<string>Matsya.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%84%E3%83%A4</string>
 	</dict>
 	<key>クールマ（Kurma）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第2の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>半分亀</string>
+		<string>【クールマ（Kurma）】
+ ヴィシュヌ神の第2の化身（アヴァターラ）
+神々と悪魔たちが協力して不死の霊薬を手に入れようとする話に登場。その際、海底でマンダラ山を支える役割を果たした。
+&lt;特徴&gt;
+下半身が亀</string>
 		<key>image</key>
 		<string>Kurma.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%BC%E3%83%AB%E3%83%9E</string>
 	</dict>
-	<key>ラーヴァナ（Ravana）</key>
+	<key>ガンガー（Ganga）</key>
 	<dict>
 		<key>description</key>
-		<string>インドにおける魔王の1人</string>
-		<key>tarait</key>
-		<string>10の頭、20の腕と銅色の目を持つ。</string>
+		<string>【ガンガー（Ganga）】
+ ヒンドゥー教に伝わる、ガンジス川を神格化した女神。
+ガンジス川（ガンガー）は現在でも「聖なる川」としてヒンドゥー教徒の信仰の対象であり、この川の水で沐浴すればすべての罪は浄められると信じられている。
+&lt;特徴&gt;
+乗り物（ヴァーハナ）はワニのクンビーラ</string>
 		<key>image</key>
-		<string>Ravana.jpg</string>
+		<string>Ganga.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%82%AC%E3%83%BC</string>
 	</dict>
 	<key>ヴァラーハ（Varaha）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第3の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>イノシシの顔</string>
+		<string>【ヴァラーハ（Varaha）】
+ヴィシュヌ神の第3の化身（アヴァターラ）
+大地（プリティヴィー）を海の底へ沈めた、恐ろしきダイティヤ族の王ヒラニヤークシャを打ち破るために遣わされ、1000年にも及ぶ戦いの末、勝利を収める。
+&lt;特徴&gt;
+イノシシの顔</string>
 		<key>image</key>
 		<string>Varaha.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%A9%E3%83%BC%E3%83%8F</string>
 	</dict>
 	<key>ナラシンハ（Nrisimha）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第4の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>人獅子。頭がライオン。</string>
+		<string>【ナラシンハ（Nrisimha）】
+ヴィシュヌ神の第4の化身（アヴァターラ）。ヌリシンハ（Nrisimha）ともいう。
+ブラフマーに苦行を認められ、実質不死身の体を得たヒラニヤカシプを退治したといわれる。
+&lt;特徴&gt;
+人獅子。頭がライオン</string>
 		<key>image</key>
 		<string>Nrisimha.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%A9%E3%82%B7%E3%83%B3%E3%83%8F</string>
 	</dict>
 	<key>ヴァーマナ（Vamana）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第5の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>少年の修行僧</string>
+		<string>【ヴァーマナ（Vamana）】
+ヴィシュヌ神の第5の化身（アヴァターラ）
+魔王バリに３歩で歩ける分だけ土地を要求し、その直後巨大化して、3歩で「天・空・地」を歩いて、三界を奪回した。
+&lt;特徴&gt;
+少年の修行僧</string>
 		<key>image</key>
 		<string>Vamana.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%9E%E3%83%8A</string>
 	</dict>
 	<key>パラシュラーマ（Parasurama）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第7の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>斧を持っている斧の達人</string>
+		<string>【パラシュラーマ（Parasurama）】
+ヴィシュヌ神の第7の化身（アヴァターラ）。クシャトリヤ・キラーとも呼ばれる。
+クシャトリヤ（武人）が猛威を振るっていた時代に生まれ、邪悪なクシャトリヤを滅ぼし，バラモン（僧侶）至上の社会を作った。
+&lt;特徴&gt;
+斧を持っている斧の達人</string>
 		<key>image</key>
 		<string>Parasurama.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://en.wikipedia.org/wiki/Parashurama</string>
 	</dict>
 	<key>ブッダ（Budha）</key>
 	<dict>
 		<key>description</key>
-		<string>ヴィシュヌ神の第9の化身（アヴァターラ）</string>
-		<key>tarait</key>
-		<string>仏教のトップ</string>
+		<string>【ブッダ（Budha）】
+ヴィシュヌ神の第9の化身（アヴァターラ）
+ヴェーダ聖典を悪人から遠ざけるために、敢えて偽の宗教である仏教を広め、人々を混乱させるために出現したとされる。
+&lt;特徴&gt;
+仏教の最高の位「仏の悟り」を開いた人</string>
 		<key>image</key>
 		<string>Budha.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%87%88%E8%BF%A6</string>
 	</dict>
 	<key>ヤマ（Yama）</key>
 	<dict>
 		<key>description</key>
-		<string>仏教では「閻魔大王」のこと</string>
-		<key>tarait</key>
-		<string>青い肌で水牛に乗っている</string>
+		<string>【ヤマ（Yama）】
+ヴィシュヌ神の第9の化身（アヴァターラ）。仏教では「閻魔大王」のこと。
+最初に死んだ人間でもあり、死ぬ人間を裁きの場所に連れてきて、生前の行いを裁く仕事をしている。
+&lt;特徴&gt;
+青い肌で水牛に乗っている</string>
 		<key>image</key>
 		<string>Yama.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E9%96%BB%E9%AD%94</string>
 	</dict>
 	<key>スーリヤ（Surya）</key>
 	<dict>
 		<key>description</key>
-		<string>インド神話に伝わる太陽神</string>
-		<key>tarait</key>
-		<string>7頭の馬の馬車に乗ってる</string>
+		<string>【スーリヤ（Surya）】
+インド神話に伝わる太陽神。天空神ディヤウスの息子とも、闘神インドラの息子ともされる。また、原初の巨人プルシャの目から生まれたとも言われる。
+&lt;特徴&gt;
+7頭の馬の馬車に乗ってる</string>
 		<key>image</key>
 		<string>Surya.jpg</string>
 		<key>wikipedia</key>
-		<string></string>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%BC%E3%83%AA%E3%83%A4</string>
 	</dict>
 </dict>
 </plist>

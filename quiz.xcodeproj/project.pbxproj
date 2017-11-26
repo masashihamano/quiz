@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B600C1B21FC1D4AF005A4CC9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */; };
+		B603126F1FC99FCA00A00EC5 /* Ganga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B603126E1FC99FCA00A00EC5 /* Ganga.jpg */; };
 		B605C0851FC673F700CA98F8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605C0841FC673F700CA98F8 /* ScoreViewController.swift */; };
 		B608AF091FC17E50009869EB /* Skanda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF081FC17E4F009869EB /* Skanda.jpg */; };
 		B608AF0B1FC191F7009869EB /* Matsya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF0A1FC191F7009869EB /* Matsya.jpg */; };
@@ -89,6 +90,7 @@
 
 /* Begin PBXFileReference section */
 		B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		B603126E1FC99FCA00A00EC5 /* Ganga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ganga.jpg; sourceTree = "<group>"; };
 		B605C0841FC673F700CA98F8 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		B608AF081FC17E4F009869EB /* Skanda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Skanda.jpg; sourceTree = "<group>"; };
 		B608AF0A1FC191F7009869EB /* Matsya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Matsya.jpg; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				B60E9DE41FC070CF00BE988A /* Ganesa.jpg */,
 				B60E9DE51FC070CF00BE988A /* Ganesa02.jpg */,
 				B60E9DE61FC070CF00BE988A /* Ganesa03.jpg */,
+				B603126E1FC99FCA00A00EC5 /* Ganga.jpg */,
 				B60E9DE71FC070CF00BE988A /* Hanuman.jpg */,
 				B60E9DE81FC070CF00BE988A /* Hanuman02.jpg */,
 				B60E9DE91FC070CF00BE988A /* Indra.jpg */,
@@ -436,6 +439,7 @@
 				B60E9E111FC070D000BE988A /* Krsna.jpg in Resources */,
 				B60E9E091FC070D000BE988A /* Hanuman.jpg in Resources */,
 				B60E9E011FC070D000BE988A /* Brahma.jpg in Resources */,
+				B603126F1FC99FCA00A00EC5 /* Ganga.jpg in Resources */,
 				B60E9E101FC070D000BE988A /* Kama.jpg in Resources */,
 				B60E9E1A1FC070D000BE988A /* Rama.jpg in Resources */,
 				B61227B91FBDE0180063B159 /* background.jpg in Resources */,

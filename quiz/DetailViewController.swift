@@ -16,6 +16,7 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var wikiLabel: UILabel!
     
     
+    
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
     //前の画面から受け取るためのプロパティ
@@ -24,6 +25,16 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let wikiString = "詳細はwikipediaへ"
+        let attributedString = NSMutableAttributedString(string: wikiString)
+        
+        attributedString.addAttribute(.link,
+                                      value: "https://www.wikipedia.org/",
+                                      range: NSString(string: wikiString).range(of: "wikipedia"))
+//        wikiLabel.attributedText = attributedString
+//        wikiLabel.isSelectable = true
+        
+        
         print("getGodName:\(getGodName)")
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
@@ -68,9 +79,15 @@ class DetailViewController: UIViewController {
 //            attributes: [wikipedia: NSURL(string: "http://www.wikipedia.org/")!])
         
         
-        
-        
-        
+        func wikiLabel(_ wikiLabel: UILabel!,
+                      shouldInteractWith URL: URL,
+                      in characterRange: NSRange,
+                      interaction: UITextItemInteraction) -> Bool {
+            
+            UIApplication.shared.open(URL)
+            
+            return false
+        }
         
     }
 

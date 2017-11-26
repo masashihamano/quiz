@@ -9,23 +9,15 @@
 import UIKit
 
 
-/////////ここコピペ/////////////
-//回答した番号の識別用enum
-enum Answer: Int {
-    case one = 1
-    case two = 2
-    case three = 3
-    case four = 4
-}
+/////////ここから/////////////
 
 //ゲームに関係する定数
 struct QuizStruct {
     static let timerDuration: Double = 10
-    static let dataMaxCount: Int = 5
-    static let limitTimer: Double = 10.000
+    static let dataMaxCount: Int = 10
     static let defaultCounter: Int = 10
 }
-/////////ここまでコピペ/////////////
+/////////ここまで/////////////
 
 class questionViewController: UIViewController, UINavigationBarDelegate, UITextViewDelegate {
     
@@ -35,7 +27,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     var godName = ""
     
     //Quiz画面の作成
-    
     
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var QuestionImage: UIImageView!
@@ -48,13 +39,15 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var Next: UIButton!
     
-    
     @IBOutlet weak var timerDisplayLabel: UILabel!
     @IBOutlet weak var problemCountLabel: UILabel!
     
     
     var CorrectAnswer = String()
-   
+    
+    var myButtonAry: [UIButton] = []
+    var scoreNum = 0
+    
 //////時間制限バー////////
     
     // 時間計測用の変数.
@@ -75,7 +68,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     var barImageView:UIImageView!
     
 //////時間制限バー////////
-///////////////ここからコピペ//////////////////////
+///////////////ここから//////////////////////
     //タイマー関連のメンバ変数
     var pastCounter: Int = 10
     var perSecTimer: Timer? = nil
@@ -84,40 +77,17 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //問題関連のメンバ変数
     var counter: Int = 0
     
-    //正解数と経過した時間
+    //正解数
     var correctProblemNumber: Int = 0
-    var totalSeconds: Double = 0.000
-    
-    //問題毎の回答時間を算出するための時間を一時的に格納するためのメンバ変数
-    var tmpTimerCount: Double!
-    
-    //タイム表示用のメンバ変数
-    var timeProblemSolvedZero: Date!  //画面表示時点の時間
-    var timeProblemSolvedOne: Date!   //第1問回答時点の時間
-    var timeProblemSolvedTwo: Date!   //第2問回答時点の時間
-    var timeProblemSolvedThree: Date! //第3問回答時点の時間
-    var timeProblemSolvedFour: Date!  //第4問回答時点の時間
-    var timeProblemSolvedFive: Date!  //第5問回答時点の時間
-    
-//    //画面出現中のタイミングに読み込まれる処理
-//    override func viewWillAppear(_ animated: Bool) {
-//
-//        RandomQuestions()
-//
-//
-//    }
     
     //画面出現しきったタイミングに読み込まれる処理
     override func viewDidAppear(_ animated: Bool) {
         
-        //ラベルを表示を「しばらくお待ちください...」から「あと10秒」という表記へ変更する
-        timerDisplayLabel.text = "あと" + String(self.pastCounter) + "秒"
+        //ラベルを表示を「TIME:10」という表記へ変更
+        timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
         
         //ボタンを全て活性状態にする
         allAnswerBtnEnabled()
-        
-        //1問目の解き始めの時間を保持する
-        timeProblemSolvedZero = Date()
         
         //タイマーをセットする
         setTimer()
@@ -129,24 +99,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //タイマーをリセットしておく
         resetTimer()
     }
-/////////ここまでコピペ/////////////
+/////////ここまで/////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
-    //非表示にする
-        Hide()
-    //問題表示する
-        RandomQuestions()
-        
-//////時間制限バー////////
+//////時間制限バーここから////////
         // 制限時間バーの高さ・幅
         let barHeight = scHei*0.015
         let barWidth = scWid*0.8
         
         // 制限時間バーのX座標・Y座標・終端のX座標
-        let barXPosition = scWid*0.5
-        let barYPosition = scHei*9.0
+        let barXPosition = scWid*0.1
+        let barYPosition = scHei*0.1
         let barXPositionEnd = barXPosition + barWidth
         
         // UIImageViewを初期化
@@ -156,10 +121,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         barImageView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
         
         // バーに色を付ける
-        barImageView.backgroundColor = .white
+        barImageView.backgroundColor = .orange
         
         //　ラベル枠の枠線太さと色
-        barImageView.layer.borderColor = UIColor.orange.cgColor
+        barImageView.layer.borderColor = UIColor.white.cgColor
         barImageView.layer.borderWidth = 2
         
         // barImageViewをViewに追加する
@@ -173,18 +138,30 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         },
                        completion: {(finished: Bool) -> Void in
                         // アニメーション終了後の処理
+                        //次のコントローラーへ遷移する
+                        self.performSegue(withIdentifier: "showScore", sender: nil)
+                        //10秒経過時は不正解として次の問題を読み込む
+                        self.pastCounter = QuizStruct.defaultCounter
+                        //タイマーを再設定する
+                        self.reloadTimer()
                         
         })
-    }
-//////時間制限バーここまで////////
+   //////時間制限バーここまで////////
     
+        
+    //非表示にする
+        Hide()
+    //問題表示する
+        RandomQuestions()
+        
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
- /////////ここからコピペ/////////////
+ /////////ここから/////////////
     //タイマーをセットするメソッド
     func setTimer() {
         
@@ -198,46 +175,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //毎秒ごとのタイマーで呼び出されるメソッド
     @objc func perSecTimerDone() {
         pastCounter -= 1
-        timerDisplayLabel.text = "あと" + String(self.pastCounter) + "秒"
+        timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
     }
     
     //問題の時間制限に到達した場合に実行されるメソッド
     @objc func timerDone() {
-        
-        //10秒経過時は不正解として次の問題を読み込む
-        totalSeconds = self.totalSeconds + QuizStruct.limitTimer
-        pastCounter = QuizStruct.defaultCounter
-        
-        switch counter {
-        case 0:
-            timeProblemSolvedOne = Date()
-        case 1:
-            timeProblemSolvedTwo = Date()
-        case 2:
-            timeProblemSolvedThree = Date()
-        case 3:
-            timeProblemSolvedFour = Date()
-        case 4:
-            timeProblemSolvedFive = Date()
-        default:
-            tmpTimerCount = 0.000
-        }
-        
-        //該当の問題の回答番号を取得する
-//        let targetProblem: NSDictionary = GodList[counter] as NSDictionary
-//        let targetAnswer: Int = Int(targetProblem[1] as! String)!
-        
-        //カウンターの値に+1をする
-//        counter += 1
-        
-        //もし回答の数字とメソッドの引数が同じならば正解数の値に+1する
-//        if answer == targetAnswer {
-//            correctProblemNumber += 1
-//        }
-        
-        //タイマーを再設定する
-        reloadTimer()
-        
+
     }
     
     //タイマーを破棄して再起動を行うメソッド
@@ -250,7 +193,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         compareNextProblemOrResultView()
     }
     
- /////////ここまでコピペ/////////////
+ /////////ここまで/////////////
     
     
     //画面が表示される時、常に発動
@@ -267,7 +210,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //カウントアップした数字をラベルに表示
         problemCountLabel.text = "Q\(question.myCount)."
     }
-    
     
     
     //4択問題を出題
@@ -288,30 +230,18 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             
             var goddic:NSDictionary = data as! NSDictionary
             var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
-//            var godwiki:NSDictionary = ["name":key,"wiki":goddic["wikipedia"]]
             
                         GodList.append(godinfo)
-//                        GodList.append(godwiki)
         }
         
-        //今画面に表示したいデータの取得
-        let detailInfo = GodList[RandomNumber] as! NSDictionary
         
-
+        //今画面に表示したいデータの取得
+        let detailInfo = GodList[RandomNumber] 
+        
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["image"] as! String)
         print(detailInfo["name"] as! String)
-//        print(detailInfo["wiki"] as! String)
-        
-        
-        
-//        QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//        answerBtn1.setTitle(detailInfo["name"] as! String, for: UIControlState())
-//        answerBtn2.setTitle = GodList[RandomNumber] as! NSDictionary
-//        answerBtn3.setTitle(detailInfo[""] as! String, for: UIControlState())
-//        answerBtn4.setTitle(detailInfo[""] as! String, for: UIControlState())
-//        CorrectAnswer = "1"
-        
+       
         for(key,data) in dic!{
             print(data)
             print(key)
@@ -319,7 +249,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             var _:NSDictionary = data as! NSDictionary
         
         }
-        
+        //正解を表示
         for _ in (detailInfo["name"] as! String) {
             let num = arc4random_uniform(31)
             print(num)
@@ -327,26 +257,28 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
             CorrectAnswer = "1"
         }
+        //不正解を表示
+        var answerBtns = [answerBtn2,answerBtn3,answerBtn4]
+        for i in 0...2{
+                RandomNumber = Int(arc4random() % 31)
+                RandomNumber += 1
+            
+                let detailInfo = GodList[RandomNumber]
+            
+                print(detailInfo["name"] as! String)
+                answerBtns[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
         
-        //不正解を三回繰り返す
-        //正解をリストから削除する
+        //重複を避ける
+        var x : Set = [(detailInfo["name"] as! String)]  //←避けられてない
+        }
+        
+        
      
-        
-        //問題を10問だす1...10
-//        //配列から画像の名前と同じ名前をボタンに表示させる
-//        switch (RandomNumber){
-//        case 0:
-//            QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//            answerBtn1.setTitle(detailInfo["name"] as! String, for: UIControlState())
-//            answerBtn2.setTitle(detailInfo[""] as! String, for: UIControlState())
-//            answerBtn3.setTitle(detailInfo[""] as! String, for: UIControlState())
-//            answerBtn4.setTitle(detailInfo[""] as! String, for: UIControlState())
-//            CorrectAnswer = "1"
         
 
         
 //    switch(RandomNumber){
-//    case 1:
+//    case 0:
 //        QuestionImage.image = UIImage(named: "Ganesa.jpg")
 //        answerBtn1.setTitle("Ganesa", for: UIControlState())
 //        answerBtn2.setTitle("Krsna", for: UIControlState())
@@ -354,7 +286,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 //        answerBtn4.setTitle("Naga", for: UIControlState())
 //        CorrectAnswer = "1"
 //        break
-//    case 2:
+//    case 1:
 //        QuestionImage.image = UIImage(named: "Brahma.jpg")
 //        answerBtn1.setTitle("Vishnu", for: UIControlState())
 //        answerBtn2.setTitle("Brahma", for: UIControlState())
@@ -373,11 +305,23 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 //        break
 //        }
         
+        //ボタンがタップされた時のメソッドを定義
+         func onClickBtn() {
+            //スコアを1加算
+            scoreNum = scoreNum + 1
+            
+            //正解ボタンをタップすると、まず、一度画面からボタンを取り除き、配列も空にする。
+            for i in 0...(counter*counter-1) {
+                myButtonAry[i].removeFromSuperview()
+            }
+            myButtonAry.removeAll()
+            
+        }
         
    }
   
     
-/////////ここからコピペ/////////////
+/////////ここから/////////////
     
     //タイマー処理を全てリセットするメソッド
     func resetTimer() {
@@ -391,34 +335,23 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         if counter == QuizStruct.dataMaxCount {
             
-            /**
-             *（処理）規定回数まで到達した場合は次の画面へ遷移する
-             */
+//           （処理）規定回数まで到達した場合は次の画面へ遷移する
             
             //タイマーを破棄する
             resetTimer()
-            
-//            //Realmに計算結果データを保存する
-//            let gameScoreObject = GameScore.create()
-//            gameScoreObject.correctAmount = self.correctProblemNumber
-//            gameScoreObject.timeCount = NSString(format:"%.3f", self.totalSeconds) as String
-//            gameScoreObject.createDate = Date()
-//            gameScoreObject.save()
             
             //次のコントローラーへ遷移する
             self.performSegue(withIdentifier: "showScore", sender: nil)
             
         } else {
             
-            /**
-             *（処理）規定回数に達していない場合はカウントをリセットして次の問題を表示する
-             */
-            
+//          （処理）規定回数に達していない場合はカウントをリセットして次の問題を表示する
+ 
             //ボタンを全て活性にする
             allAnswerBtnEnabled()
             
             //ラベルの値を再セットする
-            timerDisplayLabel.text = "あと" + String(pastCounter) + "秒"
+            timerDisplayLabel.text = "TIME:" + String(pastCounter)
             
             //タイマーをセットする
             setTimer()
@@ -434,7 +367,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             //遷移先のコントローラーの変数を用意する
             let scoreController = segue.destination as! ScoreViewController
             
-//            //遷移先のコントローラーに渡したい変数を格納（型を合わせてね）
+//            //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
 //            ScoreViewController.correctProblemNumber = correctProblemNumber
 //            ScoreViewController.totalSeconds = NSString(format:"%.3f", totalSeconds) as String
             
@@ -447,12 +380,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     func resetGameValues() {
         counter = 0
         correctProblemNumber = 0
-        totalSeconds = 0.000
     }
     
     
     
-/////////ここまでコピペ/////////////
+/////////ここまで/////////////
     
     //非表示にする関数
     func Hide(){
@@ -521,6 +453,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         Hide()
     }
     
+    //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let newVC = segue.destination as! ScoreViewController
+//        newVC.scoreNum = self.scoreNum
+//    }
     
     /*
      // MARK: - Navigation

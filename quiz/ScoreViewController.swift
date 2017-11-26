@@ -20,19 +20,23 @@ class ScoreViewController: UIViewController {
     
     var scoreNum: Int = 0
     
+//QuizControllerより引き渡される値を格納する
+    var correctProblemNumber: Int!
+    var totalSeconds: String!
+    
     //ランクを表示するメソッド
     func showRank(num: Int) {
         var text: String
         switch num {
-        case 0...20:
+        case 0...1:
             text = "まだまだです"
-        case 21...40:
+        case 2...3:
             text = "もっとがんばりましょう"
-        case 41...60:
+        case 4...5:
             text = "あと少しがんばりましょう"
-        case 61...80:
+        case 6...7:
             text = "素晴らしい"
-        case 81...90:
+        case 8...9:
             text = "おめでとう"
         default:
             text = "神です"
@@ -46,7 +50,7 @@ class ScoreViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //背景イメージ画像
+        //背景画像
         myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
         

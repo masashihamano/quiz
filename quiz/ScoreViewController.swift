@@ -18,8 +18,6 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var myImageView: UIImageView!
     
     
-    var scoreNum: Int = 0
-    
 //QuizControllerより引き渡される値を格納する
     var correctProblemNumber: Int!
     var totalSeconds: String!
@@ -39,7 +37,7 @@ class ScoreViewController: UIViewController {
         case 8...9:
             text = "おめでとう"
         default:
-            text = "神です"
+            text = "神レベル"
         }
         rankLabel.text = text
         
@@ -54,9 +52,9 @@ class ScoreViewController: UIViewController {
         myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
         
-        // Do any additional setup after loading the view.
-        self.scoreLabel.text = String(scoreNum)
-        showRank(num: scoreNum)
+   
+        self.scoreLabel.text = String(correctProblemNumber)
+        showRank(num: correctProblemNumber)
         
     }
 

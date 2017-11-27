@@ -57,7 +57,6 @@ class DetailViewController: UIViewController {
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["description"] as! String)
-//        print(detailInfo["tarait"] as! String)
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
@@ -67,7 +66,6 @@ class DetailViewController: UIViewController {
         
         //説明、画像の表示
         detailTextView.text = detailInfo["description"] as! String
-//        detailTextView.text = detailInfo["trait"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
         
         //ウィキぺディア

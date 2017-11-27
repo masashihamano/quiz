@@ -8,25 +8,15 @@
 
 import UIKit
 
-
-/////////ここから/////////////
-
 //ゲームに関係する定数
 struct QuizStruct {
     static let timerDuration: Double = 10
     static let dataMaxCount: Int = 10
     static let defaultCounter: Int = 10
 }
-/////////ここまで/////////////
 
 class questionViewController: UIViewController, UINavigationBarDelegate, UITextViewDelegate {
     
-    //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
-    var GodList:[NSDictionary] = []
-    //選択されたエリア名を保存するメンバ変数
-    var godName = ""
-    
-    //Quiz画面の作成
     
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var QuestionImage: UIImageView!
@@ -43,12 +33,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @IBOutlet weak var problemCountLabel: UILabel!
     
     
+    //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
+    var GodList:[NSDictionary] = []
+    //選択されたエリア名を保存するメンバ変数
+    var godName = ""
+    var quiznum = 1
+    var myCount = 1
+    
     var CorrectAnswer = String()
-    
+    var inCorrectAnswer = String()
     var myButtonAry: [UIButton] = []
-    var scoreNum = 0
+
     
-//////時間制限バー////////
+//////時間制限バーここから////////
     
     // 時間計測用の変数.
     var count : Float = 0
@@ -67,15 +64,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     var barImageView:UIImageView!
     
-//////時間制限バー////////
-///////////////ここから//////////////////////
+//////時間制限バーここまで////////
+//////タイマーここから///////////
     //タイマー関連のメンバ変数
     var pastCounter: Int = 10
     var perSecTimer: Timer? = nil
     var doneTimer: Timer? = nil
-    
-    //問題関連のメンバ変数
-    var counter: Int = 0
     
     //正解数
     var correctProblemNumber: Int = 0
@@ -99,11 +93,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //タイマーをリセットしておく
         resetTimer()
     }
-/////////ここまで/////////////
+/////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
+/////////////////////
 //////時間制限バーここから////////
         // 制限時間バーの高さ・幅
         let barHeight = scHei*0.015
@@ -132,22 +127,23 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         // バーをアニメーションさせる
         // 10秒かけてバーを左側から等速で減少させる
-        UIView.animate(withDuration: 10, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
+        UIView.animate(withDuration: 30, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
+            
             // アニメーション終了後の座標とサイズを指定
             self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
         },
                        completion: {(finished: Bool) -> Void in
                         // アニメーション終了後の処理
-                        //次のコントローラーへ遷移する
-                        self.performSegue(withIdentifier: "showScore", sender: nil)
+//                        //次のコントローラーへ遷移する
+//                        self.performSegue(withIdentifier: "showScore", sender: nil)
                         //10秒経過時は不正解として次の問題を読み込む
                         self.pastCounter = QuizStruct.defaultCounter
                         //タイマーを再設定する
                         self.reloadTimer()
                         
         })
-   //////時間制限バーここまで////////
-    
+//////時間制限バーここまで////////
+//////タイマーここまで///////////
         
     //非表示にする
         Hide()
@@ -176,6 +172,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @objc func perSecTimerDone() {
         pastCounter -= 1
         timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
+       
     }
     
     //問題の時間制限に到達した場合に実行されるメソッド
@@ -193,29 +190,25 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         compareNextProblemOrResultView()
     }
     
- /////////ここまで/////////////
+/////////ここまで/////////////
     
     
     //画面が表示される時、常に発動
     override func viewWillAppear(_ animated: Bool) {
 
         RandomQuestions()
-        
         //AppDelegateにアクセス
         let question = UIApplication.shared.delegate as! AppDelegate
 
-        //グローバル変数(AppDelegateのプロパティ)の値を書き換える(カウントアップ)
-        question.myCount += 1
-
-        //カウントアップした数字をラベルに表示
-        problemCountLabel.text = "Q\(question.myCount)."
     }
     
+/////////ここから問題出題/////////////
     
     //4択問題を出題
     func RandomQuestions(){
         var RandomNumber:Int = Int(arc4random() % 31)
         RandomNumber += 1
+        allAnswerBtnEnabled()
         QuestionLabel.text = "What is my name?"
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
@@ -256,86 +249,123 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
             answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
             CorrectAnswer = "1"
+            
+            
+            
+//            if QuestionImage.image == UIImage(named:detailInfo["image"] as! String) {
+//                answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                CorrectAnswer = "1"
+//                else if answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState()) {
+//                CorrectAnswer = "2"
+//                else if{ answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState()) {
+//                CorrectAnswer = "3"
+//            }else{
+//
+//            }
+//            }
+//
+            
+            
         }
-        //不正解を表示
-        var answerBtns = [answerBtn2,answerBtn3,answerBtn4]
-        for i in 0...2{
+        
+            //正解以外の問題を表示
+        func inCorrectNum(){
+            var answerBtns = [answerBtn2,answerBtn3,answerBtn4]
+            for i in 0...2{
                 RandomNumber = Int(arc4random() % 31)
                 RandomNumber += 1
-            
+                
                 let detailInfo = GodList[RandomNumber]
-            
+                
                 print(detailInfo["name"] as! String)
                 answerBtns[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-        
-        //重複を避ける
-        var x : Set = [(detailInfo["name"] as! String)]  //←避けられてない
-        }
-        
-        
-     
-        
-
-        
-//    switch(RandomNumber){
-//    case 0:
-//        QuestionImage.image = UIImage(named: "Ganesa.jpg")
-//        answerBtn1.setTitle("Ganesa", for: UIControlState())
-//        answerBtn2.setTitle("Krsna", for: UIControlState())
-//        answerBtn3.setTitle("Agni", for: UIControlState())
-//        answerBtn4.setTitle("Naga", for: UIControlState())
-//        CorrectAnswer = "1"
-//        break
-//    case 1:
-//        QuestionImage.image = UIImage(named: "Brahma.jpg")
-//        answerBtn1.setTitle("Vishnu", for: UIControlState())
-//        answerBtn2.setTitle("Brahma", for: UIControlState())
-//        answerBtn3.setTitle("Parvathi", for: UIControlState())
-//        answerBtn4.setTitle("Rama", for: UIControlState())
-//        CorrectAnswer = "2"
-//        break
-
-//    default:
-//        QuestionImage.image = UIImage(named: "Jagannatha.gif")
-//        answerBtn1.setTitle("Jagannatha", for: UIControlState())
-//        answerBtn2.setTitle("Agni", for: UIControlState())
-//        answerBtn3.setTitle("krsna", for: UIControlState())
-//        answerBtn4.setTitle("Indra", for: UIControlState())
-//        CorrectAnswer = "1"
-//        break
-//        }
-        
-        //ボタンがタップされた時のメソッドを定義
-         func onClickBtn() {
-            //スコアを1加算
-            scoreNum = scoreNum + 1
-            
-            //正解ボタンをタップすると、まず、一度画面からボタンを取り除き、配列も空にする。
-            for i in 0...(counter*counter-1) {
-                myButtonAry[i].removeFromSuperview()
             }
-            myButtonAry.removeAll()
-            
         }
+                
+//                switch(RandomNumber){
+//                case 1:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "1"
+//                    break
+//                case 2:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "2"
+//                    break
+//                case 3:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "3"
+//                    break
+//                case 4:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "4"
+//                    break
+//                case 5:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "1"
+//                    break
+//                case 6:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "2"
+//                    break
+//                case 7:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "3"
+//                    break
+//                case 8:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "4"
+//                    break
+//                case 9:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "1"
+//                    break
+//                case 10:
+//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//                    CorrectAnswer = "2"
+//                    break
+//                default:
+//                    break
+//                }
+            
+    
+            
+            
+            
+        //重複を避ける
+//            var _ : Set = [(detailInfo["name"] as! String)]  //←避けられてない
+            
+//            let values = [CorrectAnswer, answerBtns] as [Any]
+//            let orderedSet = NSOrderedSet(array: values)
+//            let uniqueValues = orderedSet.array as! [String]
+            
+//            let strArray:[String] = [GodList[RandomNumber] as! String]
+//            let orderedSet = NSOrderedSet(array: strArray)
+//            let uniqueValues = orderedSet.array as! [String]
+            
+        
         
    }
   
     
-/////////ここから/////////////
-    
-    //タイマー処理を全てリセットするメソッド
-    func resetTimer() {
-        perSecTimer!.invalidate()
-        doneTimer!.invalidate()
-    }
+/////////問題終了後ここから/////////////
     
     
     //結果表示ページへ遷移するか次の問題を表示するかを決めるメソッド
     func compareNextProblemOrResultView() {
         
-        if counter == QuizStruct.dataMaxCount {
+        if quiznum == QuizStruct.dataMaxCount {
             
-//           （処理）規定回数まで到達した場合は次の画面へ遷移する
+//           （※処理）規定回数まで到達した場合は次の画面へ遷移する
             
             //タイマーを破棄する
             resetTimer()
@@ -345,7 +375,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             
         } else {
             
-//          （処理）規定回数に達していない場合はカウントをリセットして次の問題を表示する
+//          （※処理）規定回数に達していない場合はカウントをリセットして次の問題を表示する
  
             //ボタンを全て活性にする
             allAnswerBtnEnabled()
@@ -365,24 +395,28 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         if segue.identifier == "showScore" {
             
             //遷移先のコントローラーの変数を用意する
-            let scoreController = segue.destination as! ScoreViewController
+            let ScoreViewController = segue.destination as! ScoreViewController
             
-//            //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
-//            ScoreViewController.correctProblemNumber = correctProblemNumber
-//            ScoreViewController.totalSeconds = NSString(format:"%.3f", totalSeconds) as String
+            //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
+            ScoreViewController.correctProblemNumber = correctProblemNumber
             
             //計算結果を入れる変数を初期化
             self.resetGameValues()
         }
     }
     
-    //ゲームのカウントに関する数を初期化する
-    func resetGameValues() {
-        counter = 0
-        correctProblemNumber = 0
+    //タイマー処理を全てリセットするメソッド
+    func resetTimer() {
+        perSecTimer!.invalidate()
+        doneTimer!.invalidate()
     }
     
-    
+    //ゲームのカウントに関する数を初期化する
+    func resetGameValues() {
+        quiznum = 0
+        correctProblemNumber = 0
+        
+    }
     
 /////////ここまで/////////////
     
@@ -413,11 +447,14 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     }
     
     
-    //correct,noの画像表示
+    //◯,×の画像表示
     @IBAction func answerBtn1Act(_ sender: Any) {
         UnHide()
         if (CorrectAnswer == "1"){
             resultImage.image = UIImage(named: "yes.png")
+            
+            correctProblemNumber += 1
+            allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
         }
@@ -426,6 +463,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "2"){
             resultImage.image = UIImage(named: "yes.png")
+            correctProblemNumber += 1
+            allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
         }
@@ -434,6 +473,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "3"){
             resultImage.image = UIImage(named: "yes.png")
+            correctProblemNumber += 1
+            allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
         }
@@ -442,22 +483,48 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "4"){
             resultImage.image = UIImage(named: "yes.png")
+            correctProblemNumber += 1
+            allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
         }
     }
 
-    //回答後に表示
+    
+    //10問終了後にスコア画面へ移動
     @IBAction func Next(_ sender: Any) {
         RandomQuestions()
         Hide()
+        
+        quiznum += 1
+        print("今\(quiznum)問目")
+        
+        myCount += 1
+        //カウントアップした数字をラベルに表示
+        problemCountLabel.text = "Q\(myCount)."
+        
+        if quiznum == 11{
+            print("正解数：\(correctProblemNumber)")
+            self.performSegue(withIdentifier: "showScore", sender: nil)
+            
+    //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
+            func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            let newVC = segue.destination as! ScoreViewController
+            newVC.correctProblemNumber = self.correctProblemNumber
+            }
+        
+        }
     }
     
-    //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let newVC = segue.destination as! ScoreViewController
-//        newVC.scoreNum = self.scoreNum
-//    }
+    
+    
+    //↓の前に、正解不正解を一致させて正解をランダムに10問出題(現状答えが1のみ)
+    
+    //10秒経過した時に【不正解ボタン】を押された時と同じにする
+    
+    
+    
+    
     
     /*
      // MARK: - Navigation

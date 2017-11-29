@@ -41,12 +41,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     var myCount = 1
     
     var CorrectAnswer = String()
-    var inCorrectAnswer = String()
     var myButtonAry: [UIButton] = []
 
+    var correctNum = String()
     
 //////時間制限バーここから////////
-    
     // 時間計測用の変数.
     var count : Float = 0
     // 時間表示用のラベル.
@@ -99,52 +98,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         super.viewDidLoad()
  
 /////////////////////
-//////時間制限バーここから////////
-        // 制限時間バーの高さ・幅
-        let barHeight = scHei*0.015
-        let barWidth = scWid*0.8
-        
-        // 制限時間バーのX座標・Y座標・終端のX座標
-        let barXPosition = scWid*0.1
-        let barYPosition = scHei*0.1
-        let barXPositionEnd = barXPosition + barWidth
-        
-        // UIImageViewを初期化
-        barImageView = UIImageView()
-        
-        // 画像の表示する座標を指定する
-        barImageView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
-        
-        // バーに色を付ける
-        barImageView.backgroundColor = .orange
-        
-        //　ラベル枠の枠線太さと色
-        barImageView.layer.borderColor = UIColor.white.cgColor
-        barImageView.layer.borderWidth = 2
-        
-        // barImageViewをViewに追加する
-        self.view.addSubview(barImageView)
-        
-        // バーをアニメーションさせる
-        // 10秒かけてバーを左側から等速で減少させる
-        UIView.animate(withDuration: 30, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
-            
-            // アニメーション終了後の座標とサイズを指定
-            self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
-        },
-                       completion: {(finished: Bool) -> Void in
-                        // アニメーション終了後の処理
-//                        //次のコントローラーへ遷移する
-//                        self.performSegue(withIdentifier: "showScore", sender: nil)
-                        //10秒経過時は不正解として次の問題を読み込む
-                        self.pastCounter = QuizStruct.defaultCounter
-                        //タイマーを再設定する
-                        self.reloadTimer()
-                        
-        })
-//////時間制限バーここまで////////
+
 //////タイマーここまで///////////
-        
+    //時間制限バー表示
+    timebar()
     //非表示にする
         Hide()
     //問題表示する
@@ -242,123 +199,142 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             var _:NSDictionary = data as! NSDictionary
         
         }
-        //正解を表示
-        for _ in (detailInfo["name"] as! String) {
-            let num = arc4random_uniform(31)
-            print(num)
+        
+       
+        //for文の中で正解の神様を当て込む
+        //ランダムナンバーを埋め込む　あまりを出す
+        
+        
+        //選択ボタンを表示
+        var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+        for i in 0...3{
+            RandomNumber = Int(arc4random() % 31)
+            RandomNumber += 1
             QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-            answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
-            CorrectAnswer = "1"
+            let detailInfo = GodList[RandomNumber]
             
-            
-            
-//            if QuestionImage.image == UIImage(named:detailInfo["image"] as! String) {
-//                answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                CorrectAnswer = "1"
-//                else if answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState()) {
-//                CorrectAnswer = "2"
-//                else if{ answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState()) {
-//                CorrectAnswer = "3"
-//            }else{
-//
-//            }
-//            }
-//
-            
-            
+            print(detailInfo["name"] as! String)
+            selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }
         
-            //正解以外の問題を表示
-        func inCorrectNum(){
-            var answerBtns = [answerBtn2,answerBtn3,answerBtn4]
-            for i in 0...2{
-                RandomNumber = Int(arc4random() % 31)
-                RandomNumber += 1
-                
-                let detailInfo = GodList[RandomNumber]
-                
-                print(detailInfo["name"] as! String)
-                answerBtns[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-            }
+        //正解とボタンを一致させる
+        var correctNumber:Int = Int(arc4random() % 4)
+        correctNumber += 1
+        CorrectAnswer = String(correctNumber)
+        
+        if CorrectAnswer == "1" {
+            answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }else if CorrectAnswer == "2"{
+            answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }else if CorrectAnswer == "3"{
+            answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }else if CorrectAnswer == "4"{
+            answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }else{
         }
-                
-//                switch(RandomNumber){
-//                case 1:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "1"
-//                    break
-//                case 2:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "2"
-//                    break
-//                case 3:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "3"
-//                    break
-//                case 4:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "4"
-//                    break
-//                case 5:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "1"
-//                    break
-//                case 6:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "2"
-//                    break
-//                case 7:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "3"
-//                    break
-//                case 8:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "4"
-//                    break
-//                case 9:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "1"
-//                    break
-//                case 10:
-//                    QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-//                    answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//                    CorrectAnswer = "2"
-//                    break
-//                default:
-//                    break
-//                }
-            
+        
+        
+        
+        
+        
+        
+      
+     
+//        for dic in (detailInfo["name"] as! String) {
+//            let num = arc4random_uniform(31)
+//            print(num)
+//
+//
+//            let detailInfo = GodList[RandomNumber]
+//            print(detailInfo["name"] as! String)
+//
+//
+//        }
+        
+//        var incorrectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+//        for i in 0...3{
+//            RandomNumber = Int(arc4random() % 31)
+//            RandomNumber += 1
+//
+//            let detailInfo = GodList[RandomNumber]
+//
+//            print(detailInfo["name"] as! String)
+//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//        }
+
+
+        
+//            if CorrectAnswer == "1" {
+//                incorrect.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            }else if CorrectAnswer == "2"{
+//                answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            }else if CorrectAnswer == "3"{
+//                answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            }else if CorrectAnswer == "4"{
+//                answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            }else{
+//            }
+//
+//            let detailInfo = GodList[RandomNumber]
+//
+//            print(detailInfo["name"] as! String)
+//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//
+        
+        
+        
+        
+//        if (CorrectAnswer == "1"){
+//            var incorrectBtn = [answerBtn2,answerBtn3,answerBtn4]
+//            for i in 0...2{
+//            RandomNumber = Int(arc4random() % 31)
+//            correctProblemNumber += 1
+//            let detailInfo = GodList[RandomNumber]
+//            print(detailInfo["name"] as! String)
+//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            }else {
+//        }
+//        }
+        
+        
+        
+        
     
-            
-            
-            
-        //重複を避ける
-//            var _ : Set = [(detailInfo["name"] as! String)]  //←避けられてない
-            
-//            let values = [CorrectAnswer, answerBtns] as [Any]
-//            let orderedSet = NSOrderedSet(array: values)
-//            let uniqueValues = orderedSet.array as! [String]
-            
-//            let strArray:[String] = [GodList[RandomNumber] as! String]
-//            let orderedSet = NSOrderedSet(array: strArray)
-//            let uniqueValues = orderedSet.array as! [String]
-            
+/////////////
+        
+        
+        //正解の問題を表示
+//        for dic in (detailInfo["name"] as! String) {
+//            let num = arc4random_uniform(31)
+//            print(num)
+//            QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+//            answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//            CorrectAnswer = "1"
+//
+//        }
+////        正解以外の問題を表示
+//        var incorrectBtn = [answerBtn2,answerBtn3,answerBtn4]
+//        for i in 0...2{
+//            RandomNumber = Int(arc4random() % 31)
+//            RandomNumber += 1
+//
+//            let detailInfo = GodList[RandomNumber]
+//
+//            print(detailInfo["name"] as! String)
+//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//        }
+
+
+
+  ///////////////
+    
+        
+        
         
         
    }
-  
     
 /////////問題終了後ここから/////////////
-    
     
     //結果表示ページへ遷移するか次の問題を表示するかを決めるメソッド
     func compareNextProblemOrResultView() {
@@ -457,6 +433,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            allAnswerBtnDisabled()
         }
     }
     @IBAction func answerBtn2Act(_ sender: Any) {
@@ -467,6 +444,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            allAnswerBtnDisabled()
         }
     }
     @IBAction func answerBtn3Act(_ sender: Any) {
@@ -477,6 +455,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            allAnswerBtnDisabled()
         }
     }
     @IBAction func answerBtn4Act(_ sender: Any) {
@@ -487,6 +466,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            allAnswerBtnDisabled()
         }
     }
 
@@ -495,6 +475,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @IBAction func Next(_ sender: Any) {
         RandomQuestions()
         Hide()
+        timebar()
         
         quiznum += 1
         print("今\(quiznum)問目")
@@ -515,6 +496,53 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         }
     }
+    
+    //////時間制限バーここから////////
+    func timebar() {
+        // 制限時間バーの高さ・幅
+        let barHeight = scHei*0.015
+        let barWidth = scWid*0.855
+        
+        // 制限時間バーのX(横)座標・Y(縦)座標・終端のX座標
+        let barXPosition = scWid*0.1
+        let barYPosition = scHei*0.085
+        let barXPositionEnd = barXPosition + barWidth
+        
+        // UIImageViewを初期化
+        barImageView = UIImageView()
+        
+        // 画像の表示する座標を指定する
+        barImageView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
+        
+        // バーに色を付ける
+        barImageView.backgroundColor = .green
+        
+        //　ラベル枠の枠線太さと色
+        barImageView.layer.borderColor = UIColor.white.cgColor
+        barImageView.layer.borderWidth = 2
+        
+        // barImageViewをViewに追加する
+        self.view.addSubview(barImageView)
+        
+        // バーをアニメーションさせる
+        // 10秒かけてバーを左側から等速で減少させる
+        UIView.animate(withDuration: 10, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
+            
+            // アニメーション終了後の座標とサイズを指定
+            self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
+        },
+                       completion: {(finished: Bool) -> Void in
+                        // アニメーション終了後の処理
+                        //                        //次のコントローラーへ遷移する
+                        //                        self.performSegue(withIdentifier: "showScore", sender: nil)
+                        //10秒経過時は不正解として次の問題を読み込む
+                        self.pastCounter = QuizStruct.defaultCounter
+                        //タイマーを再設定する
+                        //                        self.reloadTimer()
+                        
+        })
+    }
+    //////時間制限バーここまで////////
     
     
     

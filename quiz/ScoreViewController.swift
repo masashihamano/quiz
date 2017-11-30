@@ -8,15 +8,11 @@
 
 import UIKit
 
-
 class ScoreViewController: UIViewController {
 
     @IBOutlet weak var scoreLabel: UILabel!
-    
     @IBOutlet weak var rankLabel: UILabel!
-    
     @IBOutlet weak var myImageView: UIImageView!
-    
     
 //QuizControllerより引き渡される値を格納する
     var correctProblemNumber: Int!
@@ -26,18 +22,28 @@ class ScoreViewController: UIViewController {
     func showRank(num: Int) {
         var text: String
         switch num {
-        case 0...1:
+        case 0:
+            text = "問題外です"
+        case 10:
+            text = "修行が足りない"
+        case 20:
+            text = "ざんねんでした！"
+        case 30:
             text = "まだまだです"
-        case 2...3:
+        case 40:
             text = "もっとがんばりましょう"
-        case 4...5:
-            text = "あと少しがんばりましょう"
-        case 6...7:
-            text = "素晴らしい"
-        case 8...9:
-            text = "おめでとう"
+        case 50:
+            text = "もう少し頑張りましょう"
+        case 60:
+            text = "及第点です"
+        case 70:
+            text = "おめでとう！"
+        case 80:
+            text = "素晴らしい！"
+        case 90:
+            text = "満点まであとすこし！"
         default:
-            text = "神レベル"
+            text = "神レベル！"
         }
         rankLabel.text = text
         
@@ -53,8 +59,8 @@ class ScoreViewController: UIViewController {
         myImageView.alpha = 0.1
         
    
-        self.scoreLabel.text = String(correctProblemNumber)
-        showRank(num: correctProblemNumber)
+        self.scoreLabel.text = String(correctProblemNumber*10)
+        showRank(num: correctProblemNumber*10)
         
     }
 

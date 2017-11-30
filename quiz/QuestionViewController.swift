@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //ゲームに関係する定数
 struct QuizStruct {
@@ -45,6 +46,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     var correctNum = String()
     
+    var yesAudioPlayer: AVAudioPlayer! = nil
+    var noAudioPlayer: AVAudioPlayer! = nil
 //////時間制限バーここから////////
     // 時間計測用の変数.
     var count : Float = 0
@@ -98,14 +101,17 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         super.viewDidLoad()
  
 /////////////////////
-
+        yesSound()
+        noSound()
 //////タイマーここまで///////////
     //時間制限バー表示
-    timebar()
+        timebar()
     //非表示にする
         Hide()
     //問題表示する
         RandomQuestions()
+    //ゲーム内容リセットする
+        resetGameValues()
         
     }
     
@@ -200,7 +206,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         }
         
-       
+        //不正解を三回繰り返す
+        //正解をリストから削除する
         //for文の中で正解の神様を当て込む
         //ランダムナンバーを埋め込む　あまりを出す
         
@@ -377,7 +384,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             ScoreViewController.correctProblemNumber = correctProblemNumber
             
             //計算結果を入れる変数を初期化
-            self.resetGameValues()
+            resetGameValues()
         }
     }
     
@@ -428,11 +435,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "1"){
             resultImage.image = UIImage(named: "yes.png")
-            
+            yesSound()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            noSound()
             allAnswerBtnDisabled()
         }
     }
@@ -440,10 +448,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "2"){
             resultImage.image = UIImage(named: "yes.png")
+            yesSound()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            noSound()
             allAnswerBtnDisabled()
         }
     }
@@ -451,10 +461,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "3"){
             resultImage.image = UIImage(named: "yes.png")
+            yesSound()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            noSound()
             allAnswerBtnDisabled()
         }
     }
@@ -462,10 +474,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "4"){
             resultImage.image = UIImage(named: "yes.png")
+            yesSound()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            noSound()
             allAnswerBtnDisabled()
         }
     }
@@ -545,13 +559,45 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //////時間制限バーここまで////////
     
     
+    func yesSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "yes", ofType: "mp3")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        
+        //AVAudioPlayerのインスタンス化
+        do {
+            yesAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        yesAudioPlayer.prepareToPlay()
+    }
+    
+    
+    func noSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "no", ofType: "mp3")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+
+        //AVAudioPlayerのインスタンス化
+        do {
+            noAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        noAudioPlayer.prepareToPlay()
+    }
+    
     
     //↓の前に、正解不正解を一致させて正解をランダムに10問出題(現状答えが1のみ)
     
     //10秒経過した時に【不正解ボタン】を押された時と同じにする
     
     
-    
+    //やりすぎるとエラーになる現象
+    //2回目やると時間バーがずれる
+    //音がならない
+
     
     
     /*

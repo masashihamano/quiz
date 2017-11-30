@@ -62,10 +62,13 @@
 		B6109EAA1FB87585007B0776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6109EA81FB87585007B0776 /* LaunchScreen.storyboard */; };
 		B6109EB51FB87585007B0776 /* quizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6109EB41FB87585007B0776 /* quizTests.swift */; };
 		B6109EC01FB87585007B0776 /* quizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6109EBF1FB87585007B0776 /* quizUITests.swift */; };
+		B610EF221FCFEECD00A56756 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B610EF211FCFEEC100A56756 /* AVFoundation.framework */; };
+		B610EF2C1FCFFC8700A56756 /* yes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B610EF2B1FCFFC8700A56756 /* yes.mp3 */; };
 		B61227B91FBDE0180063B159 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B61227B71FBDE0180063B159 /* background.jpg */; };
 		B61227BA1FBDE0180063B159 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B61227B81FBDE0180063B159 /* title.jpg */; };
 		B61227BC1FBDEB140063B159 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61227BB1FBDEB140063B159 /* QuestionViewController.swift */; };
 		B612B1131FC152F800C12E4C /* GodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B612B1121FC152F800C12E4C /* GodList.plist */; };
+		B612CAA61FD00BA800DCE690 /* no.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B612CAA51FD00BA800DCE690 /* no.mp3 */; };
 		B6139F2C1FC7A7BB00A5C4E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */; };
 		B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ADB5A11FBE871C00AB940A /* ListViewController.swift */; };
 		B6F6D27F1FC043FE00E71650 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F6D27E1FC043FD00E71650 /* next.png */; };
@@ -150,10 +153,13 @@
 		B6109EBB1FB87585007B0776 /* quizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6109EBF1FB87585007B0776 /* quizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizUITests.swift; sourceTree = "<group>"; };
 		B6109EC11FB87585007B0776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B610EF211FCFEEC100A56756 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B610EF2B1FCFFC8700A56756 /* yes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yes.mp3; sourceTree = "<group>"; };
 		B61227B71FBDE0180063B159 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		B61227B81FBDE0180063B159 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
 		B61227BB1FBDEB140063B159 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		B612B1121FC152F800C12E4C /* GodList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GodList.plist; sourceTree = "<group>"; };
+		B612CAA51FD00BA800DCE690 /* no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no.mp3; sourceTree = "<group>"; };
 		B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		B6ADB5A11FBE871C00AB940A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B6F6D27E1FC043FD00E71650 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B610EF221FCFEECD00A56756 /* AVFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,11 +247,13 @@
 			isa = PBXGroup;
 			children = (
 				B6109E9E1FB87585007B0776 /* quiz */,
+				B610EF231FCFF02E00A56756 /* sound */,
 				B61227B61FBDE0180063B159 /* img */,
 				B60E9DDD1FC070CF00BE988A /* question_img */,
 				B6109EB31FB87585007B0776 /* quizTests */,
 				B6109EBE1FB87585007B0776 /* quizUITests */,
 				B6109E9D1FB87585007B0776 /* Products */,
+				B610EF201FCFEEC100A56756 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -292,6 +301,24 @@
 				B6109EC11FB87585007B0776 /* Info.plist */,
 			);
 			path = quizUITests;
+			sourceTree = "<group>";
+		};
+		B610EF201FCFEEC100A56756 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B610EF211FCFEEC100A56756 /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B610EF231FCFF02E00A56756 /* sound */ = {
+			isa = PBXGroup;
+			children = (
+				B612CAA51FD00BA800DCE690 /* no.mp3 */,
+				B610EF2B1FCFFC8700A56756 /* yes.mp3 */,
+			);
+			name = sound;
+			path = ../../Desktop/sound;
 			sourceTree = "<group>";
 		};
 		B61227B61FBDE0180063B159 /* img */ = {
@@ -442,6 +469,7 @@
 				B603126F1FC99FCA00A00EC5 /* Ganga.jpg in Resources */,
 				B60E9E101FC070D000BE988A /* Kama.jpg in Resources */,
 				B60E9E1A1FC070D000BE988A /* Rama.jpg in Resources */,
+				B610EF2C1FCFFC8700A56756 /* yes.mp3 in Resources */,
 				B61227B91FBDE0180063B159 /* background.jpg in Resources */,
 				B608AF171FC199AD009869EB /* Vamana.jpg in Resources */,
 				B60E9E061FC070D000BE988A /* Ganesa.jpg in Resources */,
@@ -461,6 +489,7 @@
 				B60E9E1F1FC070D000BE988A /* Shiva02.jpg in Resources */,
 				B61227BA1FBDE0180063B159 /* title.jpg in Resources */,
 				B60E9E1C1FC070D000BE988A /* Sarasvati.jpg in Resources */,
+				B612CAA61FD00BA800DCE690 /* no.mp3 in Resources */,
 				B60E9E0A1FC070D000BE988A /* Hanuman02.jpg in Resources */,
 				B60E9E041FC070D000BE988A /* Durga.jpg in Resources */,
 				B608AF151FC198B8009869EB /* Nrisimha.jpg in Resources */,

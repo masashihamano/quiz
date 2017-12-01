@@ -190,9 +190,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                         GodList.append(godinfo)
         }
         
-        
         //今画面に表示したいデータの取得
-        let detailInfo = GodList[RandomNumber] 
+        let detailInfo = GodList[RandomNumber]
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["image"] as! String)
@@ -206,28 +205,32 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         }
         
-        //不正解を三回繰り返す
+        //不正解の問題を出す
         //正解をリストから削除する
-        //for文の中で正解の神様を当て込む
-        //ランダムナンバーを埋め込む　あまりを出す
+        GodList.remove(at: RandomNumber)
         
+        var QList = GodList
         
-        //選択ボタンを表示
-        var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-        for i in 0...3{
-            RandomNumber = Int(arc4random() % 31)
-            RandomNumber += 1
-            QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
-            let detailInfo = GodList[RandomNumber]
+        //不正解を三回繰り返す
+        func incorrectanswer (){
+            var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+            for i in 0...3{
+                RandomNumber = Int(arc4random() % 30)
+                RandomNumber += 1
+//            QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
+        
+            let detailInfo = QList[RandomNumber] as! NSDictionary
             
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            }
         }
         
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
         correctNumber += 1
         CorrectAnswer = String(correctNumber)
+        QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
         
         if CorrectAnswer == "1" {
             answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
@@ -242,66 +245,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         
         
+        //10秒経過し時に実行される不正解ボタン
         
-        
-        
-      
-     
-//        for dic in (detailInfo["name"] as! String) {
-//            let num = arc4random_uniform(31)
-//            print(num)
-//
-//
-//            let detailInfo = GodList[RandomNumber]
-//            print(detailInfo["name"] as! String)
-//
-//
-//        }
-        
-//        var incorrectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-//        for i in 0...3{
-//            RandomNumber = Int(arc4random() % 31)
-//            RandomNumber += 1
-//
-//            let detailInfo = GodList[RandomNumber]
-//
-//            print(detailInfo["name"] as! String)
-//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//        }
-
-
-        
-//            if CorrectAnswer == "1" {
-//                incorrect.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//            }else if CorrectAnswer == "2"{
-//                answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//            }else if CorrectAnswer == "3"{
-//                answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//            }else if CorrectAnswer == "4"{
-//                answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//            }else{
-//            }
-//
-//            let detailInfo = GodList[RandomNumber]
-//
-//            print(detailInfo["name"] as! String)
-//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//
+  
         
         
         
         
-//        if (CorrectAnswer == "1"){
-//            var incorrectBtn = [answerBtn2,answerBtn3,answerBtn4]
-//            for i in 0...2{
-//            RandomNumber = Int(arc4random() % 31)
-//            correctProblemNumber += 1
-//            let detailInfo = GodList[RandomNumber]
-//            print(detailInfo["name"] as! String)
-//            incorrectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//            }else {
-//        }
-//        }
         
         
         
@@ -549,8 +499,14 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                         // アニメーション終了後の処理
                         //                        //次のコントローラーへ遷移する
                         //                        self.performSegue(withIdentifier: "showScore", sender: nil)
+                        
+                        self.resultImage.image = UIImage(named: "no.png")
+                        self.resultImage.bringSubview(toFront: self.QuestionImage)
+//                        self.noSound()
+//                        self.allAnswerBtnDisabled()
+                        
                         //10秒経過時は不正解として次の問題を読み込む
-                        self.pastCounter = QuizStruct.defaultCounter
+//                        self.pastCounter = QuizStruct.defaultCounter
                         //タイマーを再設定する
                         //                        self.reloadTimer()
                         
@@ -589,14 +545,22 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     }
     
     
-    //↓の前に、正解不正解を一致させて正解をランダムに10問出題(現状答えが1のみ)
     
+    func onClickMyButton(sender: UIButton){
+        print("onClickMyButton:")
+        print("sender.currentTitile: \(sender.currentTitle)")
+    }
+    
+
+    //scoreページにリストボタンを追加
     //10秒経過した時に【不正解ボタン】を押された時と同じにする
     
     
+    //オートレイアウト
     //やりすぎるとエラーになる現象
     //2回目やると時間バーがずれる
     //音がならない
+
 
     
     

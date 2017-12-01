@@ -546,6 +546,7 @@
         <image name="next.png" width="404" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UHz-Ez-ETe"/>
         <segue reference="Dqz-KE-cQd"/>
         <segue reference="iPk-xK-Anh"/>
     </inferredMetricsTieBreakers>

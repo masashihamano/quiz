@@ -14,6 +14,10 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
     
+    @IBAction func startBtn(_ sender: UIButton) {
+    }
+    
+    
 //QuizControllerより引き渡される値を格納する
     var correctProblemNumber: Int!
     var totalSeconds: String!
@@ -61,6 +65,10 @@ class ScoreViewController: UIViewController {
    
         self.scoreLabel.text = String(correctProblemNumber*10)
         showRank(num: correctProblemNumber*10)
+        
+        
+        scoreLabel.layer.masksToBounds = true
+        scoreLabel.layer.cornerRadius = scoreLabel.bounds.width / 2
         
     }
 

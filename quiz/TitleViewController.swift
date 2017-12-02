@@ -49,16 +49,21 @@ class TitleViewController: UIViewController {
         myImageView.alpha = 0.1
     //タイトル画面イメージ
         titleImageView.image = UIImage(named: "title.jpg")
+        
+        titleLabel.layer.borderColor = UIColor.white.cgColor
+        titleLabel.layer.cornerRadius = 25
+        titleLabel.layer.masksToBounds = true
+        
     }
     
     //【タブバー】画面が表示された時
-    override func viewWillAppear(_ animated: Bool) {
-        // AppDelegate にアクセスするための準備をして
-        let myAp = UIApplication.shared.delegate as!  AppDelegate
-        // プロパティの値を書き換える
-        myAp.myCount += 1
-        print("1画面目 count=\(myAp.myCount)")
-    }
+//    override func viewWillAppear(_ animated: Bool) {
+//        // AppDelegate にアクセスするための準備をして
+//        let myAp = UIApplication.shared.delegate as!  AppDelegate
+//        // プロパティの値を書き換える
+//        myAp.myCount += 1
+//        print("1画面目 count=\(myAp.myCount)")
+//    }
     
     
     

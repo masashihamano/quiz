@@ -14,14 +14,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     // カウント用の変数
-    var myCount = 0
-    
-    
+//    var myCount = 0
+
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        print("アプリ起動したよ")
-        
+
+//        print("アプリ起動したよ")
+
         return true
     }
 

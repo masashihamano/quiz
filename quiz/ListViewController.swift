@@ -8,6 +8,25 @@
 
 import UIKit
 
+
+extension UIImage {
+    
+    func resize(size: CGSize) -> UIImage {
+        let widthRatio = size.width / self.size.width
+        let heightRatio = size.height / self.size.height
+        let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
+        let resizedSize = CGSize(width: (self.size.width * ratio), height: (self.size.height * ratio))
+        // 画質を落とさないように修正
+        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
+        draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return resizedImage!
+    }
+}
+
+
+
 //プロトコルの設定
 class ListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
@@ -31,10 +50,13 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         for(key,data) in dic!{
             print(data)
             print(key)
-        var godinfo:NSDictionary = ["name":key]
+//        var godinfo:NSDictionary = ["name":key]
+        var goddic:NSDictionary = data as! NSDictionary
+        var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
             
             GodList.append(godinfo)
         }
+    
     }
     
     //行数の決定
@@ -49,16 +71,26 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"
             , for: indexPath)
         
-        //表示したい文字の設定
+        //表示したい文字・画像の設定
         var godinfo = GodList[indexPath.row] as! NSDictionary
-        print(godinfo["name"])
+        print(godinfo["name"] as! String)
+        print(godinfo["image"] as! String)
         
+        //文字を表示
         cell.textLabel?.text = godinfo["name"] as! String
-        
         //文字色、矢印
         cell.textLabel?.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
+        //画像を表示
         
+        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
+        
+        
+        cell.imageView!.contentMode = .scaleAspectFit
+        
+//        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)?.resize(size: CGSize(width: 5, height:5))
+        
+      
         //文字を設定したセルを返す
         
 //        cell.textLabel!.text = GodList[(indexPath as NSIndexPath).row] as! String

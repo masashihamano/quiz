@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import SafariServices
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var detailTextView: UITextView!
     @IBOutlet weak var detailImageView: UIImageView!
     
-    @IBOutlet weak var wikiLabel: UILabel!
+    @IBOutlet weak var wikiTextView: UITextView!
+    
+    
+    
+    
     
     
     
@@ -25,12 +30,14 @@ class DetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let wikiString = "詳細はwikipediaへ"
-        let attributedString = NSMutableAttributedString(string: wikiString)
+        setupTextView()
         
-        attributedString.addAttribute(.link,
-                                      value: "https://www.wikipedia.org/",
-                                      range: NSString(string: wikiString).range(of: "wikipedia"))
+//        let wikiLink = "詳細はwikipediaへ"
+//        let attributedString = NSMutableAttributedString(string: wikiLink)
+//
+//        attributedString.addAttribute(.link,
+//                                      value: "https://www.wikipedia.org/",
+//                                      range: NSString(string: wikiLink).range(of: "wikipedia"))
 //        wikiLabel.attributedText = attributedString
 //        wikiLabel.isSelectable = true
         
@@ -94,6 +101,73 @@ class DetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    func setupTextView() {
+        
+        let text = "詳細はwikipediaへ"
+        
+        wikiTextView.delegate = self
+        wikiTextView.isSelectable = true
+        wikiTextView.isEditable = false
+        
+        wikiTextView.textContainer.lineFragmentPadding = 0
+        wikiTextView.textContainerInset = .zero
+        wikiTextView.isScrollEnabled = false
+        
+        let attributedString = NSMutableAttributedString(string: text)
+        let range = NSString(string: text).range(of: "wikipedia")
+        
+        attributedString.addAttribute(
+            NSAttributedStringKey.link,
+            value: "https://www.wikipedia.org/",
+            range: range)
+        
+        wikiTextView.attributedText = attributedString
+        wikiTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.blue]
+        // 枠のカラー
+        detailTextView.layer.borderColor = UIColor.orange.cgColor
+        wikiTextView.layer.borderColor = UIColor.orange.cgColor
+        // 枠の幅
+        detailTextView.layer.borderWidth = 2
+        wikiTextView.layer.borderWidth = 2
+        // 枠を角丸にする場合
+        detailTextView.layer.cornerRadius = 10.0
+        wikiTextView.layer.cornerRadius = 10.0
+        detailTextView.layer.masksToBounds = true
+        wikiTextView.layer.masksToBounds = true
+        // 文字の大きさ
+        detailTextView.font = UIFont.systemFont(ofSize: CGFloat(16))
+        wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(36))
+        // 文字の中央寄せ
+        wikiTextView.textAlignment = NSTextAlignment.center
+        
+      
+        
+        
+//        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
+        
+    
+        
+        
+    }
+    
+    // この Delegate の実装しない場合はデフォルトで URL を Safari で開く。
+    func wikiTextView(_ wikiTextView: UITextView,
+                  shouldInteractWith URL: URL,
+                  in characterRange: NSRange,
+                  interaction: UITextItemInteraction) -> Bool {
+        
+        // UIApplication.shared.open(URL)
+        let controller = SFSafariViewController(url: URL)
+        self.present(controller, animated: true)
+        
+        return false
+    
+    }
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 

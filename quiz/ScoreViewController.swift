@@ -70,6 +70,7 @@ class ScoreViewController: UIViewController {
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = scoreLabel.bounds.width / 2
         
+        
     }
 
     override func didReceiveMemoryWarning() {

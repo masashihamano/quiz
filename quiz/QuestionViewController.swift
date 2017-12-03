@@ -435,7 +435,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // サウンドファイルのパスを生成
         let soundFile = Bundle.main.path(forResource: "yes", ofType: "mp3")! as NSString
         let soundClear = URL(fileURLWithPath: soundFile as String)
-        
         //AVAudioPlayerのインスタンス化
         do {
             yesAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
@@ -445,12 +444,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         yesAudioPlayer.prepareToPlay()
     }
     
-    
     func noSound() {
         // サウンドファイルのパスを生成
         let soundFile = Bundle.main.path(forResource: "no", ofType: "mp3")! as NSString
         let soundClear = URL(fileURLWithPath: soundFile as String)
-
         //AVAudioPlayerのインスタンス化
         do {
             noAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
@@ -466,7 +463,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     //オートレイアウト
     //wikipedia
-    //テーブルビューに画像
+    //テーブルビューに画像→できたがリサイズできない
     
     
 

@@ -9,11 +9,6 @@
 import UIKit
 import AVFoundation
 
-//ゲームに関係する定数
-struct QuizStruct {
-    static let timerDuration: Int = 10
-    static let dataMaxCount: Int = 10
-}
 
 class questionViewController: UIViewController, UINavigationBarDelegate, UITextViewDelegate {
     
@@ -37,66 +32,29 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     var GodList:[NSDictionary] = []
     //選択されたエリア名を保存するメンバ変数
     var godName = ""
+    //問題数
     var quiznum = 1
-    
+    //正解ボタン
     var CorrectAnswer = String()
-
-    var correctNum = String()
-    
-    var yesAudioPlayer: AVAudioPlayer! = nil
-    var noAudioPlayer: AVAudioPlayer! = nil
-//////時間制限バーここから////////
-    // 時間計測用の変数.
-    var count : Float = 0
-    // 時間表示用のラベル.
-    var myLabel : UILabel!
-    // 停止/再開ボタン
-    var stopBtn:UIButton!
-    var startBtn:UIButton!
-    // タイマー
-    var timer : Timer!
-    // 一時停止の際の時間を格納する
-    var pauseTime:Float = 0
-    // スクリーン画面のサイズを取得
-    let scWid: CGFloat = UIScreen.main.bounds.width     //画面の幅
-    let scHei: CGFloat = UIScreen.main.bounds.height    //画面の高さ
-    
-    var barImageView:UIImageView!
-    
-//////時間制限バーここまで////////
-
-    //タイマー関連のメンバ変数
-    var pastCounter: Int = 10
-    @objc var perSecTimer: Timer? = nil
-    @objc var doneTimer: Timer? = nil
-    
     //正解数
     var correctProblemNumber: Int = 0
+    //正解音
+    var yesAudioPlayer: AVAudioPlayer! = nil
+    //不正解音
+    var noAudioPlayer: AVAudioPlayer! = nil
     
-    //画面出現しきったタイミングに読み込まれる処理
-    override func viewDidAppear(_ animated: Bool) {
-        
-        //ラベルを表示を「TIME:10」という表記へ変更
-        timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
-        
-        //ボタンを全て活性状態にする
-        allAnswerBtnEnabled()
-        
-        //タイマーをセットする
-        setTimer()
-    }
+    //時間制限バーの画面
+    var barImageView:UIImageView!
+    //画面の幅
+    let scWid: CGFloat = UIScreen.main.bounds.width
+    //画面の高さ
+    let scHei: CGFloat = UIScreen.main.bounds.height
     
-    //画面が消えるタイミングに読み込まれる処理
-    override func viewWillDisappear(_ animated: Bool) {
-        
-        //タイマーをリセットしておく
-        resetTimer()
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
  
-    //時間制限バー表示
+    //時間制限バーを表示
         timebar()
     //非表示にする
         Hide()
@@ -115,31 +73,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // Dispose of any resources that can be recreated.
     }
     
- /////////ここから/////////////
-    //タイマーをセットするメソッド
-    func setTimer() {
-        
-        //毎秒ごとにperSecTimerDoneメソッドを実行するタイマーを作成する
-        self.perSecTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(getter: questionViewController.perSecTimer), userInfo: nil, repeats: true)
-        
-        //指定秒数後にtimerDoneメソッドを実行するタイマーを作成する（問題の時間制限に到達した場合の実行）
-        self.doneTimer = Timer.scheduledTimer(timeInterval: TimeInterval(QuizStruct.timerDuration), target: self, selector: #selector(questionViewController.timerDone), userInfo: nil, repeats: true)
-    }
-    
-    //毎秒ごとのタイマーで呼び出されるメソッド
-    @objc func perSecTimerDone() {
-        pastCounter -= 1
-        timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
-    }
-    
-    //問題の時間制限に到達した場合に実行されるメソッド
-    @objc func timerDone() {
-//        self.resultImage.image = UIImage(named: "no.png")
-//        self.resultImage.bringSubview(toFront: self.QuestionImage)
-//        self.noAudioPlayer.play()
-    }
-    
-
 /////////ここから問題出題/////////////
    
     func RandomQuestions(){
@@ -194,31 +127,31 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             }
         
         //選択肢が重複しないように
-        QList.remove(at: RandomNumber)
-        var QList1 = QList
-        
-        var selectBtn1 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-        for i in 0...3{
-            RandomNumber = Int(arc4random() % 29)
-            RandomNumber += 3
-            
-            let detailInfo = QList1[RandomNumber] as! NSDictionary
-            print(detailInfo["name"] as! String)
-            selectBtn1[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-        }
-        
-        //選択肢が重複しないように
-        QList1.remove(at: RandomNumber)
-        var QList2 = QList1
-        
-        var selectBtn2 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-        for i in 0...3{
-            RandomNumber = Int(arc4random() % 28)
-            
-            let detailInfo = QList2[RandomNumber] as! NSDictionary
-            print(detailInfo["name"] as! String)
-            selectBtn2[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-        }
+//        QList.remove(at: RandomNumber)
+//        var QList1 = QList
+//
+//        var selectBtn1 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+//        for i in 0...3{
+//            RandomNumber = Int(arc4random() % 29)
+//            RandomNumber += 3
+//
+//            let detailInfo = QList1[RandomNumber] as! NSDictionary
+//            print(detailInfo["name"] as! String)
+//            selectBtn1[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//        }
+//
+//        //選択肢が重複しないように
+//        QList1.remove(at: RandomNumber)
+//        var QList2 = QList1
+//
+//        var selectBtn2 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+//        for i in 0...3{
+//            RandomNumber = Int(arc4random() % 28)
+//
+//            let detailInfo = QList2[RandomNumber] as! NSDictionary
+//            print(detailInfo["name"] as! String)
+//            selectBtn2[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//        }
         
 //        //選択肢が重複しないように
 //        QList2.remove(at: RandomNumber)
@@ -251,34 +184,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else{
         }
-        
    }
-    
-    
-    //結果表示ページへ遷移するか次の問題を表示するかを決めるメソッド
-    func compareNextProblemOrResultView() {
-
-        if quiznum == QuizStruct.dataMaxCount {
-
-//           （※処理）規定回数まで到達した場合は次の画面へ遷移する
-
-            //タイマーを破棄する
-            resetTimer()
-
-        } else {
-
-//          （※処理）規定回数に達していない場合はカウントをリセットして次の問題を表示する
-
-            //ボタンを全て活性にする
-            allAnswerBtnEnabled()
-
-            //ラベルの値を再セットする
-            timerDisplayLabel.text = "TIME:" + String(pastCounter)
-
-            //タイマーをセットする
-//            setTimer()
-        }
-    }
     
     //セグエを呼び出したときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -297,16 +203,9 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }
     }
     
-    //タイマー処理を全てリセットするメソッド
-    func resetTimer() {
-        perSecTimer!.invalidate()
-        doneTimer!.invalidate()
-    }
-    
     //ゲームのカウントに関する数を初期化する
     func resetGameValues() {
         correctProblemNumber = 0
-        
     }
     
 /////////ここまで/////////////
@@ -337,7 +236,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         answerBtn4.isEnabled = true
     }
     
-    
     //◯,×の画像表示
     @IBAction func answerBtn1Act(_ sender: Any) {
         UnHide()
@@ -346,10 +244,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
+            timerbarStop()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
+            timerbarStop()
         }
     }
     @IBAction func answerBtn2Act(_ sender: Any) {
@@ -359,10 +259,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
+            timerbarStop()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
+            timerbarStop()
         }
     }
     @IBAction func answerBtn3Act(_ sender: Any) {
@@ -372,10 +274,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
+            timerbarStop()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
+            timerbarStop()
         }
     }
     @IBAction func answerBtn4Act(_ sender: Any) {
@@ -385,10 +289,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
+            timerbarStop()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
+            timerbarStop()
         }
     }
     
@@ -397,13 +303,15 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         RandomQuestions()
         Hide()
         timebar()
+        timerbarReset()
         
+        //問題数の表示
         quiznum += 1
-        print("今\(quiznum)問目")
-        
+//        print("今\(quiznum)問目")
         //カウントアップした数字をラベルに表示
         problemCountLabel.text = "Q\(quiznum)."
         
+        //10問目でscore画面へ遷移
         if quiznum == 11{
             print("正解数：\(correctProblemNumber)")
             self.performSegue(withIdentifier: "showScore", sender: nil)
@@ -416,7 +324,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }
     }
     
-//////時間制限バーここから////////
+//////タイマー関連ここから////////
+    
     func timebar() {
         // 制限時間バーの高さ・幅
         let barHeight = scHei*0.015
@@ -447,25 +356,50 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // 10秒かけてバーを左側から等速で減少させる
         UIView.animate(withDuration: 5, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
             
-            // アニメーション終了後の座標とサイズを指定
-            self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
+        // アニメーション終了後の座標とサイズを指定
+        self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
         },
-                       completion: {(finished: Bool) -> Void in
+            completion: {(finished: Bool) -> Void in
   
-///////////////////////////
-                        // アニメーション終了後の処理
-                        
-                        self.resultImage.image = UIImage(named: "no.png")
-                        self.UnHide()
-//                        self.resultImage.isHidden = false
-                        self.view.bringSubview(toFront: self.resultImage)
-                        self.noAudioPlayer.play()
-                        self.allAnswerBtnDisabled()
-                       
+        // アニメーション終了後の処理
+        self.resultImage.image = UIImage(named: "no.png")
+        self.UnHide()
+//          self.resultImage.isHidden = false
+        self.view.bringSubview(toFront: self.resultImage)
+        self.noAudioPlayer.play()
+        self.allAnswerBtnDisabled()
                         
         })
     }
-//////時間制限バーここまで////////
+    
+    
+    //時間制限バーの一時停止
+    func timerbarStop(){
+        pauseLayer(layer: barImageView.layer)
+    }
+    
+    func pauseLayer(layer: CALayer) {
+        let pausedTime: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil)
+        layer.speed = 0.0
+        layer.timeOffset = pausedTime
+    }
+    
+    //時間制限バーのリセット
+    func timerbarReset(){
+        resumeLayer(layer: barImageView.layer)
+    }
+    
+    func resumeLayer(layer: CALayer) {
+        let pausedTime: CFTimeInterval = layer.timeOffset
+        layer.speed = 1.0
+        layer.timeOffset = 0.0
+        layer.beginTime = 0.0
+        let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
+        layer.beginTime = timeSincePause
+    }
+    
+//////タイマー関連ここまで////////
+    
     
     func yesSound() {
         // サウンドファイルのパスを生成
@@ -495,13 +429,21 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
 
     
-
+    
+    
+    
+    
+    
+    
     //選択肢が重複する
-    //いらないタイマー消す　→　ヘンなタイミングで不正解が出る、多分リセットさせる。
+    //11問目が一瞬表示され、不正解音が鳴る
+    //タイマーのアニメーションが戻らない
+    
+    
+    
     //wikipedia　→　plistからnameと連動させる、中央寄せ
     //テーブルビューに画像　→　画像とラベルを別々に入れてカスタムセルにする
     //オートレイアウト
-    
     
     //scoreが出た後にbackで11問目が表示　→　navi消す？
     //時々エラーになる

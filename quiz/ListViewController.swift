@@ -38,7 +38,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     var godName = ""
     
     @IBOutlet weak var listTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -60,19 +60,19 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
     }
     
-    //行数の決定
+    //行数の決定 /// セルの個数を指定するデリゲートメソッド（必須）
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return GodList.count
     }
     
-    //表示する文字列を決定
+    //表示する文字列を決定 /// セルに値を設定するデータソースメソッド（必須）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //文字列を表示するセルの取得
+        //文字列を表示するセルの取得  // セルを取得
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"
             , for: indexPath)
         
-        //表示したい文字・画像の設定
+        //表示したい文字・画像の設定 セルに値を設定
         var godinfo = GodList[indexPath.row] as! NSDictionary
         print(godinfo["name"] as! String)
         print(godinfo["image"] as! String)
@@ -131,8 +131,10 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
     }
 
-
-
+    
+//    cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
+    
+    
     /*
     // MARK: - Navigation
 

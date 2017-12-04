@@ -21,6 +21,7 @@
 		B608AF1B1FC19C64009869EB /* Budha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF1A1FC19C64009869EB /* Budha.jpg */; };
 		B608AF1D1FC19FF8009869EB /* Yama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF1C1FC19FF8009869EB /* Yama.jpg */; };
 		B608AF1F1FC1A0F5009869EB /* Surya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF1E1FC1A0F5009869EB /* Surya.jpg */; };
+		B609F9AF1FD5B6DB00374310 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */; };
 		B60E9E001FC070D000BE988A /* Agni.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DDE1FC070CF00BE988A /* Agni.jpg */; };
 		B60E9E011FC070D000BE988A /* Brahma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DDF1FC070CF00BE988A /* Brahma.jpg */; };
 		B60E9E021FC070D000BE988A /* Brahma02.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE01FC070CF00BE988A /* Brahma02.jpg */; };
@@ -106,6 +107,7 @@
 		B608AF1A1FC19C64009869EB /* Budha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Budha.jpg; sourceTree = "<group>"; };
 		B608AF1C1FC19FF8009869EB /* Yama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yama.jpg; sourceTree = "<group>"; };
 		B608AF1E1FC1A0F5009869EB /* Surya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Surya.jpg; sourceTree = "<group>"; };
+		B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		B60E9DDE1FC070CF00BE988A /* Agni.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Agni.jpg; sourceTree = "<group>"; };
 		B60E9DDF1FC070CF00BE988A /* Brahma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Brahma.jpg; sourceTree = "<group>"; };
 		B60E9DE01FC070CF00BE988A /* Brahma02.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Brahma02.jpg; sourceTree = "<group>"; };
@@ -281,6 +283,7 @@
 				B6109EA81FB87585007B0776 /* LaunchScreen.storyboard */,
 				B6109EAB1FB87585007B0776 /* Info.plist */,
 				B612B1121FC152F800C12E4C /* GodList.plist */,
+				B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				B61227BC1FBDEB140063B159 /* QuestionViewController.swift in Sources */,
 				B600C1B21FC1D4AF005A4CC9 /* DetailViewController.swift in Sources */,
 				B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */,
+				B609F9AF1FD5B6DB00374310 /* CustomTableViewCell.swift in Sources */,
 				B6109EA01FB87585007B0776 /* AppDelegate.swift in Sources */,
 				B605C0851FC673F700CA98F8 /* ScoreViewController.swift in Sources */,
 				B6139F2C1FC7A7BB00A5C4E3 /* TitleViewController.swift in Sources */,

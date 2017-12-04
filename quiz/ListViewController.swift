@@ -12,10 +12,11 @@ import UIKit
 extension UIImage {
     
     func resize(size: CGSize) -> UIImage {
-        let widthRatio = size.width / self.size.width
-        let heightRatio = size.height / self.size.height
-        let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
-        let resizedSize = CGSize(width: (self.size.width * ratio), height: (self.size.height * ratio))
+//        let widthRatio = size.width / self.size.width
+//        let heightRatio = size.height / self.size.height
+//        let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
+//        let resizedSize = CGSize(width: (self.size.width * ratio), height: (self.size.height * ratio))
+        let resizedSize = CGSize(width: 40, height: 40)
         // 画質を落とさないように修正
         UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
         draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
@@ -82,11 +83,13 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.textLabel?.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
         //画像を表示
-        
+        cell.imageView?.frame.size = CGSize(width: 40, height: 40)
+        cell.imageView!.contentMode = .scaleToFill
         cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
         
         
-        cell.imageView!.contentMode = .scaleAspectFit
+//        cell.imageView!.contentMode = .scaleAspectFit
+     
         
 //        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)?.resize(size: CGSize(width: 5, height:5))
         

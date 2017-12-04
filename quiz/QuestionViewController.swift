@@ -92,7 +92,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //タイマーをリセットしておく
         resetTimer()
     }
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -131,7 +130,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @objc func perSecTimerDone() {
         pastCounter -= 1
         timerDisplayLabel.text = "TIME:" + String(self.pastCounter)
-
     }
     
     //問題の時間制限に到達した場合に実行されるメソッド
@@ -178,26 +176,64 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             print(key)
             
             var _:NSDictionary = data as! NSDictionary
-        
         }
-        
-        //不正解の問題を出す
+
+        //正解と選択肢が重複しないように問題を出す
         //正解をリストから削除する
         GodList.remove(at: RandomNumber)
-        
         var QList = GodList
-        
-        //不正解を三回繰り返す
+
             var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
             for i in 0...3{
                 RandomNumber = Int(arc4random() % 30)
-                RandomNumber += 1
-        
+                RandomNumber += 2
+                
             let detailInfo = QList[RandomNumber] as! NSDictionary
-            
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
             }
+        
+        //選択肢が重複しないように
+        QList.remove(at: RandomNumber)
+        var QList1 = QList
+        
+        var selectBtn1 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+        for i in 0...3{
+            RandomNumber = Int(arc4random() % 29)
+            RandomNumber += 3
+            
+            let detailInfo = QList1[RandomNumber] as! NSDictionary
+            print(detailInfo["name"] as! String)
+            selectBtn1[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }
+        
+        //選択肢が重複しないように
+        QList1.remove(at: RandomNumber)
+        var QList2 = QList1
+        
+        var selectBtn2 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+        for i in 0...3{
+            RandomNumber = Int(arc4random() % 28)
+            
+            let detailInfo = QList2[RandomNumber] as! NSDictionary
+            print(detailInfo["name"] as! String)
+            selectBtn2[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+        }
+        
+//        //選択肢が重複しないように
+//        QList2.remove(at: RandomNumber)
+//        var QList3 = QList2
+//
+//        var selectBtn3 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
+//        for i in 0...3{
+//            RandomNumber = Int(arc4random() % 27)
+//            RandomNumber += 1
+//
+//            let detailInfo = QList3[RandomNumber] as! NSDictionary
+//            print(detailInfo["name"] as! String)
+//            selectBtn3[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+//        }
+//
         
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
@@ -228,9 +264,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
             //タイマーを破棄する
             resetTimer()
-
-            //次のコントローラーへ遷移する
-//            self.performSegue(withIdentifier: "showScore", sender: nil)
 
         } else {
 
@@ -272,7 +305,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     //ゲームのカウントに関する数を初期化する
     func resetGameValues() {
-//        quiznum = 0
         correctProblemNumber = 0
         
     }
@@ -413,19 +445,23 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         // バーをアニメーションさせる
         // 10秒かけてバーを左側から等速で減少させる
-        UIView.animate(withDuration: 10, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
+        UIView.animate(withDuration: 5, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
             
             // アニメーション終了後の座標とサイズを指定
             self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
         },
                        completion: {(finished: Bool) -> Void in
-                        
+  
+///////////////////////////
                         // アニメーション終了後の処理
                         
                         self.resultImage.image = UIImage(named: "no.png")
-                        self.resultImage.bringSubview(toFront: self.QuestionImage)
-//                        self.noAudioPlayer.play()
-//                        self.allAnswerBtnDisabled()
+                        self.UnHide()
+//                        self.resultImage.isHidden = false
+                        self.view.bringSubview(toFront: self.resultImage)
+                        self.noAudioPlayer.play()
+                        self.allAnswerBtnDisabled()
+                       
                         
         })
     }
@@ -460,16 +496,14 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     
 
-
-    //オートレイアウト
-    //wikipedia
-    //テーブルビューに画像→できたがリサイズできない
-    
-    
-
-    //10秒経過した時に【不正解ボタン】を押された時と同じにする
     //選択肢が重複する
-    //scoreが出た後にbackで11問目が表示
+    //いらないタイマー消す　→　ヘンなタイミングで不正解が出る、多分リセットさせる。
+    //wikipedia　→　plistからnameと連動させる、中央寄せ
+    //テーブルビューに画像　→　画像とラベルを別々に入れてカスタムセルにする
+    //オートレイアウト
+    
+    
+    //scoreが出た後にbackで11問目が表示　→　navi消す？
     //時々エラーになる
 
 

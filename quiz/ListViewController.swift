@@ -9,22 +9,22 @@
 import UIKit
 
 
-extension UIImage {
-    
-    func resize(size: CGSize) -> UIImage {
-//        let widthRatio = size.width / self.size.width
-//        let heightRatio = size.height / self.size.height
-//        let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
-//        let resizedSize = CGSize(width: (self.size.width * ratio), height: (self.size.height * ratio))
-        let resizedSize = CGSize(width: 40, height: 40)
-        // 画質を落とさないように修正
-        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
-        draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return resizedImage!
-    }
-}
+//extension UIImage {
+//    
+//    func resize(size: CGSize) -> UIImage {
+////        let widthRatio = size.width / self.size.width
+////        let heightRatio = size.height / self.size.height
+////        let ratio = (widthRatio < heightRatio) ? widthRatio : heightRatio
+////        let resizedSize = CGSize(width: (self.size.width * ratio), height: (self.size.height * ratio))
+//        let resizedSize = CGSize(width: 40, height: 40)
+//        // 画質を落とさないように修正
+//        UIGraphicsBeginImageContextWithOptions(resizedSize, false, 0.0)
+//        draw(in: CGRect(x: 0, y: 0, width: resizedSize.width, height: resizedSize.height))
+//        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return resizedImage!
+//    }
+//}
 
 
 
@@ -41,6 +41,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
@@ -68,38 +69,66 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     //表示する文字列を決定 /// セルに値を設定するデータソースメソッド（必須）
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        //文字列を表示するセルの取得  // セルを取得
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"
-            , for: indexPath)
+    //文字列を表示するセルの取得  // セルを取得
+        let cell:CustomTableViewCell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! CustomTableViewCell
         
-        //表示したい文字・画像の設定 セルに値を設定
-        var godinfo = GodList[indexPath.row] as! NSDictionary
-        print(godinfo["name"] as! String)
-        print(godinfo["image"] as! String)
+        //表示したい文字・画像の設定
+                var godinfo = GodList[indexPath.row] as! NSDictionary
+                print(godinfo["name"] as! String)
+                print(godinfo["image"] as! String)
         
-        //文字を表示
-        cell.textLabel?.text = godinfo["name"] as! String
-        //文字色、矢印
-        cell.textLabel?.textColor = UIColor.orange
-        cell.accessoryType = .disclosureIndicator
         //画像を表示
-        cell.imageView?.frame.size = CGSize(width: 40, height: 40)
-        cell.imageView!.contentMode = .scaleToFill
-        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
+        cell.listImageView.image = UIImage(named:godinfo["image"] as! String)
+        //文字を表示
+        cell.listLabel.text = godinfo["name"] as? String
+        //文字色、矢印
+        cell.listLabel.textColor = UIColor.orange
+//        cell.accessoryType = .disclosureIndicator
         
         
-//        cell.imageView!.contentMode = .scaleAspectFit
-     
         
-//        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)?.resize(size: CGSize(width: 5, height:5))
+       
         
-      
-        //文字を設定したセルを返す
         
-//        cell.textLabel!.text = GodList[(indexPath as NSIndexPath).row] as! String
         
+        
+        
+        
+        
+        //文字列を表示するセルの取得  // セルを取得
+//        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell"
+//            , for: indexPath)
+        
+//        //表示したい文字・画像の設定
+//        var godinfo = GodList[indexPath.row] as! NSDictionary
+//        print(godinfo["name"] as! String)
+//        print(godinfo["image"] as! String)
+//
+//        //文字を表示
+//        cell.textLabel?.text = godinfo["name"] as! String
+//        //文字色、矢印
+//        cell.textLabel?.textColor = UIColor.orange
+//        cell.accessoryType = .disclosureIndicator
+//        //画像を表示
+////        cell.imageView?.frame.size = CGSize(width: 40, height: 40)
+////        cell.imageView!.contentMode = .scaleToFill
+//        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
+//
+//
+////        cell.imageView!.contentMode = .scaleAspectFit
+//
+//
+////        cell.imageView!.image = UIImage(named:godinfo["image"] as! String)?.resize(size: CGSize(width: 5, height:5))
+//
+//
+//        //文字を設定したセルを返す
+////        cell.textLabel!.text = GodList[(indexPath as NSIndexPath).row] as! String
+//
+        
+
         return cell
 
+        
     }
     
     //セルがタップされたとき

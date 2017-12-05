@@ -24,7 +24,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var Next: UIButton!
     
-    @IBOutlet weak var timerDisplayLabel: UILabel!
     @IBOutlet weak var problemCountLabel: UILabel!
     
     
@@ -53,15 +52,16 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     override func viewDidLoad() {
         super.viewDidLoad()
- 
+        
+
     //時間制限バーを表示
         timebar()
     //非表示にする
         Hide()
     //問題表示する
         RandomQuestions()
-    //ゲーム内容リセットする
-        resetGameValues()
+    //問題ナンバーをリセットする
+        resetproblemCount()
     //正解・不正解の音
         yesSound()
         noSound()
@@ -111,62 +111,22 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             var _:NSDictionary = data as! NSDictionary
         }
 
-        //正解と選択肢が重複しないように問題を出す
-        //正解をリストから削除する
+        //不正解の選択肢を出題
         GodList.remove(at: RandomNumber)
         var QList = GodList
 
             var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
             for i in 0...3{
-                RandomNumber = Int(arc4random() % 30)
-                RandomNumber += 2
+                RandomNumber = Int(arc4random()) % QList.count
                 
             let detailInfo = QList[RandomNumber] as! NSDictionary
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
+                
+                //1回利用した選択肢を削除する
+                QList.remove(at: RandomNumber)
+                
             }
-        
-        //選択肢が重複しないように
-//        QList.remove(at: RandomNumber)
-//        var QList1 = QList
-//
-//        var selectBtn1 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-//        for i in 0...3{
-//            RandomNumber = Int(arc4random() % 29)
-//            RandomNumber += 3
-//
-//            let detailInfo = QList1[RandomNumber] as! NSDictionary
-//            print(detailInfo["name"] as! String)
-//            selectBtn1[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//        }
-//
-//        //選択肢が重複しないように
-//        QList1.remove(at: RandomNumber)
-//        var QList2 = QList1
-//
-//        var selectBtn2 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-//        for i in 0...3{
-//            RandomNumber = Int(arc4random() % 28)
-//
-//            let detailInfo = QList2[RandomNumber] as! NSDictionary
-//            print(detailInfo["name"] as! String)
-//            selectBtn2[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//        }
-        
-//        //選択肢が重複しないように
-//        QList2.remove(at: RandomNumber)
-//        var QList3 = QList2
-//
-//        var selectBtn3 = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
-//        for i in 0...3{
-//            RandomNumber = Int(arc4random() % 27)
-//            RandomNumber += 1
-//
-//            let detailInfo = QList3[RandomNumber] as! NSDictionary
-//            print(detailInfo["name"] as! String)
-//            selectBtn3[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-//        }
-//
         
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
@@ -188,24 +148,18 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     //セグエを呼び出したときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
         //セグエ名で判定を行う
         if segue.identifier == "showScore" {
-            
             //遷移先のコントローラーの変数を用意する
             let ScoreViewController = segue.destination as! ScoreViewController
-            
             //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
             ScoreViewController.correctProblemNumber = correctProblemNumber
-            
-            //計算結果を入れる変数を初期化
-            resetGameValues()
         }
     }
     
-    //ゲームのカウントに関する数を初期化する
-    func resetGameValues() {
-        correctProblemNumber = 0
+    //問題数を初期化する
+    func resetproblemCount(){
+        quiznum = 1
     }
     
 /////////ここまで/////////////
@@ -227,7 +181,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         answerBtn3.isEnabled = false
         answerBtn4.isEnabled = false
     }
-    
     //全ボタンを活性にする
     func allAnswerBtnEnabled() {
         answerBtn1.isEnabled = true
@@ -307,19 +260,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         //問題数の表示
         quiznum += 1
-//        print("今\(quiznum)問目")
+//          print("今\(quiznum)問目")
         //カウントアップした数字をラベルに表示
         problemCountLabel.text = "Q\(quiznum)."
         
-        //10問目でscore画面へ遷移
+        //10問終わったらscore画面へ遷移
         if quiznum == 11{
             print("正解数：\(correctProblemNumber)")
             self.performSegue(withIdentifier: "showScore", sender: nil)
             
-    //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
+            //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            let newVC = segue.destination as! ScoreViewController
-            newVC.correctProblemNumber = self.correctProblemNumber
+                let newVC = segue.destination as! ScoreViewController
+                newVC.correctProblemNumber = self.correctProblemNumber
             }
         }
     }
@@ -333,12 +286,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         // 制限時間バーのX(横)座標・Y(縦)座標・終端のX座標
         let barXPosition = scWid*0.1
-        let barYPosition = scHei*0.085
+        let barYPosition = scHei*0.025
         let barXPositionEnd = barXPosition + barWidth
         
         // UIImageViewを初期化
         barImageView = UIImageView()
-        
+
         // 画像の表示する座標を指定する
         barImageView.frame = CGRect(x: barXPosition ,y: barYPosition ,width: barWidth ,height: barHeight)
         
@@ -359,8 +312,9 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // アニメーション終了後の座標とサイズを指定
         self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
         },
+                       
             completion: {(finished: Bool) -> Void in
-  
+                
         // アニメーション終了後の処理
         self.resultImage.image = UIImage(named: "no.png")
         self.UnHide()
@@ -398,6 +352,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         layer.beginTime = timeSincePause
     }
     
+    
+    
+//    resetEmitterLayer:(id)sender
+    
+    
+    
 //////タイマー関連ここまで////////
     
     
@@ -429,23 +389,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
 
     
-    
-    
-    
-    
-    
-    
     //選択肢が重複する
+    
     //11問目が一瞬表示され、不正解音が鳴る
     //タイマーのアニメーションが戻らない
     
     
+    //CustomTableViewCellうまく接続できず
     
-    //wikipedia　→　plistからnameと連動させる、中央寄せ
-    //テーブルビューに画像　→　画像とラベルを別々に入れてカスタムセルにする
     //オートレイアウト
+    //wikipedia　→　plistからnameと連動させる、中央寄せ
+    //多言語化対応
     
-    //scoreが出た後にbackで11問目が表示　→　navi消す？
+    
     //時々エラーになる
 
 

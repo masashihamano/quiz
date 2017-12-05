@@ -26,10 +26,7 @@ class CustomTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
-    var godinfo = GodList[indexPath.row] as! NSDictionary
-    print(godinfo["name"] as! String)
-    print(godinfo["image"] as! String)
     
+
     
 }

@@ -46,21 +46,19 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource: "GodList", ofType: "plist")
-        
         //ファイルの内容を読み込んでディクショナリー型に格納
         let dic = NSDictionary(contentsOfFile: filePath!)
-        
         //今画面に表示したいデータの取得
         let detailInfo = dic![getGodName] as! NSDictionary
         
         
         
-//        // TableViewで扱いやすい配列（エリア名の入ってる配列）を作成
-//        for(key,data) in dic!{
-//        var godinfo:NSDictionary = ["name":key]
-//        GodList.append(godinfo)
-//
-//        }
+        // 配列（エリア名の入ってる配列）を作成
+        for(key,data) in dic!{
+        var godinfo:NSDictionary = ["name":key]
+        GodList.append(godinfo)
+
+        }
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["description"] as! String)
@@ -74,25 +72,10 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         //説明、画像の表示
         detailTextView.text = detailInfo["description"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
-        
         //ウィキぺディア
-//        wikiLabel.text = detailInfo["wikipwdia"] as! String
+//        wikiTextView.text = detailInfo["wikipwdia"] as! String
         
         
-//        let wikiLabel = NSMutableAttributedString(
-//            string: string,
-//            attributes: [wikipedia: NSURL(string: "http://www.wikipedia.org/")!])
-        
-        
-        func wikiLabel(_ wikiLabel: UILabel!,
-                      shouldInteractWith URL: URL,
-                      in characterRange: NSRange,
-                      interaction: UITextItemInteraction) -> Bool {
-            
-            UIApplication.shared.open(URL)
-            
-            return false
-        }
         
     }
 
@@ -119,8 +102,10 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         attributedString.addAttribute(
             NSAttributedStringKey.link,
+//            value: detailInfo["wikipwdia"] as! String,
             value: "https://www.wikipedia.org/",
             range: range)
+        
         
         wikiTextView.attributedText = attributedString
         wikiTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.blue]
@@ -137,16 +122,14 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         wikiTextView.layer.masksToBounds = true
         // 文字の大きさ
         detailTextView.font = UIFont.systemFont(ofSize: CGFloat(16))
+        detailTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(36))
+        
         // 文字の中央寄せ
         wikiTextView.textAlignment = NSTextAlignment.center
         
       
-        
-        
 //        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        
-    
         
         
     }

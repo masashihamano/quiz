@@ -439,9 +439,9 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NQb-nZ-j0h">
-                                                    <rect key="frame" x="97" y="15" width="158" height="21"/>
+                                                    <rect key="frame" x="70" y="15" width="235" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -479,7 +479,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="nkV-IY-hic"/>
                     </view>
-                    <navigationItem key="navigationItem" title="List" id="GUp-On-gAg" userLabel="List"/>
+                    <navigationItem key="navigationItem" title="List" id="GUp-On-gAg" userLabel="List">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="UPp-MK-3uD"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="listTableView" destination="XsE-jn-m6Q" id="pj9-9d-LjN"/>
                         <segue destination="9hX-p3-Rdv" kind="show" identifier="showDetail" id="MFq-vn-3aP"/>
@@ -498,7 +500,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mJk-xm-Kuw">
-                                <rect key="frame" x="16" y="88" width="288" height="168"/>
+                                <rect key="frame" x="16" y="44" width="288" height="212"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="LOA-FJ-fqJ">
                                 <rect key="frame" x="16" y="264" width="288" height="170"/>
@@ -608,7 +610,7 @@
         <image name="next.png" width="404" height="76"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dyk-fq-eo1"/>
+        <segue reference="abm-B1-GCr"/>
         <segue reference="IBc-Ud-SPD"/>
     </inferredMetricsTieBreakers>
 </document>

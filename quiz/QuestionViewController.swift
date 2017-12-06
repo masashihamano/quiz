@@ -259,7 +259,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 //        RandomQuestions()
 //        Hide()
 //        timebar()
-//        timerbarReset()
 //
 //        //問題数の表示
 //        quiznum += 1
@@ -267,25 +266,27 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 //        //カウントアップした数字をラベルに表示
 //        problemCountLabel.text = "Q\(quiznum)."
 //
+        
         //10問終わったらscore画面へ遷移
         if quiznum == 10{
             print("正解数：\(correctProblemNumber)")
             self.performSegue(withIdentifier: "showScore", sender: nil)
             
+       
             //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 let newVC = segue.destination as! ScoreViewController
                 newVC.correctProblemNumber = self.correctProblemNumber
                 
-//            self.noAudioPlayer.pause()
+//                self.noAudioPlayer.pause()
+//                self.noAudioPlayer.stop()
                 
             }
         }else{
-            imagehide()
+            oldtimebarhide()
             RandomQuestions()
             Hide()
-//            timebar()
-            timerbarReset()
+            timebar()
             
             //問題数の表示
             quiznum += 1
@@ -340,13 +341,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         self.view.bringSubview(toFront: self.resultImage)
         self.noAudioPlayer.play()
         self.allAnswerBtnDisabled()
-//          self.noAudioPlayer.stop()
         })
     }
     
-    
-    
-    //時間制限バーの一時停止
+    //時間制限バーの停止
     func timerbarStop(){
         pauseLayer(layer: barImageView.layer)
     }
@@ -357,26 +355,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         layer.timeOffset = pausedTime
     }
     
-    //時間制限バーのリセット
-    func timerbarReset(){
-        resumeLayer(layer: barImageView.layer)
-    }
-    
-    func resumeLayer(layer: CALayer) {
-        let pausedTime: CFTimeInterval = layer.timeOffset
-        layer.speed = 1.0
-        layer.timeOffset = 0.0
-        layer.beginTime = 0.0
-        let timeSincePause: CFTimeInterval = layer.convertTime(CACurrentMediaTime(), from: nil) - pausedTime
-        layer.beginTime = timeSincePause
-    }
-    
     //時間制限バーのイメージを隠す
-    func imagehide() {
-//            barImageView.isHidden = false
+    func oldtimebarhide() {
             barImageView.isHidden = true
-        }
-    
+    }
     
 //////タイマー関連ここまで////////
     
@@ -410,18 +392,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     
     //選択肢が重複する
-    
     //11問目が一瞬表示され、不正解音が鳴る
-    //Apple Developer Programへ参加
     
-    
-    //オートレイアウト
-    //wikipedia対応
-    //多言語化対応
 
+    //Apple Developer Programへ参加
+    //wikipedia対応
     
+    //10問正解の時におめでとうの音と画像を出す。
+    //リストページにbackボタン
+    //オートレイアウト
+    //多言語化対応
     //時々エラーになる
-    //タイマーのアニメーションが戻らない　→　不要なコードを消す
+    
+ 
     
     
     /*

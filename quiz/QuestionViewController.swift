@@ -119,7 +119,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             for i in 0...3{
                 RandomNumber = Int(arc4random()) % QList.count
                 
-            let detailInfo = QList[RandomNumber] as! NSDictionary
+            let detailInfo = QList[RandomNumber]
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
                 
@@ -253,19 +253,22 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     //NEXTボタンのアクション
     @IBAction func Next(_ sender: Any) {
-        RandomQuestions()
-        Hide()
-        timebar()
-        timerbarReset()
         
-        //問題数の表示
-        quiznum += 1
-//          print("今\(quiznum)問目")
-        //カウントアップした数字をラベルに表示
-        problemCountLabel.text = "Q\(quiznum)."
-        
+//        barImageView.removeFromSuperview()
+//        imagehide()
+//        RandomQuestions()
+//        Hide()
+//        timebar()
+//        timerbarReset()
+//
+//        //問題数の表示
+//        quiznum += 1
+////          print("今\(quiznum)問目")
+//        //カウントアップした数字をラベルに表示
+//        problemCountLabel.text = "Q\(quiznum)."
+//
         //10問終わったらscore画面へ遷移
-        if quiznum == 11{
+        if quiznum == 10{
             print("正解数：\(correctProblemNumber)")
             self.performSegue(withIdentifier: "showScore", sender: nil)
             
@@ -273,7 +276,22 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 let newVC = segue.destination as! ScoreViewController
                 newVC.correctProblemNumber = self.correctProblemNumber
+                
+//            self.noAudioPlayer.pause()
+                
             }
+        }else{
+            imagehide()
+            RandomQuestions()
+            Hide()
+//            timebar()
+            timerbarReset()
+            
+            //問題数の表示
+            quiznum += 1
+            //カウントアップした数字をラベルに表示
+            problemCountLabel.text = "Q\(quiznum)."
+            
         }
     }
     
@@ -322,9 +340,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         self.view.bringSubview(toFront: self.resultImage)
         self.noAudioPlayer.play()
         self.allAnswerBtnDisabled()
-                        
+//          self.noAudioPlayer.stop()
         })
     }
+    
     
     
     //時間制限バーの一時停止
@@ -352,10 +371,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         layer.beginTime = timeSincePause
     }
     
-    
-    
-//    resetEmitterLayer:(id)sender
-    
+    //時間制限バーのイメージを隠す
+    func imagehide() {
+//            barImageView.isHidden = false
+            barImageView.isHidden = true
+        }
     
     
 //////タイマー関連ここまで////////
@@ -392,20 +412,16 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //選択肢が重複する
     
     //11問目が一瞬表示され、不正解音が鳴る
-    //タイマーのアニメーションが戻らない
+    //Apple Developer Programへ参加
     
-    
-    //CustomTableViewCellうまく接続できず
     
     //オートレイアウト
-    //wikipedia　→　plistからnameと連動させる、中央寄せ
+    //wikipedia対応
     //多言語化対応
-    
+
     
     //時々エラーになる
-
-
-
+    //タイマーのアニメーションが戻らない　→　不要なコードを消す
     
     
     /*

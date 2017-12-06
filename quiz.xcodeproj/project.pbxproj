@@ -320,8 +320,7 @@
 				B6FDEB821FD40211004F9F0F /* no.mp3 */,
 				B610EF2B1FCFFC8700A56756 /* yes.mp3 */,
 			);
-			name = sound;
-			path = ../../Desktop/sound;
+			path = sound;
 			sourceTree = "<group>";
 		};
 		B61227B61FBDE0180063B159 /* img */ = {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 //UIButtonのカスタムクラス
 @IBDesignable
@@ -32,17 +33,21 @@ class Button_Custom: UIButton {
 
 class TitleViewController: UIViewController {
    
-    
     @IBOutlet weak var titleLabel: UILabel!
-    @IBAction func startBtn(_ sender: UIButton) {
-    }
-    @IBAction func listBtn(_ sender: UIButton) {
-    }
     @IBOutlet weak var myImageView: UIImageView!
     @IBOutlet weak var titleImageView: UIImageView!
     
+    //スタート音の変数
+    var startAudioPlayer: AVAudioPlayer! = nil
+    //リスト音の変数
+    var listAudioPlayer: AVAudioPlayer! = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+     //ボタン押した時の音
+        startSound()
+        listSound()
         
     //背景イメージ画像
         myImageView.image = UIImage(named: "background.jpg")
@@ -55,26 +60,48 @@ class TitleViewController: UIViewController {
         titleLabel.layer.masksToBounds = true
         
     }
-    
-    //【タブバー】画面が表示された時
-//    override func viewWillAppear(_ animated: Bool) {
-//        // AppDelegate にアクセスするための準備をして
-//        let myAp = UIApplication.shared.delegate as!  AppDelegate
-//        // プロパティの値を書き換える
-//        myAp.myCount += 1
-//        print("1画面目 count=\(myAp.myCount)")
-//    }
+ 
     
     
-    
-    //セルがタップされたとき
-    func button(_ button: UIButton, didSelectRowAt indexPath: IndexPath) {
-        
-        //セグエのidentifierを指定して、画面移動
-        performSegue(withIdentifier: "showList",sender: nil)
-        performSegue(withIdentifier: "showStart",sender: nil)
-        
+    @IBAction func startBtn(_ sender: Any) {
+//       performSegue(withIdentifier: "showQuestion", sender: nil)
+        startAudioPlayer.play()
     }
+    
+    @IBAction func listBtn(_ sender: Any) {
+//       performSegue(withIdentifier: "showlist", sender: nil)
+        listAudioPlayer.play()
+    }
+    
+    
+    func startSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "start", ofType: "wav")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            startAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+            startAudioPlayer.prepareToPlay()
+    }
+    
+    func listSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "list", ofType: "wav")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            listAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+            listAudioPlayer.volume = 0.5
+            listAudioPlayer.prepareToPlay()
+    }
+    
+    
     
     
 

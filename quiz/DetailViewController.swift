@@ -9,6 +9,7 @@
 import UIKit
 import SafariServices
 
+
 class DetailViewController: UIViewController, UITextViewDelegate {
 
     @IBOutlet weak var detailTextView: UITextView!
@@ -58,14 +59,35 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 //        let wikiTextView =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
 //        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.center
     
+        wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
+        
+        
         
     }
 
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+        if let textView = object as? UITextView {
+            var topCorrect = (textView.bounds.size.height - textView.contentSize.height * textView.zoomScale) / 2
+            topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
+            textView.contentInset.top = topCorrect
+        }
+    }
+    
+    deinit {
+        wikiTextView.removeObserver(self, forKeyPath: "contentSize")
+    }
+    
+    
+    
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    
     
     func setupTextView() {
         
@@ -89,6 +111,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 //            value: detailInfo["wikipwdia"] as! String,
             value: wikiurl,
             range: range)
+        
+        
         
         
         wikiTextView.attributedText = attributedString
@@ -131,6 +155,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         return false
     
     }
+    
     
     
     

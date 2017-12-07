@@ -270,8 +270,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                 let newVC = segue.destination as! ScoreViewController
                 newVC.correctProblemNumber = self.correctProblemNumber
                 
-//                self.noAudioPlayer.pause()
-//                self.noAudioPlayer.stop()
                 
             }
         }else{
@@ -366,6 +364,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
+        yesAudioPlayer.volume = 0.2
         yesAudioPlayer.prepareToPlay()
     }
     
@@ -382,15 +381,20 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         noAudioPlayer.prepareToPlay()
     }
     
+    
+    
+    
+    //          self.yesAudioPlayer.volume = 0.7
+    //          self.noAudioPlayer.numberOfLoops = 0 // 1回再生。-1で無限ループ
+    
+
+    
+  
+    //リストページにbackボタン(たぶんカスタムセルが原因、もう一つnaviが必要)
+       //textfieldviewの縦方向の中央寄せ
 
     
     //選択肢が重複する
-  
-    //リストページにbackボタン(たぶんカスタムセルが原因)
-    
-    //textfieldviewの縦方向の中央寄せ
-    //10問正解の時におめでとうの音と画像を出す。
-    
     //オートレイアウト
     //多言語化対応
     //時々エラーになる

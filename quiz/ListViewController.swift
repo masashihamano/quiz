@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import AVFoundation
 
 //プロトコルの設定
 class ListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
@@ -18,12 +18,20 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
      //選択されたエリア名を保存するメンバ変数
     var godName = ""
     
+    //前の画面から受け取るためのプロパティ
+    var getlistname = ""
+    
+    //タップ音の変数
+    var cellAudioPlayer: AVAudioPlayer! = nil
+    
+    
     @IBOutlet weak var listTableView: UITableView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        //セルをタップした時の音
+        cellSound()
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -75,6 +83,8 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     //セルがタップされたとき
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     
+            cellAudioPlayer.play()
+            
             //タップされた行のエリア名を保存
             var godinfo = GodList[indexPath.row] as! NSDictionary
             
@@ -95,6 +105,24 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         secondinfo.getGodName = godName
 
     }
+    
+    
+    func cellSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "cell", ofType: "wav")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            cellAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+//        restartAudioPlayer.volume = 0.1
+        cellAudioPlayer.prepareToPlay()
+    }
+    
+    
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

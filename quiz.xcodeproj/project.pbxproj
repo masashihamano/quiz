@@ -71,6 +71,12 @@
 		B612B1131FC152F800C12E4C /* GodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B612B1121FC152F800C12E4C /* GodList.plist */; };
 		B6139F2C1FC7A7BB00A5C4E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */; };
 		B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ADB5A11FBE871C00AB940A /* ListViewController.swift */; };
+		B6B82A701FD98DA2003589A3 /* start.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A6F1FD98DA2003589A3 /* start.wav */; };
+		B6B82A721FD9901A003589A3 /* list.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A711FD9901A003589A3 /* list.wav */; };
+		B6B82A741FD99550003589A3 /* restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A731FD99550003589A3 /* restart.wav */; };
+		B6B82A761FD9982E003589A3 /* cell.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A751FD9982E003589A3 /* cell.wav */; };
+		B6B82A781FD99AF3003589A3 /* zero.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A771FD99AF3003589A3 /* zero.wav */; };
+		B6B82A7A1FD99AFB003589A3 /* perfect.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A791FD99AFB003589A3 /* perfect.wav */; };
 		B6F6D27F1FC043FE00E71650 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F6D27E1FC043FD00E71650 /* next.png */; };
 		B6FDEB831FD40211004F9F0F /* no.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B6FDEB821FD40211004F9F0F /* no.mp3 */; };
 /* End PBXBuildFile section */
@@ -163,6 +169,12 @@
 		B612B1121FC152F800C12E4C /* GodList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GodList.plist; sourceTree = "<group>"; };
 		B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		B6ADB5A11FBE871C00AB940A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		B6B82A6F1FD98DA2003589A3 /* start.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = start.wav; sourceTree = "<group>"; };
+		B6B82A711FD9901A003589A3 /* list.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = list.wav; sourceTree = "<group>"; };
+		B6B82A731FD99550003589A3 /* restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = restart.wav; sourceTree = "<group>"; };
+		B6B82A751FD9982E003589A3 /* cell.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = cell.wav; sourceTree = "<group>"; };
+		B6B82A771FD99AF3003589A3 /* zero.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = zero.wav; sourceTree = "<group>"; };
+		B6B82A791FD99AFB003589A3 /* perfect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = perfect.wav; sourceTree = "<group>"; };
 		B6F6D27E1FC043FD00E71650 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
 		B6FDEB821FD40211004F9F0F /* no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -317,6 +329,12 @@
 		B610EF231FCFF02E00A56756 /* sound */ = {
 			isa = PBXGroup;
 			children = (
+				B6B82A791FD99AFB003589A3 /* perfect.wav */,
+				B6B82A771FD99AF3003589A3 /* zero.wav */,
+				B6B82A751FD9982E003589A3 /* cell.wav */,
+				B6B82A731FD99550003589A3 /* restart.wav */,
+				B6B82A6F1FD98DA2003589A3 /* start.wav */,
+				B6B82A711FD9901A003589A3 /* list.wav */,
 				B6FDEB821FD40211004F9F0F /* no.mp3 */,
 				B610EF2B1FCFFC8700A56756 /* yes.mp3 */,
 			);
@@ -442,6 +460,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6B82A761FD9982E003589A3 /* cell.wav in Resources */,
 				B60E9E0B1FC070D000BE988A /* Indra.jpg in Resources */,
 				B60E9E131FC070D000BE988A /* Lakshmi.jpg in Resources */,
 				B60E9E151FC070D000BE988A /* Minakshi.jpg in Resources */,
@@ -462,11 +481,14 @@
 				B608AF111FC19551009869EB /* Ravana.jpg in Resources */,
 				B60E9E211FC070D000BE988A /* Vishnu.jpg in Resources */,
 				B60E9E0D1FC070D000BE988A /* Jagannatha02.jpg in Resources */,
+				B6B82A781FD99AF3003589A3 /* zero.wav in Resources */,
 				B60F293D1FC813B400238C25 /* yes.png in Resources */,
 				B60E9E0E1FC070D000BE988A /* Kali.jpg in Resources */,
 				B60E9E121FC070D000BE988A /* Krsna02.jpg in Resources */,
 				B60E9E111FC070D000BE988A /* Krsna.jpg in Resources */,
+				B6B82A741FD99550003589A3 /* restart.wav in Resources */,
 				B60E9E091FC070D000BE988A /* Hanuman.jpg in Resources */,
+				B6B82A701FD98DA2003589A3 /* start.wav in Resources */,
 				B60E9E011FC070D000BE988A /* Brahma.jpg in Resources */,
 				B603126F1FC99FCA00A00EC5 /* Ganga.jpg in Resources */,
 				B60E9E101FC070D000BE988A /* Kama.jpg in Resources */,
@@ -477,6 +499,8 @@
 				B60E9E061FC070D000BE988A /* Ganesa.jpg in Resources */,
 				B608AF131FC19720009869EB /* Varaha.jpg in Resources */,
 				B6109EA71FB87585007B0776 /* Assets.xcassets in Resources */,
+				B6B82A721FD9901A003589A3 /* list.wav in Resources */,
+				B6B82A7A1FD99AFB003589A3 /* perfect.wav in Resources */,
 				B60E9E071FC070D000BE988A /* Ganesa02.jpg in Resources */,
 				B608AF1B1FC19C64009869EB /* Budha.jpg in Resources */,
 				B60E9E191FC070D000BE988A /* Parvathi.jpg in Resources */,

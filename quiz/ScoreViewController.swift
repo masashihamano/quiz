@@ -20,7 +20,6 @@ class ScoreViewController: UIViewController {
     
 //QuizControllerより引き渡される値を格納する
     var correctProblemNumber: Int!
-    var totalSeconds: String!
     
     //ランクを表示するメソッド
     func showRank(num: Int) {
@@ -69,6 +68,8 @@ class ScoreViewController: UIViewController {
         
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = scoreLabel.bounds.width / 2
+        
+
         
         
     }

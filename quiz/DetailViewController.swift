@@ -16,11 +16,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var wikiTextView: UITextView!
     
-    
-    
-    
-    
-    
+    //選択されたurlを保存するメンバ変数
+    var wikiurl = ""
     
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
@@ -29,17 +26,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        setupTextView()
-        
-//        let wikiLink = "詳細はwikipediaへ"
-//        let attributedString = NSMutableAttributedString(string: wikiLink)
-//
-//        attributedString.addAttribute(.link,
-//                                      value: "https://www.wikipedia.org/",
-//                                      range: NSString(string: wikiLink).range(of: "wikipedia"))
-//        wikiLabel.attributedText = attributedString
-//        wikiLabel.isSelectable = true
         
         
         print("getGodName:\(getGodName)")
@@ -51,31 +37,27 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         //今画面に表示したいデータの取得
         let detailInfo = dic![getGodName] as! NSDictionary
         
-        
-        
-        // 配列（エリア名の入ってる配列）を作成
-        for(key,data) in dic!{
-        var godinfo:NSDictionary = ["name":key]
-        GodList.append(godinfo)
-
-        }
-        
-        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
+        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換
         print(detailInfo["description"] as! String)
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
+        wikiurl = detailInfo["wikipedia"] as! String
+        
+        
+        setupTextView()
+        
         //タイトルをナビゲーションバーの真ん中に表示
         navigationItem.title = getGodName
-        
         
         //説明、画像の表示
         detailTextView.text = detailInfo["description"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
-        //ウィキぺディア
-//        wikiTextView.text = detailInfo["wikipwdia"] as! String
         
         
+//        let wikiTextView =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
+//        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.center
+    
         
     }
 
@@ -100,10 +82,12 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         let attributedString = NSMutableAttributedString(string: text)
         let range = NSString(string: text).range(of: "wikipedia")
         
+        print(wikiurl)
+        
         attributedString.addAttribute(
             NSAttributedStringKey.link,
 //            value: detailInfo["wikipwdia"] as! String,
-            value: "https://www.wikipedia.org/",
+            value: wikiurl,
             range: range)
         
         

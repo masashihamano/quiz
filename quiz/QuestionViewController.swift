@@ -29,7 +29,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
     var GodList:[NSDictionary] = []
-    //選択されたエリア名を保存するメンバ変数
+    //選択された名前を保存するメンバ変数
     var godName = ""
     //問題数
     var quiznum = 1
@@ -107,11 +107,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         for(key,data) in dic!{
             print(data)
             print(key)
-            
+
             var _:NSDictionary = data as! NSDictionary
         }
 
-        //不正解の選択肢を出題
+        //4択問題を出題（不正解）
         GodList.remove(at: RandomNumber)
         var QList = GodList
 
@@ -120,6 +120,10 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                 RandomNumber = Int(arc4random()) % QList.count
                 
             let detailInfo = QList[RandomNumber]
+                print(RandomNumber, 1)
+                print(RandomNumber, 2)
+                print(RandomNumber, 3)
+                print(RandomNumber, 4)
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
                 
@@ -254,24 +258,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //NEXTボタンのアクション
     @IBAction func Next(_ sender: Any) {
         
-//        barImageView.removeFromSuperview()
-//        imagehide()
-//        RandomQuestions()
-//        Hide()
-//        timebar()
-//
-//        //問題数の表示
-//        quiznum += 1
-////          print("今\(quiznum)問目")
-//        //カウントアップした数字をラベルに表示
-//        problemCountLabel.text = "Q\(quiznum)."
-//
-        
         //10問終わったらscore画面へ遷移
         if quiznum == 10{
+            quiznum += 1
+            
             print("正解数：\(correctProblemNumber)")
             self.performSegue(withIdentifier: "showScore", sender: nil)
-            
        
             //ゲーム画面→結果表示画面のViewControllerにプロパティの値を渡す
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -331,16 +323,18 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // アニメーション終了後の座標とサイズを指定
         self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
         },
-                       
             completion: {(finished: Bool) -> Void in
                 
-        // アニメーション終了後の処理
-        self.resultImage.image = UIImage(named: "no.png")
-        self.UnHide()
-//          self.resultImage.isHidden = false
-        self.view.bringSubview(toFront: self.resultImage)
-        self.noAudioPlayer.play()
-        self.allAnswerBtnDisabled()
+                if self.quiznum < 11{
+                    
+                    // アニメーション終了後の処理
+                    self.resultImage.image = UIImage(named: "no.png")
+                    self.UnHide()
+                    //          self.resultImage.isHidden = false
+                    self.view.bringSubview(toFront: self.resultImage)
+                    self.noAudioPlayer.play()
+                    self.allAnswerBtnDisabled()
+                }
         })
     }
     
@@ -361,7 +355,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     }
     
 //////タイマー関連ここまで////////
-    
     
     func yesSound() {
         // サウンドファイルのパスを生成
@@ -392,14 +385,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     
     //選択肢が重複する
-    //11問目が一瞬表示され、不正解音が鳴る
+  
+    //リストページにbackボタン(たぶんカスタムセルが原因)
     
-
-    //Apple Developer Programへ参加
-    //wikipedia対応
-    
+    //textfieldviewの縦方向の中央寄せ
     //10問正解の時におめでとうの音と画像を出す。
-    //リストページにbackボタン
+    
     //オートレイアウト
     //多言語化対応
     //時々エラーになる

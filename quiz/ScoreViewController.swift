@@ -11,6 +11,8 @@ import AVFoundation
 
 class ScoreViewController: UIViewController {
 
+    
+    @IBOutlet weak var scoreTitleLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
@@ -101,13 +103,20 @@ class ScoreViewController: UIViewController {
         myImageView.alpha = 0.1
         
         //得点表示
-        self.scoreLabel.text = String(correctProblemNumber*10)
+        scoreLabel.text = String(correctProblemNumber*10)
         showRank(num: correctProblemNumber*10)
         
         //scoe文字の装飾
         scoreLabel.layer.masksToBounds = true
         scoreLabel.layer.cornerRadius = scoreLabel.bounds.width / 2
-        scoreLabel.font = UIFont.boldSystemFont(ofSize: 48)
+        scoreLabel.font = UIFont.boldSystemFont(ofSize: 92)
+        
+        //テキスト文字の枠線
+        scoreTitleLabel.layer.borderColor = UIColor.white.cgColor
+        scoreTitleLabel.layer.borderWidth = 2
+        scoreTitleLabel.layer.cornerRadius = 10.0
+        scoreTitleLabel.layer.masksToBounds = true
+        scoreTitleLabel.font = UIFont.boldSystemFont(ofSize: 62)
         
     }
     

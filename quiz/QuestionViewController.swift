@@ -71,9 +71,14 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
     //アウトレットでnextボタンの画像を設定
         Next.setImage(UIImage(named: "next,png"), for: .normal)
-    //問題文のフォント設定
-        QuestionLabel.font = UIFont.boldSystemFont(ofSize: 32)
-    
+    //問題文の文字設定
+        QuestionLabel.font = UIFont.boldSystemFont(ofSize: 27)
+        QuestionLabel.layer.cornerRadius = 5.0
+        QuestionLabel.layer.masksToBounds = true
+    //問題画像の枠
+        QuestionImage.layer.cornerRadius = 5.0
+        QuestionImage.layer.masksToBounds = true
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -111,7 +116,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         //今画面に表示したいデータの取得
         let detailInfo = GodList[RandomNumber]
-        
+
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["image"] as! String)
         print(detailInfo["name"] as! String)
@@ -305,6 +310,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             Hide()
             timebar()
             nextAudioPlayer.play()
+            
             //問題数
             quiznum += 1
         }
@@ -339,7 +345,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         self.view.addSubview(barImageView)
         
         // バーをアニメーションさせる
-        // 10秒かけてバーを左側から等速で減少させる
+        // 5秒かけてバーを左側から等速で減少させる
         UIView.animate(withDuration: 5, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
             
         // アニメーション終了後の座標とサイズを指定
@@ -352,10 +358,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                     // アニメーション終了後の処理
                     self.resultImage.image = UIImage(named: "no.png")
                     self.UnHide()
-                    //          self.resultImage.isHidden = false
+//                              self.resultImage.isHidden = false
                     self.view.bringSubview(toFront: self.resultImage)
                     self.noAudioPlayer.play()
                     self.allAnswerBtnDisabled()
+                    self.nextBtn()
                     
                 }
         })
@@ -424,13 +431,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         let nextImg = Next.setImage(UIImage(named: "next.png"), for: .normal)
     }
    
-    
-    
-    
-    //          self.yesAudioPlayer.volume = 0.7
-    //          self.noAudioPlayer.numberOfLoops = 0 // 1回再生。-1で無限ループ
-    
-
     
   
     

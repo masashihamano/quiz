@@ -83,6 +83,8 @@
 		B612FCCF1FDBE36C007D10B7 /* score20.wav in Resources */ = {isa = PBXBuildFile; fileRef = B612FCC41FDBE36C007D10B7 /* score20.wav */; };
 		B612FCD01FDBE36C007D10B7 /* score40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B612FCC51FDBE36C007D10B7 /* score40.mp3 */; };
 		B612FCD11FDBE36C007D10B7 /* score90.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B612FCC61FDBE36C007D10B7 /* score90.mp3 */; };
+		B612FCD71FDC392B007D10B7 /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = B612FCD61FDC392B007D10B7 /* faq.png */; };
+		B612FCD91FDC3A05007D10B7 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = B612FCD81FDC3A05007D10B7 /* list.png */; };
 		B6139F2C1FC7A7BB00A5C4E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */; };
 		B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ADB5A11FBE871C00AB940A /* ListViewController.swift */; };
 		B6B82A721FD9901A003589A3 /* wiki.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A711FD9901A003589A3 /* wiki.wav */; };
@@ -191,6 +193,8 @@
 		B612FCC41FDBE36C007D10B7 /* score20.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = score20.wav; sourceTree = "<group>"; };
 		B612FCC51FDBE36C007D10B7 /* score40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = score40.mp3; sourceTree = "<group>"; };
 		B612FCC61FDBE36C007D10B7 /* score90.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = score90.mp3; sourceTree = "<group>"; };
+		B612FCD61FDC392B007D10B7 /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
+		B612FCD81FDC3A05007D10B7 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
 		B6ADB5A11FBE871C00AB940A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B6B82A711FD9901A003589A3 /* wiki.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wiki.wav; sourceTree = "<group>"; };
@@ -374,6 +378,8 @@
 		B61227B61FBDE0180063B159 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				B612FCD81FDC3A05007D10B7 /* list.png */,
+				B612FCD61FDC392B007D10B7 /* faq.png */,
 				B61227B71FBDE0180063B159 /* background.jpg */,
 				B61227B81FBDE0180063B159 /* title.jpg */,
 				B60F293C1FC813B400238C25 /* yes.png */,
@@ -519,6 +525,7 @@
 				B60E9E0D1FC070D000BE988A /* Jagannatha02.jpg in Resources */,
 				B60F293D1FC813B400238C25 /* yes.png in Resources */,
 				B60E9E0E1FC070D000BE988A /* Kali.jpg in Resources */,
+				B612FCD91FDC3A05007D10B7 /* list.png in Resources */,
 				B60E9E121FC070D000BE988A /* Krsna02.jpg in Resources */,
 				B60E9E111FC070D000BE988A /* Krsna.jpg in Resources */,
 				B6B82A741FD99550003589A3 /* restart.wav in Resources */,
@@ -548,6 +555,7 @@
 				B60E9E171FC070D000BE988A /* Naga.jpg in Resources */,
 				B612FCCA1FDBE36C007D10B7 /* score50.mp3 in Resources */,
 				B608AF191FC19B4D009869EB /* Parasurama.jpg in Resources */,
+				B612FCD71FDC392B007D10B7 /* faq.png in Resources */,
 				B60E9E1D1FC070D000BE988A /* Sarasvati02.jpg in Resources */,
 				B612FCB71FDBDDA9007D10B7 /* next.wav in Resources */,
 				B60E9E031FC070D000BE988A /* Dakini.jpg in Resources */,

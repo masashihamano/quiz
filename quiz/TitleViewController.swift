@@ -51,13 +51,22 @@ class TitleViewController: UIViewController {
         myImageView.alpha = 0.1
     //タイトル画面イメージ
         titleImageView.image = UIImage(named: "title.jpg")
-        
+        titleImageView.layer.borderColor = UIColor.white.cgColor
+        titleImageView.layer.borderWidth = 2
+        titleImageView.layer.cornerRadius = 10.0
+        titleImageView.layer.masksToBounds = true
+    //タイトル文字
         titleLabel.layer.borderColor = UIColor.white.cgColor
         titleLabel.layer.borderWidth = 2
-//        titleLabel.layer.cornerRadius = 25
+        titleLabel.layer.cornerRadius = 10.0
         titleLabel.layer.masksToBounds = true
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
-   
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 46)
+        
+        //表示可能最大行数を指定
+        titleLabel.numberOfLines = 2
+        //contentsのサイズに合わせてobujectのサイズを変える
+        titleLabel.sizeToFit()
+
     }
  
     
@@ -79,7 +88,6 @@ class TitleViewController: UIViewController {
         }
             startAudioPlayer.prepareToPlay()
     }
-    
     
 
     override func didReceiveMemoryWarning() {

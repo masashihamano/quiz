@@ -83,9 +83,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     
     
-    
-    
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -115,19 +112,15 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 //            value: detailInfo["wikipwdia"] as! String,
             value: wikiurl,
             range: range)
-        
-        
-        
+    
         wikiTextView.attributedText = attributedString
         wikiTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.blue]
+        
+        
         // 枠のカラー
-        detailImageView.layer.borderColor = UIColor.orange.cgColor
-        detailTextView.layer.borderColor = UIColor.orange.cgColor
-        wikiTextView.layer.borderColor = UIColor.orange.cgColor
+        detailImageView.layer.borderColor = UIColor.white.cgColor
         // 枠の幅
         detailImageView.layer.borderWidth = 2
-        detailTextView.layer.borderWidth = 2
-        wikiTextView.layer.borderWidth = 2
         // 枠を角丸にする場合
         detailImageView.layer.cornerRadius = 10.0
         detailTextView.layer.cornerRadius = 10.0

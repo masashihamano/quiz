@@ -68,11 +68,18 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         //画像を表示
         cell.listImageView.image = UIImage(named:godinfo["image"] as! String)
+        cell.listImageView.layer.borderColor = UIColor.white.cgColor
+        cell.listImageView.layer.borderWidth = 1
+        cell.listImageView.layer.cornerRadius = 3.0
+        cell.listImageView.layer.masksToBounds = true
+        
         //文字を表示
         cell.listLabel.text = godinfo["name"] as? String
         //文字色、矢印
         cell.listLabel.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
+        
+        
         
 
         return cell

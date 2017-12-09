@@ -39,15 +39,12 @@ class TitleViewController: UIViewController {
     
     //スタート音の変数
     var startAudioPlayer: AVAudioPlayer! = nil
-    //リスト音の変数
-    var listAudioPlayer: AVAudioPlayer! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
      //ボタン押した時の音
         startSound()
-        listSound()
         
     //背景イメージ画像
         myImageView.image = UIImage(named: "background.jpg")
@@ -56,27 +53,23 @@ class TitleViewController: UIViewController {
         titleImageView.image = UIImage(named: "title.jpg")
         
         titleLabel.layer.borderColor = UIColor.white.cgColor
-        titleLabel.layer.cornerRadius = 25
+        titleLabel.layer.borderWidth = 2
+//        titleLabel.layer.cornerRadius = 25
         titleLabel.layer.masksToBounds = true
-        
+        titleLabel.font = UIFont.boldSystemFont(ofSize: 48)
+   
     }
  
-    
     
     @IBAction func startBtn(_ sender: Any) {
 //       performSegue(withIdentifier: "showQuestion", sender: nil)
         startAudioPlayer.play()
     }
     
-    @IBAction func listBtn(_ sender: Any) {
-//       performSegue(withIdentifier: "showlist", sender: nil)
-        listAudioPlayer.play()
-    }
-    
     
     func startSound() {
         // サウンドファイルのパスを生成
-        let soundFile = Bundle.main.path(forResource: "start", ofType: "wav")! as NSString
+        let soundFile = Bundle.main.path(forResource: "start", ofType: "mp3")! as NSString
         let soundClear = URL(fileURLWithPath: soundFile as String)
         //AVAudioPlayerのインスタンス化
         do {
@@ -86,22 +79,6 @@ class TitleViewController: UIViewController {
         }
             startAudioPlayer.prepareToPlay()
     }
-    
-    func listSound() {
-        // サウンドファイルのパスを生成
-        let soundFile = Bundle.main.path(forResource: "list", ofType: "wav")! as NSString
-        let soundClear = URL(fileURLWithPath: soundFile as String)
-        //AVAudioPlayerのインスタンス化
-        do {
-            listAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
-        }catch{
-            print("AVAudioPlayerインスタンス作成失敗")
-        }
-            listAudioPlayer.volume = 0.5
-            listAudioPlayer.prepareToPlay()
-    }
-    
-    
     
     
 

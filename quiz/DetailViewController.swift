@@ -8,7 +8,7 @@
 
 import UIKit
 import SafariServices
-
+import AVFoundation
 
 class DetailViewController: UIViewController, UITextViewDelegate {
 
@@ -20,6 +20,9 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     //選択されたurlを保存するメンバ変数
     var wikiurl = ""
     
+    //wikiの音
+    var wikiAudioPlayer: AVAudioPlayer! = nil
+    
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
     //前の画面から受け取るためのプロパティ
@@ -28,6 +31,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //wikiがタップされた時の音
+        wikiSound()
         
         print("getGodName:\(getGodName)")
         
@@ -60,7 +65,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
 //        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.center
     
         wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
-        
         
         
     }
@@ -114,18 +118,21 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         
         
-        
         wikiTextView.attributedText = attributedString
         wikiTextView.linkTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue: UIColor.blue]
         // 枠のカラー
+        detailImageView.layer.borderColor = UIColor.orange.cgColor
         detailTextView.layer.borderColor = UIColor.orange.cgColor
         wikiTextView.layer.borderColor = UIColor.orange.cgColor
         // 枠の幅
+        detailImageView.layer.borderWidth = 2
         detailTextView.layer.borderWidth = 2
         wikiTextView.layer.borderWidth = 2
         // 枠を角丸にする場合
+        detailImageView.layer.cornerRadius = 10.0
         detailTextView.layer.cornerRadius = 10.0
         wikiTextView.layer.cornerRadius = 10.0
+        detailImageView.layer.masksToBounds = true
         detailTextView.layer.masksToBounds = true
         wikiTextView.layer.masksToBounds = true
         // 文字の大きさ
@@ -148,6 +155,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
                   in characterRange: NSRange,
                   interaction: UITextItemInteraction) -> Bool {
         
+        wikiAudioPlayer.play()  //音ならない
+        
         // UIApplication.shared.open(URL)
         let controller = SFSafariViewController(url: URL)
         self.present(controller, animated: true)
@@ -155,6 +164,21 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         return false
     
     }
+    
+    func wikiSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "wiki", ofType: "wav")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            wikiAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        //        restartAudioPlayer.volume = 0.1
+        wikiAudioPlayer.prepareToPlay()
+    }
+    
     
     
     

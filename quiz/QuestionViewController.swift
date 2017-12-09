@@ -24,15 +24,15 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var Next: UIButton!
     
-    @IBOutlet weak var problemCountLabel: UILabel!
-    
-    
+
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
     var GodList:[NSDictionary] = []
     //選択された名前を保存するメンバ変数
     var godName = ""
     //問題数
     var quiznum = 1
+    //問題数をカウント
+    var count = 0
     //正解ボタン
     var CorrectAnswer = String()
     //正解数
@@ -41,6 +41,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     var yesAudioPlayer: AVAudioPlayer! = nil
     //不正解音
     var noAudioPlayer: AVAudioPlayer! = nil
+    //nextボタンの音
+    var nextAudioPlayer: AVAudioPlayer! = nil
     
     //時間制限バーの画面
     var barImageView:UIImageView!
@@ -65,7 +67,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //正解・不正解の音
         yesSound()
         noSound()
+        nextSound()
         
+    //アウトレットでnextボタンの画像を設定
+        Next.setImage(UIImage(named: "next,png"), for: .normal)
+    //問題文のフォント設定
+        QuestionLabel.font = UIFont.boldSystemFont(ofSize: 32)
+    
     }
     
     override func didReceiveMemoryWarning() {
@@ -79,7 +87,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         var RandomNumber:Int = Int(arc4random() % 31)
         RandomNumber += 1
         allAnswerBtnEnabled()
-        QuestionLabel.text = "What is my name?"
+        
+        //問題数の表示
+        count += 1
+        //問題文
+        QuestionLabel.text = "Q\(count).What is my name?"
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -91,8 +103,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                         print(data)
                         print(key)
             
-            var goddic:NSDictionary = data as! NSDictionary
-            var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
+            let goddic:NSDictionary = data as! NSDictionary
+            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
             
                         GodList.append(godinfo)
         }
@@ -111,12 +123,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             var _:NSDictionary = data as! NSDictionary
         }
 
-        //4択問題を出題（不正解）
+        //4択を表示（不正解）
         GodList.remove(at: RandomNumber)
         var QList = GodList
 
             var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
             for i in 0...3{
+                
                 RandomNumber = Int(arc4random()) % QList.count
                 
             let detailInfo = QList[RandomNumber]
@@ -127,8 +140,11 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
                 
-                //1回利用した選択肢を削除する
-                QList.remove(at: RandomNumber)
+                //オブジェクトを削除、1回使用した選択肢を削除する
+                QList.remove(object: detailInfo)
+            
+                //1回使用した選択肢を削除する
+//                QList.remove(at: RandomNumber)
                 
             }
         
@@ -148,7 +164,9 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else{
         }
-   }
+        
+    }
+    
     
     //セグエを呼び出したときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -202,11 +220,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             correctProblemNumber += 1
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }
     }
     @IBAction func answerBtn2Act(_ sender: Any) {
@@ -217,11 +237,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             correctProblemNumber += 1
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }
     }
     @IBAction func answerBtn3Act(_ sender: Any) {
@@ -232,11 +254,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             correctProblemNumber += 1
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }
     }
     @IBAction func answerBtn4Act(_ sender: Any) {
@@ -247,16 +271,21 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             correctProblemNumber += 1
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
+            nextBtn()
         }
     }
     
     //NEXTボタンのアクション
     @IBAction func Next(_ sender: Any) {
+        
+        //アクションの引数に対して画像を設定
+        Next.setImage(UIImage(named: "next.png"), for: .normal)
         
         //10問終わったらscore画面へ遷移
         if quiznum == 10{
@@ -269,20 +298,15 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             func prepare(for segue: UIStoryboardSegue, sender: Any?) {
                 let newVC = segue.destination as! ScoreViewController
                 newVC.correctProblemNumber = self.correctProblemNumber
-                
-                
             }
         }else{
             oldtimebarhide()
             RandomQuestions()
             Hide()
             timebar()
-            
-            //問題数の表示
+            nextAudioPlayer.play()
+            //問題数
             quiznum += 1
-            //カウントアップした数字をラベルに表示
-            problemCountLabel.text = "Q\(quiznum)."
-            
         }
     }
     
@@ -332,6 +356,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                     self.view.bringSubview(toFront: self.resultImage)
                     self.noAudioPlayer.play()
                     self.allAnswerBtnDisabled()
+                    
                 }
         })
     }
@@ -381,6 +406,24 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         noAudioPlayer.prepareToPlay()
     }
     
+    func nextSound() {
+        // サウンドファイルのパスを生成
+        let soundFile = Bundle.main.path(forResource: "next", ofType: "wav")! as NSString
+        let soundClear = URL(fileURLWithPath: soundFile as String)
+        //AVAudioPlayerのインスタンス化
+        do {
+            nextAudioPlayer = try AVAudioPlayer(contentsOf: soundClear as URL, fileTypeHint:nil)
+        }catch{
+            print("AVAudioPlayerインスタンス作成失敗")
+        }
+        nextAudioPlayer.prepareToPlay()
+    }
+    
+    //Nextボタンの表示
+    func nextBtn(){
+        let nextImg = Next.setImage(UIImage(named: "next.png"), for: .normal)
+    }
+   
     
     
     
@@ -390,13 +433,18 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
     
   
-    //リストページにbackボタン(たぶんカスタムセルが原因、もう一つnaviが必要)
-       //textfieldviewの縦方向の中央寄せ
-
     
+
     //選択肢が重複する
+    //→ 現状ランダムで4択を表示し、正解を差し替えている。始めに表示した4択と正解の選択肢がわずかな可能性で重複してしまう
+    
+    
+    //点数ごとにscore画面変える
     //オートレイアウト
+    
+    
     //多言語化対応
+    //アイコン(1024x1024)、説明文
     //時々エラーになる
     
  
@@ -411,5 +459,18 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
      // Pass the selected object to the new view controller.
      }
      */
+    
+}
+
+//重複を回避するためのエクステンション
+extension Array where Element: Equatable {
+    
+    // すべてのオブジェクトを削除
+    mutating func remove(object: Element) {
+        if let index = index(of: object){
+            self.remove(at: index)
+            self.remove(object: object)
+        }
+    }
     
 }

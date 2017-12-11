@@ -100,7 +100,7 @@
 サティー（シヴァの最初の奥さん）の生まれ変わり。ヒマラヤ山脈の山神ヒマヴァットの娘で、ガンジス川の女神であるガンガーの姉。
 シヴァの奥さん。学問の神ガネーシャと軍神スカンダの母。
 &lt;特徴&gt;
-シヴァと一緒になって描かれることがほとんど。</string>
+シヴァと一緒に描かれている。</string>
 		<key>image</key>
 		<string>Parvathi.jpg</string>
 		<key>wikipedia</key>
@@ -383,7 +383,7 @@
 	<dict>
 		<key>description</key>
 		<string>【ヤマ（Yama）】
-ヴィシュヌ神の第9の化身（アヴァターラ）。仏教では「閻魔大王」のこと。
+仏教では「閻魔大王」のこと。
 最初に死んだ人間でもあり、死ぬ人間を裁きの場所に連れてきて、生前の行いを裁く仕事をしている。
 &lt;特徴&gt;
 青い肌で水牛に乗っている</string>
@@ -403,6 +403,55 @@
 		<string>Surya.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%BC%E3%83%AA%E3%83%A4</string>
+	</dict>
+	<key>ヴァルナ（Varuṇa）</key>
+	<dict>
+		<key>description</key>
+		<string>【ヴァルナ（Varuṇa）】
+インド神話における水神様。ミトラとならぶ最高神でもあり、太古のアスラ族、アーディティヤ神群を代表した神様。
+&lt;特徴&gt;
+マカラ（インド神話に登場する怪魚：象のような鼻、とぐろ巻く尾を持つ）に乗っている</string>
+		<key>image</key>
+		<string>Varuna.jpg</string>
+		<key>wikipedia</key>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%AB%E3%83%8A_(%E7%A5%9E)</string>
+	</dict>
+	<key>ヴァーユ（Vayu）</key>
+	<dict>
+		<key>description</key>
+		<string>【ヴァーユ（Vayu）】
+「大気、風」を意味する風を神格化した風神様。仏教では十二天の一柱で西北の守護者。『マハーバーラタ』の英雄ビーマや、『ラーマーヤナ』のハヌマーンはヴァーユの息子とされる。
+&lt;特徴&gt;
+鹿、もしくはニ頭の赤い駿馬がひく戦車に乗る。</string>
+		<key>image</key>
+		<string>Vayu.jpg</string>
+		<key>wikipedia</key>
+		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%A6</string>
+	</dict>
+	<key>クベーラ（Kubera）</key>
+	<dict>
+		<key>description</key>
+		<string>【クベーラ（Kubera）】
+インド神話における富と財宝の神。仏教では「毘沙門天」と音写される。
+千年の修行がブラフマー神に気に入られ神になった。
+&lt;特徴&gt;
+太鼓腹の目立つ姿で描かれる。</string>
+		<key>image</key>
+		<string>Kubera.jpg</string>
+		<key>wikipedia</key>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%99%E3%83%BC%E3%83%A9</string>
+	</dict>
+	<key>ソーマ（Soma）</key>
+	<dict>
+		<key>description</key>
+		<string>【ソーマ（Soma）】
+月の神様。飲めば不老不死になると言われているお酒の 「ソーマ」が生の由来。月の神チャンドラ(Chandra)と同一視される。
+&lt;特徴&gt;
+馬車に乗っている。</string>
+		<key>image</key>
+		<string>Soma.jpg</string>
+		<key>wikipedia</key>
+		<string>https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%9E</string>
 	</dict>
 </dict>
 </plist>

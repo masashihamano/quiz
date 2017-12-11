@@ -17,6 +17,13 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var rankLabel: UILabel!
     @IBOutlet weak var myImageView: UIImageView!
    
+    @IBOutlet weak var godImageView: UIImageView!
+    
+    
+    //プロパティリストから読み込んだデータを格納する配列
+    var GodList:[NSDictionary] = []
+    //選択された名前を保存するメンバ変数
+    var godName = ""
     
     //リスタート音の変数
     var restartAudioPlayer: AVAudioPlayer! = nil
@@ -37,51 +44,102 @@ class ScoreViewController: UIViewController {
     //QuizControllerより引き渡される値を格納する
     var correctProblemNumber: Int!
     
-    //ランクを表示するメソッド
-    func showRank(num: Int) {
-        var text: String
-        switch num {
-        case 0:
-            text = "問題外です"
-            score0AudioPlayer.play()
-        case 10:
-            text = "修行が足りない"
-            score10AudioPlayer.play()
-        case 20:
-            text = "ざんねんでした！"
-            score20AudioPlayer.play()
-        case 30:
-            text = "まだまだです"
-            score30AudioPlayer.play()
-        case 40:
-            text = "もっとがんばりましょう"
-            score40AudioPlayer.play()
-        case 50:
-            text = "もう少し頑張りましょう"
-            score50AudioPlayer.play()
-        case 60:
-            text = "及第点です"
-            score60AudioPlayer.play()
-        case 70:
-            text = "おめでとう！"
-            score70AudioPlayer.play()
-        case 80:
-            text = "素晴らしい！"
-            score80AudioPlayer.play()
-        case 90:
-            text = "満点まであとすこし！"
-            score90AudioPlayer.play()
-        default:
-            text = "神レベル！"
-            score100AudioPlayer.play()
-        }
-        rankLabel.text = text
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        func scoreList(){
+            let scoregodname:Int = Int(arc4random()) % GodList.count
+
+        //ファイルパスを取得(神様が格納されているプロパティリスト)
+        let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
+        // プロパティリストからデータを取得（Dictionary型）
+        let dic = NSDictionary(contentsOfFile: filePath!)
+
+        //画像ファイル名を格納する配列を作成
+        for(key,data) in dic!{
+            print(data)
+            print(key)
+
+            let goddic:NSDictionary = data as! NSDictionary
+            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
+
+            GodList.append(godinfo)
+        }
+
+        //今画面に表示したいデータの取得
+        let detailInfo = GodList[scoregodname]
+            
+//        //今画面に表示したいデータの取得
+//        let detailInfo = dic![scoregodname] as! NSDictionary
+
+        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
+        print(detailInfo["image"] as! String)
+        print(detailInfo["name"] as! String)
+
+            for(key,data) in dic!{
+                print(data)
+                print(key)
+
+                var _:NSDictionary = data as! NSDictionary
+            }
+
+        }
+        
+        //ランクを表示するメソッド
+        func showRank(num: Int) {
+            var text: String
+            switch num {
+            case 0:
+                rankLabel.text = "問題外です"
+                godImageView.image = UIImage(named: "")
+                 score0AudioPlayer.play()
+            case 10:
+                rankLabel.text = "残念でした"
+                godImageView.image = UIImage(named: "Naga.jpg")
+                score10AudioPlayer.play()
+            case 20:
+                rankLabel.text = "修行が足りない"
+                godImageView.image = UIImage(named: "Nandin.jpg")
+                score20AudioPlayer.play()
+            case 30:
+                rankLabel.text = "まだまだです"
+                godImageView.image = UIImage(named: "")
+                score30AudioPlayer.play()
+            case 40:
+                rankLabel.text = "もっとがんばりましょう"
+                godImageView.image = UIImage(named: "")
+                score40AudioPlayer.play()
+            case 50:
+                rankLabel.text = "もう少し頑張りましょう"
+                godImageView.image = UIImage(named: "")
+                score50AudioPlayer.play()
+            case 60:
+                rankLabel.text = "及第点です"
+                godImageView.image = UIImage(named: "")
+                score60AudioPlayer.play()
+            case 70:
+                rankLabel.text = "おめでとう！"
+                godImageView.image = UIImage(named: "")
+                score70AudioPlayer.play()
+            case 80:
+                rankLabel.text = "素晴らしい！"
+                godImageView.image = UIImage(named: "")
+                score80AudioPlayer.play()
+            case 90:
+                rankLabel.text = "パーフェクトまであと1問！"
+                godImageView.image = UIImage(named: "")
+                score90AudioPlayer.play()
+            default:
+                rankLabel.text = "神レベル！"
+                godImageView.image = UIImage(named: "godImg.jpg")
+                score100AudioPlayer.play()
+                
+            }
+        
+        }
+    
+            
         //ボタン押した時の音
         restartSound()
         
@@ -102,14 +160,10 @@ class ScoreViewController: UIViewController {
         myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
         
-        //得点表示
+        //点数表示
         scoreLabel.text = String(correctProblemNumber*10)
         showRank(num: correctProblemNumber*10)
-        
-        //scoe文字の装飾
-        scoreLabel.layer.masksToBounds = true
-        scoreLabel.layer.cornerRadius = scoreLabel.bounds.width / 2
-        scoreLabel.font = UIFont.boldSystemFont(ofSize: 92)
+        scoreLabel.font = UIFont.boldSystemFont(ofSize: 80)
         
         //テキスト文字の枠線
         scoreTitleLabel.layer.borderColor = UIColor.white.cgColor
@@ -119,9 +173,9 @@ class ScoreViewController: UIViewController {
         scoreTitleLabel.font = UIFont.boldSystemFont(ofSize: 62)
         
     }
+
     
-    
-    @IBAction func startBtn(_ sender: UIButton) {
+    @IBAction func restartBtn(_ sender: UIButton) {
 //        performSegue(withIdentifier: "showTitle", sender: nil)
         restartAudioPlayer.play()
     }
@@ -144,7 +198,7 @@ class ScoreViewController: UIViewController {
     
     func score0Sound() {
         // サウンドファイルのパスを生成
-        let soundFile = Bundle.main.path(forResource: "score0", ofType: "wav")! as NSString
+        let soundFile = Bundle.main.path(forResource: "score0", ofType: "mp3")! as NSString
         let soundClear = URL(fileURLWithPath: soundFile as String)
         //AVAudioPlayerのインスタンス化
         do {

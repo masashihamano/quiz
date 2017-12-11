@@ -12,10 +12,9 @@ import AVFoundation
 //プロトコルの設定
 class ListViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
 
-    
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
-     //選択されたエリア名を保存するメンバ変数
+     //選択された名前を保存するメンバ変数
     var godName = ""
     
     //前の画面から受け取るためのプロパティ
@@ -33,11 +32,11 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         //セルをタップした時の音
         cellSound()
         
-        //ファイルパスを取得(エリア名が格納されているプロパティリスト)
+        //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
         // プロパティリストからデータを取得（Dictionary型）
         let dic = NSDictionary(contentsOfFile: filePath!)
-        // TableViewで扱いやすい配列（エリア名の入ってる配列）を作成
+        // TableViewで扱いやすい配列（神様の名前が入ってる配列）を作成
         for(key,data) in dic!{
             print(data)
             print(key)
@@ -79,7 +78,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.listLabel.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
         
-        
+        cell.listLabel.font = UIFont.boldSystemFont(ofSize: 16)
         
 
         return cell
@@ -92,7 +91,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
     
             cellAudioPlayer.play()
             
-            //タップされた行のエリア名を保存
+            //タップされた行の名前を保存
             var godinfo = GodList[indexPath.row] as! NSDictionary
             
             godName = godinfo["name"]  as! String
@@ -108,7 +107,7 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         let secondinfo = segue.destination as!
         DetailViewController
         
-        // 次の画面のプロパティに選択されたエリア名を設定
+        // 次の画面のプロパティに選択された名前を設定
         secondinfo.getGodName = godName
 
     }

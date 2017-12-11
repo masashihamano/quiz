@@ -132,6 +132,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         detailTextView.font = UIFont.systemFont(ofSize: CGFloat(16))
         detailTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(36))
+//        wikiTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
         // 文字の中央寄せ
         wikiTextView.textAlignment = NSTextAlignment.center

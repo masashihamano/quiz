@@ -11,7 +11,7 @@ import AVFoundation
 
 
 class questionViewController: UIViewController, UINavigationBarDelegate, UITextViewDelegate {
-    
+
     
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var QuestionImage: UIImageView!
@@ -89,7 +89,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 /////////ここから問題出題/////////////
    
     func RandomQuestions(){
-        var RandomNumber:Int = Int(arc4random() % 31)
+        var RandomNumber:Int = Int(arc4random() % 35)
         RandomNumber += 1
         allAnswerBtnEnabled()
         
@@ -98,7 +98,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //問題文
         QuestionLabel.text = "Q\(count).What is my name?"
         
-        //ファイルパスを取得(エリア名が格納されているプロパティリスト)
+        //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
         // プロパティリストからデータを取得（Dictionary型）
         let dic = NSDictionary(contentsOfFile: filePath!)
@@ -129,29 +129,42 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }
 
         //4択を表示（不正解）
+        //正解の神様の名前取得
+        var correctGod = GodList[RandomNumber] as! NSDictionary
+        
+//        GodList.remove(at: RandomNumber)
         GodList.remove(at: RandomNumber)
-        var QList = GodList
+        
+        
+        var QList:[NSDictionary] = []
+        
+        for god in GodList {
+            if correctGod != god {
+                print(god["name"] as! String)
+                 QList.append(god)
+            }
+           
+        }
+//        var QList = GodList
 
             var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
             for i in 0...3{
                 
-                RandomNumber = Int(arc4random()) % QList.count
+            let incorrectRandomNumber = Int(arc4random()) % QList.count
                 
-            let detailInfo = QList[RandomNumber]
-                print(RandomNumber, 1)
-                print(RandomNumber, 2)
-                print(RandomNumber, 3)
-                print(RandomNumber, 4)
+            let detailInfo = QList[incorrectRandomNumber]
+                print(incorrectRandomNumber, 1)
+                print(incorrectRandomNumber, 2)
+                print(incorrectRandomNumber, 3)
+                print(incorrectRandomNumber, 4)
             print(detailInfo["name"] as! String)
             selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
                 
                 //オブジェクトを削除、1回使用した選択肢を削除する
                 QList.remove(object: detailInfo)
-            
-                //1回使用した選択肢を削除する
-//                QList.remove(at: RandomNumber)
-                
-            }
+
+        }
+        
         
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
@@ -171,7 +184,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }
         
     }
-    
     
     //セグエを呼び出したときに呼ばれるメソッド
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -217,6 +229,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     }
     
     //◯,×の画像表示
+    //ボタン1が押された時
     @IBAction func answerBtn1Act(_ sender: Any) {
         UnHide()
         if (CorrectAnswer == "1"){
@@ -234,6 +247,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }
     }
+    //ボタン2が押された時
     @IBAction func answerBtn2Act(_ sender: Any) {
         UnHide()
         if (CorrectAnswer == "2"){
@@ -251,6 +265,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }
     }
+    //ボタン3が押された時
     @IBAction func answerBtn3Act(_ sender: Any) {
         UnHide()
         if (CorrectAnswer == "3"){
@@ -268,6 +283,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }
     }
+    //ボタン4が押された時
     @IBAction func answerBtn4Act(_ sender: Any) {
         UnHide()
         if (CorrectAnswer == "4"){
@@ -305,14 +321,14 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                 newVC.correctProblemNumber = self.correctProblemNumber
             }
         }else{
+            //10問目までのアクション
+            quiznum += 1
             oldtimebarhide()
             RandomQuestions()
             Hide()
             timebar()
             nextAudioPlayer.play()
             
-            //問題数
-            quiznum += 1
         }
     }
     
@@ -320,7 +336,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     func timebar() {
         // 制限時間バーの高さ・幅
-        let barHeight = scHei*0.015
+        let barHeight = scHei*0.018
         let barWidth = scWid*0.855
         
         // 制限時間バーのX(横)座標・Y(縦)座標・終端のX座標
@@ -379,13 +395,19 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         layer.timeOffset = pausedTime
     }
     
-    //時間制限バーのイメージを隠す
+    //前の問題の時間制限バーを隠す
     func oldtimebarhide() {
             barImageView.isHidden = true
     }
     
 //////タイマー関連ここまで////////
     
+    //Nextボタンの表示させる
+    func nextBtn(){
+        let nextImg = Next.setImage(UIImage(named: "next.png"), for: .normal)
+    }
+    
+    //正解音の作成
     func yesSound() {
         // サウンドファイルのパスを生成
         let soundFile = Bundle.main.path(forResource: "yes", ofType: "mp3")! as NSString
@@ -400,6 +422,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         yesAudioPlayer.prepareToPlay()
     }
     
+    //不正解音の作成
     func noSound() {
         // サウンドファイルのパスを生成
         let soundFile = Bundle.main.path(forResource: "no", ofType: "mp3")! as NSString
@@ -413,6 +436,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         noAudioPlayer.prepareToPlay()
     }
     
+    //nextボタンの音を作成
     func nextSound() {
         // サウンドファイルのパスを生成
         let soundFile = Bundle.main.path(forResource: "next", ofType: "wav")! as NSString
@@ -426,29 +450,20 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         nextAudioPlayer.prepareToPlay()
     }
     
-    //Nextボタンの表示
-    func nextBtn(){
-        let nextImg = Next.setImage(UIImage(named: "next.png"), for: .normal)
-    }
-   
-    
   
     
-
-    //選択肢が重複する
-    //→ 現状ランダムで4択を表示し、正解を差し替えている。始めに表示した4択と正解の選択肢がわずかな可能性で重複してしまう
-    
-    
-    //点数ごとにscore画面変える
     //オートレイアウト
-    
-    
     //多言語化対応
+    
+    
+    //点数ごとにscore画面変える　→ Plistに番号ふるって分ける
+    //タイトル画面にランダム配置
     //アイコン(1024x1024)、説明文
+    
+    
     //時々エラーになる
     
  
-    
     
     /*
      // MARK: - Navigation

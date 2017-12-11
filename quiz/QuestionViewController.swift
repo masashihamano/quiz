@@ -96,7 +96,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //問題数の表示
         count += 1
         //問題文
-        QuestionLabel.text = "Q\(count).What is my name?"
+        QuestionLabel.text = NSLocalizedString("Q\(count).私の名前は何でしょう?", comment: "")
         
         //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -452,13 +452,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
   
     
-    //オートレイアウト
-    //多言語化対応
-    
-    
-    //点数ごとにscore画面変える　→ Plistに番号ふるって分ける
-    //タイトル画面にランダム配置
+
+    //多言語化対応 → xlifeやらない？、NSLocalizedStrings書く前まで
     //アイコン(1024x1024)、説明文
+    
+    //点数ごとにscore画面変える　→ Plistに番号ふるって分ける?
+    //タイトル画面にランダム配置
+
     
     
     //時々エラーになる

@@ -9,33 +9,20 @@
 /* Begin PBXBuildFile section */
 		B600C1B21FC1D4AF005A4CC9 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */; };
 		B605C0851FC673F700CA98F8 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B605C0841FC673F700CA98F8 /* ScoreViewController.swift */; };
-		B608690B1FDE9751009EF361 /* Budha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608690A1FDE9751009EF361 /* Budha.jpg */; };
-		B608690D1FDE9769009EF361 /* Ganga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608690C1FDE9768009EF361 /* Ganga.jpg */; };
-		B608690F1FDE9794009EF361 /* Hanuman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608690E1FDE9793009EF361 /* Hanuman.jpg */; };
-		B60869111FDE97B1009EF361 /* Kali.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60869101FDE97B1009EF361 /* Kali.jpg */; };
 		B60869131FDE97FD009EF361 /* Matsya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60869121FDE97FD009EF361 /* Matsya.jpg */; };
-		B60869151FDE9818009EF361 /* Nrisimha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60869141FDE9818009EF361 /* Nrisimha.jpg */; };
 		B60869171FDE9834009EF361 /* Parasurama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60869161FDE9834009EF361 /* Parasurama.jpg */; };
 		B60869191FDE985F009EF361 /* Rama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60869181FDE985F009EF361 /* Rama.jpg */; };
 		B608691B1FDE9871009EF361 /* Shiva.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608691A1FDE9871009EF361 /* Shiva.jpg */; };
 		B608691D1FDE98B0009EF361 /* Skanda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608691C1FDE98AF009EF361 /* Skanda.jpg */; };
-		B608691F1FDE98C9009EF361 /* Surya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608691E1FDE98C8009EF361 /* Surya.jpg */; };
 		B608AF111FC19551009869EB /* Ravana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B608AF101FC19551009869EB /* Ravana.jpg */; };
 		B609F9AF1FD5B6DB00374310 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */; };
+		B60D53961FDEFD6F00E0AB59 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60D53951FDEFD6F00E0AB59 /* title.jpg */; };
 		B60E9E001FC070D000BE988A /* Agni.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DDE1FC070CF00BE988A /* Agni.jpg */; };
-		B60E9E021FC070D000BE988A /* Brahma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE01FC070CF00BE988A /* Brahma.jpg */; };
-		B60E9E031FC070D000BE988A /* Dakini.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE11FC070CF00BE988A /* Dakini.jpg */; };
-		B60E9E041FC070D000BE988A /* Durga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE21FC070CF00BE988A /* Durga.jpg */; };
-		B60E9E061FC070D000BE988A /* Ganesa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE41FC070CF00BE988A /* Ganesa.jpg */; };
 		B60E9E0B1FC070D000BE988A /* Indra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DE91FC070CF00BE988A /* Indra.jpg */; };
 		B60E9E0C1FC070D000BE988A /* Jagannatha.gif in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DEA1FC070CF00BE988A /* Jagannatha.gif */; };
 		B60E9E121FC070D000BE988A /* Krsna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DF01FC070CF00BE988A /* Krsna.jpg */; };
-		B60E9E131FC070D000BE988A /* Lakshmi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DF11FC070CF00BE988A /* Lakshmi.jpg */; };
 		B60E9E151FC070D000BE988A /* Minakshi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DF31FC070CF00BE988A /* Minakshi.jpg */; };
-		B60E9E171FC070D000BE988A /* Naga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DF51FC070CF00BE988A /* Naga.jpg */; };
 		B60E9E181FC070D000BE988A /* Nandin.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DF61FC070CF00BE988A /* Nandin.jpg */; };
-		B60E9E1C1FC070D000BE988A /* Sarasvati.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DFA1FC070CF00BE988A /* Sarasvati.jpg */; };
-		B60E9E211FC070D000BE988A /* Vishnu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B60E9DFF1FC070CF00BE988A /* Vishnu.jpg */; };
 		B60F293D1FC813B400238C25 /* yes.png in Resources */ = {isa = PBXBuildFile; fileRef = B60F293C1FC813B400238C25 /* yes.png */; };
 		B60F293F1FC813CD00238C25 /* no.png in Resources */ = {isa = PBXBuildFile; fileRef = B60F293E1FC813CD00238C25 /* no.png */; };
 		B6109EA01FB87585007B0776 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6109E9F1FB87585007B0776 /* AppDelegate.swift */; };
@@ -44,10 +31,12 @@
 		B6109EAA1FB87585007B0776 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6109EA81FB87585007B0776 /* LaunchScreen.storyboard */; };
 		B6109EB51FB87585007B0776 /* quizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6109EB41FB87585007B0776 /* quizTests.swift */; };
 		B6109EC01FB87585007B0776 /* quizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6109EBF1FB87585007B0776 /* quizUITests.swift */; };
+		B610DE111FDEC310007CE559 /* Kubera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B610DE101FDEC310007CE559 /* Kubera.jpg */; };
+		B610DE131FDEC4D6007CE559 /* Dakini.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B610DE121FDEC4D6007CE559 /* Dakini.jpg */; };
+		B610DE151FDEC5DD007CE559 /* Sarasvati.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B610DE141FDEC5DD007CE559 /* Sarasvati.jpg */; };
 		B610EF221FCFEECD00A56756 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B610EF211FCFEEC100A56756 /* AVFoundation.framework */; };
 		B610EF2C1FCFFC8700A56756 /* yes.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B610EF2B1FCFFC8700A56756 /* yes.mp3 */; };
 		B61227B91FBDE0180063B159 /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B61227B71FBDE0180063B159 /* background.jpg */; };
-		B61227BA1FBDE0180063B159 /* title.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B61227B81FBDE0180063B159 /* title.jpg */; };
 		B61227BC1FBDEB140063B159 /* QuestionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B61227BB1FBDEB140063B159 /* QuestionViewController.swift */; };
 		B612B1131FC152F800C12E4C /* GodList.plist in Resources */ = {isa = PBXBuildFile; fileRef = B612B1121FC152F800C12E4C /* GodList.plist */; };
 		B612FCB71FDBDDA9007D10B7 /* next.wav in Resources */ = {isa = PBXBuildFile; fileRef = B612FCB61FDBDDA8007D10B7 /* next.wav */; };
@@ -66,15 +55,27 @@
 		B612FCD71FDC392B007D10B7 /* faq.png in Resources */ = {isa = PBXBuildFile; fileRef = B612FCD61FDC392B007D10B7 /* faq.png */; };
 		B612FCD91FDC3A05007D10B7 /* list.png in Resources */ = {isa = PBXBuildFile; fileRef = B612FCD81FDC3A05007D10B7 /* list.png */; };
 		B6139F2C1FC7A7BB00A5C4E3 /* TitleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */; };
-		B6197A4E1FDEA8C300522E3D /* parvathi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6197A4D1FDEA8C300522E3D /* parvathi.jpg */; };
+		B614058F1FDEEAD600ADA725 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B61405911FDEEAD600ADA725 /* Localizable.strings */; };
+		B615A1D81FDEB4DE002C92E4 /* Naga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1D71FDEB4DE002C92E4 /* Naga.jpg */; };
+		B615A1DA1FDEB5DA002C92E4 /* Nrisimha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1D91FDEB5DA002C92E4 /* Nrisimha.jpg */; };
+		B615A1DC1FDEB705002C92E4 /* Surya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1DB1FDEB704002C92E4 /* Surya.jpg */; };
+		B615A1DE1FDEB76F002C92E4 /* Vamana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1DD1FDEB76F002C92E4 /* Vamana.jpg */; };
+		B615A1E21FDEB882002C92E4 /* Vishnu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1E11FDEB881002C92E4 /* Vishnu.jpg */; };
+		B615A1E41FDEB955002C92E4 /* Kali.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1E31FDEB954002C92E4 /* Kali.jpg */; };
+		B615A1E61FDEBBD4002C92E4 /* Hanuman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1E51FDEBBD3002C92E4 /* Hanuman.jpg */; };
+		B615A1E81FDEBC75002C92E4 /* Ganga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1E71FDEBC75002C92E4 /* Ganga.jpg */; };
+		B615A1EA1FDEBCD3002C92E4 /* Budha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1E91FDEBCD3002C92E4 /* Budha.jpg */; };
+		B615A1EC1FDEBD79002C92E4 /* Ganesa.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1EB1FDEBD79002C92E4 /* Ganesa.jpg */; };
+		B615A1EE1FDEBE61002C92E4 /* Brahma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1ED1FDEBE61002C92E4 /* Brahma.jpg */; };
+		B615A1F01FDEC0E9002C92E4 /* Durga.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1EF1FDEC0E9002C92E4 /* Durga.jpg */; };
+		B615A1F21FDEC180002C92E4 /* Soma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1F11FDEC180002C92E4 /* Soma.jpg */; };
+		B615A1F41FDEC24B002C92E4 /* Lakshmi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B615A1F31FDEC24B002C92E4 /* Lakshmi.jpg */; };
+		B6197A4E1FDEA8C300522E3D /* Parvathi.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B6197A4D1FDEA8C300522E3D /* Parvathi.jpg */; };
 		B64AE8651FDD446B008043C4 /* Yama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8641FDD446B008043C4 /* Yama.jpg */; };
 		B64AE8691FDD48E2008043C4 /* Varuna.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8681FDD48E2008043C4 /* Varuna.jpg */; };
 		B64AE86B1FDD5019008043C4 /* Vayu.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE86A1FDD5019008043C4 /* Vayu.jpg */; };
-		B64AE86D1FDD564B008043C4 /* Kubera.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE86C1FDD564B008043C4 /* Kubera.jpg */; };
-		B64AE86F1FDD5C50008043C4 /* Soma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE86E1FDD5C4F008043C4 /* Soma.jpg */; };
 		B64AE8711FDD609A008043C4 /* Kurma.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8701FDD609A008043C4 /* Kurma.jpg */; };
 		B64AE8731FDD66E7008043C4 /* Kama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8721FDD66E6008043C4 /* Kama.jpg */; };
-		B64AE8751FDD677F008043C4 /* Vamana.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8741FDD677E008043C4 /* Vamana.jpg */; };
 		B64AE8771FDD67FC008043C4 /* Varaha.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8761FDD67FC008043C4 /* Varaha.jpg */; };
 		B64AE8791FDD6F82008043C4 /* score40.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B64AE8781FDD6F82008043C4 /* score40.mp3 */; };
 		B64AE87B1FDD7D35008043C4 /* godImg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B64AE87A1FDD7D35008043C4 /* godImg.jpg */; };
@@ -105,33 +106,20 @@
 /* Begin PBXFileReference section */
 		B600C1B11FC1D4AF005A4CC9 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		B605C0841FC673F700CA98F8 /* ScoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
-		B608690A1FDE9751009EF361 /* Budha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Budha.jpg; sourceTree = "<group>"; };
-		B608690C1FDE9768009EF361 /* Ganga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ganga.jpg; sourceTree = "<group>"; };
-		B608690E1FDE9793009EF361 /* Hanuman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hanuman.jpg; sourceTree = "<group>"; };
-		B60869101FDE97B1009EF361 /* Kali.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kali.jpg; sourceTree = "<group>"; };
 		B60869121FDE97FD009EF361 /* Matsya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Matsya.jpg; sourceTree = "<group>"; };
-		B60869141FDE9818009EF361 /* Nrisimha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nrisimha.jpg; sourceTree = "<group>"; };
 		B60869161FDE9834009EF361 /* Parasurama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parasurama.jpg; sourceTree = "<group>"; };
 		B60869181FDE985F009EF361 /* Rama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Rama.jpg; sourceTree = "<group>"; };
 		B608691A1FDE9871009EF361 /* Shiva.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Shiva.jpg; sourceTree = "<group>"; };
 		B608691C1FDE98AF009EF361 /* Skanda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Skanda.jpg; sourceTree = "<group>"; };
-		B608691E1FDE98C8009EF361 /* Surya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Surya.jpg; sourceTree = "<group>"; };
 		B608AF101FC19551009869EB /* Ravana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ravana.jpg; sourceTree = "<group>"; };
 		B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		B60D53951FDEFD6F00E0AB59 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
 		B60E9DDE1FC070CF00BE988A /* Agni.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Agni.jpg; sourceTree = "<group>"; };
-		B60E9DE01FC070CF00BE988A /* Brahma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Brahma.jpg; sourceTree = "<group>"; };
-		B60E9DE11FC070CF00BE988A /* Dakini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dakini.jpg; sourceTree = "<group>"; };
-		B60E9DE21FC070CF00BE988A /* Durga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Durga.jpg; sourceTree = "<group>"; };
-		B60E9DE41FC070CF00BE988A /* Ganesa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ganesa.jpg; sourceTree = "<group>"; };
 		B60E9DE91FC070CF00BE988A /* Indra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Indra.jpg; sourceTree = "<group>"; };
 		B60E9DEA1FC070CF00BE988A /* Jagannatha.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Jagannatha.gif; sourceTree = "<group>"; };
 		B60E9DF01FC070CF00BE988A /* Krsna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Krsna.jpg; sourceTree = "<group>"; };
-		B60E9DF11FC070CF00BE988A /* Lakshmi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lakshmi.jpg; sourceTree = "<group>"; };
 		B60E9DF31FC070CF00BE988A /* Minakshi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Minakshi.jpg; sourceTree = "<group>"; };
-		B60E9DF51FC070CF00BE988A /* Naga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Naga.jpg; sourceTree = "<group>"; };
 		B60E9DF61FC070CF00BE988A /* Nandin.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nandin.jpg; sourceTree = "<group>"; };
-		B60E9DFA1FC070CF00BE988A /* Sarasvati.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sarasvati.jpg; sourceTree = "<group>"; };
-		B60E9DFF1FC070CF00BE988A /* Vishnu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vishnu.jpg; sourceTree = "<group>"; };
 		B60F293C1FC813B400238C25 /* yes.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yes.png; sourceTree = "<group>"; };
 		B60F293E1FC813CD00238C25 /* no.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no.png; sourceTree = "<group>"; };
 		B6109E9C1FB87585007B0776 /* quiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = quiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,10 +134,12 @@
 		B6109EBB1FB87585007B0776 /* quizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = quizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6109EBF1FB87585007B0776 /* quizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = quizUITests.swift; sourceTree = "<group>"; };
 		B6109EC11FB87585007B0776 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B610DE101FDEC310007CE559 /* Kubera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kubera.jpg; sourceTree = "<group>"; };
+		B610DE121FDEC4D6007CE559 /* Dakini.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Dakini.jpg; sourceTree = "<group>"; };
+		B610DE141FDEC5DD007CE559 /* Sarasvati.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sarasvati.jpg; sourceTree = "<group>"; };
 		B610EF211FCFEEC100A56756 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		B610EF2B1FCFFC8700A56756 /* yes.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yes.mp3; sourceTree = "<group>"; };
 		B61227B71FBDE0180063B159 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
-		B61227B81FBDE0180063B159 /* title.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = title.jpg; sourceTree = "<group>"; };
 		B61227BB1FBDEB140063B159 /* QuestionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewController.swift; sourceTree = "<group>"; };
 		B612B1121FC152F800C12E4C /* GodList.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = GodList.plist; sourceTree = "<group>"; };
 		B612FCB61FDBDDA8007D10B7 /* next.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = next.wav; sourceTree = "<group>"; };
@@ -168,15 +158,29 @@
 		B612FCD61FDC392B007D10B7 /* faq.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = faq.png; sourceTree = "<group>"; };
 		B612FCD81FDC3A05007D10B7 /* list.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = list.png; sourceTree = "<group>"; };
 		B6139F2B1FC7A7BB00A5C4E3 /* TitleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TitleViewController.swift; sourceTree = "<group>"; };
-		B6197A4D1FDEA8C300522E3D /* parvathi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = parvathi.jpg; sourceTree = "<group>"; };
+		B614058B1FDEE61B00ADA725 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Main.strings; sourceTree = "<group>"; };
+		B614058C1FDEE61B00ADA725 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B61405901FDEEAD600ADA725 /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B615A1D71FDEB4DE002C92E4 /* Naga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Naga.jpg; sourceTree = "<group>"; };
+		B615A1D91FDEB5DA002C92E4 /* Nrisimha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Nrisimha.jpg; sourceTree = "<group>"; };
+		B615A1DB1FDEB704002C92E4 /* Surya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Surya.jpg; sourceTree = "<group>"; };
+		B615A1DD1FDEB76F002C92E4 /* Vamana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vamana.jpg; sourceTree = "<group>"; };
+		B615A1E11FDEB881002C92E4 /* Vishnu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vishnu.jpg; sourceTree = "<group>"; };
+		B615A1E31FDEB954002C92E4 /* Kali.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kali.jpg; sourceTree = "<group>"; };
+		B615A1E51FDEBBD3002C92E4 /* Hanuman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Hanuman.jpg; sourceTree = "<group>"; };
+		B615A1E71FDEBC75002C92E4 /* Ganga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ganga.jpg; sourceTree = "<group>"; };
+		B615A1E91FDEBCD3002C92E4 /* Budha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Budha.jpg; sourceTree = "<group>"; };
+		B615A1EB1FDEBD79002C92E4 /* Ganesa.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Ganesa.jpg; sourceTree = "<group>"; };
+		B615A1ED1FDEBE61002C92E4 /* Brahma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Brahma.jpg; sourceTree = "<group>"; };
+		B615A1EF1FDEC0E9002C92E4 /* Durga.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Durga.jpg; sourceTree = "<group>"; };
+		B615A1F11FDEC180002C92E4 /* Soma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soma.jpg; sourceTree = "<group>"; };
+		B615A1F31FDEC24B002C92E4 /* Lakshmi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lakshmi.jpg; sourceTree = "<group>"; };
+		B6197A4D1FDEA8C300522E3D /* Parvathi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parvathi.jpg; sourceTree = "<group>"; };
 		B64AE8641FDD446B008043C4 /* Yama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yama.jpg; sourceTree = "<group>"; };
 		B64AE8681FDD48E2008043C4 /* Varuna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Varuna.jpg; sourceTree = "<group>"; };
 		B64AE86A1FDD5019008043C4 /* Vayu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vayu.jpg; sourceTree = "<group>"; };
-		B64AE86C1FDD564B008043C4 /* Kubera.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kubera.jpg; sourceTree = "<group>"; };
-		B64AE86E1FDD5C4F008043C4 /* Soma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soma.jpg; sourceTree = "<group>"; };
 		B64AE8701FDD609A008043C4 /* Kurma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kurma.jpg; sourceTree = "<group>"; };
 		B64AE8721FDD66E6008043C4 /* Kama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Kama.jpg; sourceTree = "<group>"; };
-		B64AE8741FDD677E008043C4 /* Vamana.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vamana.jpg; sourceTree = "<group>"; };
 		B64AE8761FDD67FC008043C4 /* Varaha.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Varaha.jpg; sourceTree = "<group>"; };
 		B64AE8781FDD6F82008043C4 /* score40.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = score40.mp3; sourceTree = "<group>"; };
 		B64AE87A1FDD7D35008043C4 /* godImg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = godImg.jpg; sourceTree = "<group>"; };
@@ -217,40 +221,40 @@
 			isa = PBXGroup;
 			children = (
 				B60E9DDE1FC070CF00BE988A /* Agni.jpg */,
-				B60E9DE01FC070CF00BE988A /* Brahma.jpg */,
-				B608690A1FDE9751009EF361 /* Budha.jpg */,
-				B60E9DE11FC070CF00BE988A /* Dakini.jpg */,
-				B60E9DE21FC070CF00BE988A /* Durga.jpg */,
-				B608690C1FDE9768009EF361 /* Ganga.jpg */,
-				B60E9DE41FC070CF00BE988A /* Ganesa.jpg */,
-				B608690E1FDE9793009EF361 /* Hanuman.jpg */,
+				B615A1ED1FDEBE61002C92E4 /* Brahma.jpg */,
+				B615A1E91FDEBCD3002C92E4 /* Budha.jpg */,
+				B610DE121FDEC4D6007CE559 /* Dakini.jpg */,
+				B615A1EF1FDEC0E9002C92E4 /* Durga.jpg */,
+				B615A1EB1FDEBD79002C92E4 /* Ganesa.jpg */,
+				B615A1E71FDEBC75002C92E4 /* Ganga.jpg */,
+				B615A1E51FDEBBD3002C92E4 /* Hanuman.jpg */,
 				B60E9DE91FC070CF00BE988A /* Indra.jpg */,
 				B60E9DEA1FC070CF00BE988A /* Jagannatha.gif */,
-				B60869101FDE97B1009EF361 /* Kali.jpg */,
-				B64AE86E1FDD5C4F008043C4 /* Soma.jpg */,
+				B615A1E31FDEB954002C92E4 /* Kali.jpg */,
+				B615A1F11FDEC180002C92E4 /* Soma.jpg */,
 				B608691C1FDE98AF009EF361 /* Skanda.jpg */,
 				B64AE8721FDD66E6008043C4 /* Kama.jpg */,
 				B64AE8701FDD609A008043C4 /* Kurma.jpg */,
 				B60E9DF01FC070CF00BE988A /* Krsna.jpg */,
-				B60E9DF11FC070CF00BE988A /* Lakshmi.jpg */,
-				B64AE86C1FDD564B008043C4 /* Kubera.jpg */,
+				B610DE101FDEC310007CE559 /* Kubera.jpg */,
+				B615A1F31FDEC24B002C92E4 /* Lakshmi.jpg */,
 				B60E9DF31FC070CF00BE988A /* Minakshi.jpg */,
-				B60E9DF51FC070CF00BE988A /* Naga.jpg */,
+				B615A1D71FDEB4DE002C92E4 /* Naga.jpg */,
 				B60869121FDE97FD009EF361 /* Matsya.jpg */,
 				B60E9DF61FC070CF00BE988A /* Nandin.jpg */,
-				B60869141FDE9818009EF361 /* Nrisimha.jpg */,
-				B6197A4D1FDEA8C300522E3D /* parvathi.jpg */,
+				B615A1D91FDEB5DA002C92E4 /* Nrisimha.jpg */,
+				B6197A4D1FDEA8C300522E3D /* Parvathi.jpg */,
 				B60869161FDE9834009EF361 /* Parasurama.jpg */,
 				B60869181FDE985F009EF361 /* Rama.jpg */,
 				B608AF101FC19551009869EB /* Ravana.jpg */,
-				B60E9DFA1FC070CF00BE988A /* Sarasvati.jpg */,
+				B610DE141FDEC5DD007CE559 /* Sarasvati.jpg */,
 				B608691A1FDE9871009EF361 /* Shiva.jpg */,
-				B608691E1FDE98C8009EF361 /* Surya.jpg */,
-				B64AE8741FDD677E008043C4 /* Vamana.jpg */,
+				B615A1DB1FDEB704002C92E4 /* Surya.jpg */,
+				B615A1DD1FDEB76F002C92E4 /* Vamana.jpg */,
 				B64AE8761FDD67FC008043C4 /* Varaha.jpg */,
 				B64AE8681FDD48E2008043C4 /* Varuna.jpg */,
 				B64AE86A1FDD5019008043C4 /* Vayu.jpg */,
-				B60E9DFF1FC070CF00BE988A /* Vishnu.jpg */,
+				B615A1E11FDEB881002C92E4 /* Vishnu.jpg */,
 				B64AE8641FDD446B008043C4 /* Yama.jpg */,
 			);
 			path = question_img;
@@ -295,6 +299,7 @@
 				B6109EAB1FB87585007B0776 /* Info.plist */,
 				B612B1121FC152F800C12E4C /* GodList.plist */,
 				B609F9AE1FD5B6DB00374310 /* CustomTableViewCell.swift */,
+				B61405911FDEEAD600ADA725 /* Localizable.strings */,
 			);
 			path = quiz;
 			sourceTree = "<group>";
@@ -357,7 +362,7 @@
 				B612FCD81FDC3A05007D10B7 /* list.png */,
 				B612FCD61FDC392B007D10B7 /* faq.png */,
 				B61227B71FBDE0180063B159 /* background.jpg */,
-				B61227B81FBDE0180063B159 /* title.jpg */,
+				B60D53951FDEFD6F00E0AB59 /* title.jpg */,
 				B60F293C1FC813B400238C25 /* yes.png */,
 				B60F293E1FC813CD00238C25 /* no.png */,
 				B6F6D27E1FC043FD00E71650 /* next.png */,
@@ -472,10 +477,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B608690B1FDE9751009EF361 /* Budha.jpg in Resources */,
+				B615A1EA1FDEBCD3002C92E4 /* Budha.jpg in Resources */,
 				B60E9E0B1FC070D000BE988A /* Indra.jpg in Resources */,
-				B60E9E131FC070D000BE988A /* Lakshmi.jpg in Resources */,
 				B64AE86B1FDD5019008043C4 /* Vayu.jpg in Resources */,
+				B610DE111FDEC310007CE559 /* Kubera.jpg in Resources */,
+				B615A1F41FDEC24B002C92E4 /* Lakshmi.jpg in Resources */,
 				B60E9E151FC070D000BE988A /* Minakshi.jpg in Resources */,
 				B612FCC91FDBE36C007D10B7 /* score10.wav in Resources */,
 				B64AE8691FDD48E2008043C4 /* Varuna.jpg in Resources */,
@@ -487,57 +493,57 @@
 				B60E9E001FC070D000BE988A /* Agni.jpg in Resources */,
 				B612FCCC1FDBE36C007D10B7 /* score100.wav in Resources */,
 				B6F6D27F1FC043FE00E71650 /* next.png in Resources */,
-				B60E9E021FC070D000BE988A /* Brahma.jpg in Resources */,
 				B612FCCE1FDBE36C007D10B7 /* score80.mp3 in Resources */,
 				B612B1131FC152F800C12E4C /* GodList.plist in Resources */,
-				B64AE86D1FDD564B008043C4 /* Kubera.jpg in Resources */,
 				B612FCD01FDBE36C007D10B7 /* score30.mp3 in Resources */,
 				B608691D1FDE98B0009EF361 /* Skanda.jpg in Resources */,
 				B612FCC71FDBE36C007D10B7 /* score0.mp3 in Resources */,
+				B615A1EC1FDEBD79002C92E4 /* Ganesa.jpg in Resources */,
 				B64AE8771FDD67FC008043C4 /* Varaha.jpg in Resources */,
 				B608AF111FC19551009869EB /* Ravana.jpg in Resources */,
+				B615A1E21FDEB882002C92E4 /* Vishnu.jpg in Resources */,
 				B60869171FDE9834009EF361 /* Parasurama.jpg in Resources */,
 				B64AE87B1FDD7D35008043C4 /* godImg.jpg in Resources */,
-				B60E9E211FC070D000BE988A /* Vishnu.jpg in Resources */,
+				B615A1D81FDEB4DE002C92E4 /* Naga.jpg in Resources */,
 				B60869131FDE97FD009EF361 /* Matsya.jpg in Resources */,
 				B60F293D1FC813B400238C25 /* yes.png in Resources */,
+				B615A1DA1FDEB5DA002C92E4 /* Nrisimha.jpg in Resources */,
+				B610DE131FDEC4D6007CE559 /* Dakini.jpg in Resources */,
 				B612FCD91FDC3A05007D10B7 /* list.png in Resources */,
+				B60D53961FDEFD6F00E0AB59 /* title.jpg in Resources */,
 				B60E9E121FC070D000BE988A /* Krsna.jpg in Resources */,
-				B60869151FDE9818009EF361 /* Nrisimha.jpg in Resources */,
 				B6B82A741FD99550003589A3 /* restart.wav in Resources */,
 				B612FCCB1FDBE36C007D10B7 /* score60.wav in Resources */,
 				B610EF2C1FCFFC8700A56756 /* yes.mp3 in Resources */,
 				B612FCBB1FDBDF7F007D10B7 /* cell.wav in Resources */,
+				B615A1DE1FDEB76F002C92E4 /* Vamana.jpg in Resources */,
+				B615A1EE1FDEBE61002C92E4 /* Brahma.jpg in Resources */,
+				B615A1E61FDEBBD4002C92E4 /* Hanuman.jpg in Resources */,
 				B61227B91FBDE0180063B159 /* background.jpg in Resources */,
-				B60E9E061FC070D000BE988A /* Ganesa.jpg in Resources */,
-				B608690F1FDE9794009EF361 /* Hanuman.jpg in Resources */,
 				B6109EA71FB87585007B0776 /* Assets.xcassets in Resources */,
 				B64AE8711FDD609A008043C4 /* Kurma.jpg in Resources */,
 				B6B82A721FD9901A003589A3 /* wiki.wav in Resources */,
 				B6109EA51FB87585007B0776 /* Main.storyboard in Resources */,
 				B612FCCD1FDBE36C007D10B7 /* score70.mp3 in Resources */,
-				B60869111FDE97B1009EF361 /* Kali.jpg in Resources */,
-				B64AE8751FDD677F008043C4 /* Vamana.jpg in Resources */,
 				B608691B1FDE9871009EF361 /* Shiva.jpg in Resources */,
-				B60E9E171FC070D000BE988A /* Naga.jpg in Resources */,
 				B612FCCA1FDBE36C007D10B7 /* score50.mp3 in Resources */,
-				B608691F1FDE98C9009EF361 /* Surya.jpg in Resources */,
 				B60869191FDE985F009EF361 /* Rama.jpg in Resources */,
-				B608690D1FDE9769009EF361 /* Ganga.jpg in Resources */,
+				B615A1DC1FDEB705002C92E4 /* Surya.jpg in Resources */,
+				B615A1E81FDEBC75002C92E4 /* Ganga.jpg in Resources */,
+				B610DE151FDEC5DD007CE559 /* Sarasvati.jpg in Resources */,
 				B612FCD71FDC392B007D10B7 /* faq.png in Resources */,
 				B64AE8731FDD66E7008043C4 /* Kama.jpg in Resources */,
+				B614058F1FDEEAD600ADA725 /* Localizable.strings in Resources */,
+				B615A1F21FDEC180002C92E4 /* Soma.jpg in Resources */,
 				B612FCB71FDBDDA9007D10B7 /* next.wav in Resources */,
-				B60E9E031FC070D000BE988A /* Dakini.jpg in Resources */,
 				B612FCD11FDBE36C007D10B7 /* score90.mp3 in Resources */,
-				B61227BA1FBDE0180063B159 /* title.jpg in Resources */,
-				B6197A4E1FDEA8C300522E3D /* parvathi.jpg in Resources */,
+				B6197A4E1FDEA8C300522E3D /* Parvathi.jpg in Resources */,
 				B64AE8651FDD446B008043C4 /* Yama.jpg in Resources */,
 				B64AE8791FDD6F82008043C4 /* score40.mp3 in Resources */,
-				B64AE86F1FDD5C50008043C4 /* Soma.jpg in Resources */,
-				B60E9E1C1FC070D000BE988A /* Sarasvati.jpg in Resources */,
 				B6FDEB831FD40211004F9F0F /* no.mp3 in Resources */,
-				B60E9E041FC070D000BE988A /* Durga.jpg in Resources */,
+				B615A1E41FDEB955002C92E4 /* Kali.jpg in Resources */,
 				B60E9E0C1FC070D000BE988A /* Jagannatha.gif in Resources */,
+				B615A1F01FDEC0E9002C92E4 /* Durga.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -608,6 +614,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B6109EA41FB87585007B0776 /* Base */,
+				B614058B1FDEE61B00ADA725 /* ja */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -616,8 +623,17 @@
 			isa = PBXVariantGroup;
 			children = (
 				B6109EA91FB87585007B0776 /* Base */,
+				B614058C1FDEE61B00ADA725 /* ja */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B61405911FDEEAD600ADA725 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B61405901FDEEAD600ADA725 /* ja */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -627,6 +643,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -684,6 +701,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

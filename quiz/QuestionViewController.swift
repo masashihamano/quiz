@@ -96,7 +96,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //問題数の表示
         count += 1
         //問題文
-        QuestionLabel.text = NSLocalizedString("Q\(count).私の名前は何でしょう?", comment: "")
+        QuestionLabel.text = "Q\(count)." + NSLocalizedString("question", comment: "")
         
         //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -115,7 +115,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }
         
         //今画面に表示したいデータの取得
-        let detailInfo = GodList[RandomNumber]
+        var detailInfo = GodList[RandomNumber]  //ここ原因？
 
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["image"] as! String)
@@ -193,6 +193,9 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             let ScoreViewController = segue.destination as! ScoreViewController
             //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
             ScoreViewController.correctProblemNumber = correctProblemNumber
+            
+            
+            
         }
     }
     
@@ -234,6 +237,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "1"){
             resultImage.image = UIImage(named: "yes.png")
+            resultImage.alpha = 0.9
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
@@ -241,6 +245,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            resultImage.alpha = 0.9
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
@@ -252,6 +257,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "2"){
             resultImage.image = UIImage(named: "yes.png")
+            resultImage.alpha = 0.9
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
@@ -259,6 +265,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            resultImage.alpha = 0.9
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
@@ -270,6 +277,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "3"){
             resultImage.image = UIImage(named: "yes.png")
+            resultImage.alpha = 0.9
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
@@ -277,6 +285,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            resultImage.alpha = 0.9
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
@@ -288,6 +297,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         UnHide()
         if (CorrectAnswer == "4"){
             resultImage.image = UIImage(named: "yes.png")
+            resultImage.alpha = 0.9
             yesAudioPlayer.play()
             correctProblemNumber += 1
             allAnswerBtnDisabled()
@@ -295,6 +305,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             nextBtn()
         }else{
             resultImage.image = UIImage(named: "no.png")
+            resultImage.alpha = 0.9
             noAudioPlayer.play()
             allAnswerBtnDisabled()
             timerbarStop()
@@ -336,12 +347,12 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     func timebar() {
         // 制限時間バーの高さ・幅
-        let barHeight = scHei*0.018
-        let barWidth = scWid*0.855
+        let barHeight = scHei*0.01
+        let barWidth = scWid*0.87
         
         // 制限時間バーのX(横)座標・Y(縦)座標・終端のX座標
-        let barXPosition = scWid*0.1
-        let barYPosition = scHei*0.025
+        let barXPosition = scWid*0.11
+        let barYPosition = scHei*0.0375
         let barXPositionEnd = barXPosition + barWidth
         
         // UIImageViewを初期化
@@ -373,6 +384,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                     
                     // アニメーション終了後の処理
                     self.resultImage.image = UIImage(named: "no.png")
+                    self.resultImage.alpha = 0.9
                     self.UnHide()
 //                              self.resultImage.isHidden = false
                     self.view.bringSubview(toFront: self.resultImage)
@@ -450,20 +462,26 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         nextAudioPlayer.prepareToPlay()
     }
     
-  
     
+    
+    
+    
+  
+    //点数ごとにscore画面変える
 
     //多言語化対応 → xlifeやらない？、NSLocalizedStrings書く前まで
-    //アイコン(1024x1024)、説明文
     
-    //点数ごとにscore画面変える　→ Plistに番号ふるって分ける?
-    //タイトル画面にランダム配置
-
+    //アイコン作成（1024×1024）
+        //説明文
+        //キーワード10個ぐらい
+        //スクリーンショット5.5inch、12.9inch
     
-    
-    //時々エラーになる
-    
+   //ipad対応
  
+    
+    
+    
+    
     
     /*
      // MARK: - Navigation

@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  quiz
+
+  Created by 濱野将士 on 2017/12/12.
+  Copyright © 2017年 Masashi Hamano. All rights reserved.
+*/
+"question" = "What is my name?";
+"commentZero" = "Out of the question.";
+"commentFirst" = "That's too bad.";
+"commentSecond" = "Learn harder.";
+"commentThird" = "Lack of learning.";
+"commentFourth" = "Not there yet.";
+"commentFifth" = "Believe in yourself.";
+"commentSixth" = "You can do it!";
+"commentSeventh" = "Good!";
+"commentEighth" = "Great!";
+"commentNinth" = "Amazing!";
+"commentTenth" = "Congratulations!";

@@ -82,7 +82,7 @@
 		B6ADB5A21FBE871C00AB940A /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ADB5A11FBE871C00AB940A /* ListViewController.swift */; };
 		B6B82A721FD9901A003589A3 /* wiki.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A711FD9901A003589A3 /* wiki.wav */; };
 		B6B82A741FD99550003589A3 /* restart.wav in Resources */ = {isa = PBXBuildFile; fileRef = B6B82A731FD99550003589A3 /* restart.wav */; };
-		B6F6D27F1FC043FE00E71650 /* next.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F6D27E1FC043FD00E71650 /* next.png */; };
+		B6F6D27F1FC043FE00E71650 /* next1.png in Resources */ = {isa = PBXBuildFile; fileRef = B6F6D27E1FC043FD00E71650 /* next1.png */; };
 		B6FDEB831FD40211004F9F0F /* no.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B6FDEB821FD40211004F9F0F /* no.mp3 */; };
 /* End PBXBuildFile section */
 
@@ -176,6 +176,7 @@
 		B615A1F11FDEC180002C92E4 /* Soma.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Soma.jpg; sourceTree = "<group>"; };
 		B615A1F31FDEC24B002C92E4 /* Lakshmi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lakshmi.jpg; sourceTree = "<group>"; };
 		B6197A4D1FDEA8C300522E3D /* Parvathi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parvathi.jpg; sourceTree = "<group>"; };
+		B63316131FDF6A3700C71F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B64AE8641FDD446B008043C4 /* Yama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yama.jpg; sourceTree = "<group>"; };
 		B64AE8681FDD48E2008043C4 /* Varuna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Varuna.jpg; sourceTree = "<group>"; };
 		B64AE86A1FDD5019008043C4 /* Vayu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vayu.jpg; sourceTree = "<group>"; };
@@ -187,7 +188,7 @@
 		B6ADB5A11FBE871C00AB940A /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		B6B82A711FD9901A003589A3 /* wiki.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = wiki.wav; sourceTree = "<group>"; };
 		B6B82A731FD99550003589A3 /* restart.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = restart.wav; sourceTree = "<group>"; };
-		B6F6D27E1FC043FD00E71650 /* next.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next.png; sourceTree = "<group>"; };
+		B6F6D27E1FC043FD00E71650 /* next1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = next1.png; sourceTree = "<group>"; };
 		B6FDEB821FD40211004F9F0F /* no.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = no.mp3; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -365,7 +366,7 @@
 				B60D53951FDEFD6F00E0AB59 /* title.jpg */,
 				B60F293C1FC813B400238C25 /* yes.png */,
 				B60F293E1FC813CD00238C25 /* no.png */,
-				B6F6D27E1FC043FD00E71650 /* next.png */,
+				B6F6D27E1FC043FD00E71650 /* next1.png */,
 			);
 			path = img;
 			sourceTree = "<group>";
@@ -492,7 +493,7 @@
 				B612FCB91FDBDF29007D10B7 /* start.mp3 in Resources */,
 				B60E9E001FC070D000BE988A /* Agni.jpg in Resources */,
 				B612FCCC1FDBE36C007D10B7 /* score100.wav in Resources */,
-				B6F6D27F1FC043FE00E71650 /* next.png in Resources */,
+				B6F6D27F1FC043FE00E71650 /* next1.png in Resources */,
 				B612FCCE1FDBE36C007D10B7 /* score80.mp3 in Resources */,
 				B612B1131FC152F800C12E4C /* GodList.plist in Resources */,
 				B612FCD01FDBE36C007D10B7 /* score30.mp3 in Resources */,
@@ -632,6 +633,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				B61405901FDEEAD600ADA725 /* ja */,
+				B63316131FDF6A3700C71F1B /* Base */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";

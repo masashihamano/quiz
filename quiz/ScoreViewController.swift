@@ -22,8 +22,9 @@ class ScoreViewController: UIViewController {
     
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
-    //選択された名前を保存するメンバ変数
-    var godName = ""
+
+    //QuizControllerより引き渡される値を格納する
+    var correctProblemNumber: Int!
     
     //リスタート音の変数
     var restartAudioPlayer: AVAudioPlayer! = nil
@@ -41,15 +42,19 @@ class ScoreViewController: UIViewController {
     var score90AudioPlayer: AVAudioPlayer! = nil
     var score100AudioPlayer: AVAudioPlayer! = nil
     
-    //QuizControllerより引き渡される値を格納する
-    var correctProblemNumber: Int!
     
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+//        print("correctProblemNumber:\(correctProblemNumber)")
+        
+        
         func scoreList(){
-            let scoregodname:Int = Int(arc4random()) % GodList.count
+            var scoregodname:Int = Int(arc4random()) % GodList.count
+            scoregodname += 1
 
         //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -62,21 +67,34 @@ class ScoreViewController: UIViewController {
             print(key)
 
             let goddic:NSDictionary = data as! NSDictionary
-            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
+//            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
+            
+            let scoreinfo:NSDictionary = ["name":key,"score90":goddic["score90"] as Any,"score80":goddic["score80"] as Any,"score70":goddic["score70"] as Any,"score60":goddic["score60"] as Any,"score50":goddic["score50"] as Any,"score40":goddic["score40"] as Any,"score30":goddic["score30"] as Any,"score20":goddic["score20"] as Any,"score10":goddic["score10"] as Any,"image":goddic["image"]!]
 
-            GodList.append(godinfo)
+            GodList.append(scoreinfo)
         }
 
-        //今画面に表示したいデータの取得
-        let detailInfo = GodList[scoregodname]
+            
             
 //        //今画面に表示したいデータの取得
-//        let detailInfo = dic![scoregodname] as! NSDictionary
+//        let scorelInfo = dic![scoregodname] as! NSDictionary
 
+        let scoreInfo = GodList[scoregodname] as! NSDictionary
+            
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
-        print(detailInfo["image"] as! String)
-        print(detailInfo["name"] as! String)
+        print(scoreInfo["image"] as! String)
+        print(scoreInfo["name"] as! String)
+            print(scoreInfo["score90"] as! String)
+            print(scoreInfo["score80"] as! String)
+            print(scoreInfo["score70"] as! String)
+            print(scoreInfo["score60"] as! String)
+            print(scoreInfo["score50"] as! String)
+            print(scoreInfo["score40"] as! String)
+            print(scoreInfo["score30"] as! String)
+            print(scoreInfo["score20"] as! String)
+            print(scoreInfo["score10"] as! String)
 
+            
             for(key,data) in dic!{
                 print(data)
                 print(key)
@@ -86,52 +104,55 @@ class ScoreViewController: UIViewController {
 
         }
         
+        
         //ランクを表示するメソッド
         func showRank(num: Int) {
             var text: String
             switch num {
             case 0:
-                rankLabel.text = "問題外です"
+                rankLabel.text = NSLocalizedString("commentZero", comment: "")
                 godImageView.image = UIImage(named: "")
                  score0AudioPlayer.play()
             case 10:
-                rankLabel.text = "残念でした"
-                godImageView.image = UIImage(named: "Naga.jpg")
+                rankLabel.text = NSLocalizedString("commentFirst", comment: "")
+                
+//                godImageView.image = UIImage(named:scoreInfo["score10"] as! String)
+
                 score10AudioPlayer.play()
             case 20:
-                rankLabel.text = "修行が足りない"
+                rankLabel.text = NSLocalizedString("commentSecond", comment: "")
                 godImageView.image = UIImage(named: "Nandin.jpg")
                 score20AudioPlayer.play()
             case 30:
-                rankLabel.text = "まだまだです"
+                rankLabel.text = NSLocalizedString("commentThird", comment: "")
                 godImageView.image = UIImage(named: "")
                 score30AudioPlayer.play()
             case 40:
-                rankLabel.text = "もっとがんばりましょう"
+                rankLabel.text = NSLocalizedString("commentFourth", comment: "")
                 godImageView.image = UIImage(named: "")
                 score40AudioPlayer.play()
             case 50:
-                rankLabel.text = "もう少し頑張りましょう"
+                rankLabel.text = NSLocalizedString("commentFifth", comment: "")
                 godImageView.image = UIImage(named: "")
                 score50AudioPlayer.play()
             case 60:
-                rankLabel.text = "及第点です"
+                rankLabel.text = NSLocalizedString("commentSixth", comment: "")
                 godImageView.image = UIImage(named: "")
                 score60AudioPlayer.play()
             case 70:
-                rankLabel.text = "おめでとう！"
+                rankLabel.text = NSLocalizedString("commentSeventh", comment: "")
                 godImageView.image = UIImage(named: "")
                 score70AudioPlayer.play()
             case 80:
-                rankLabel.text = "素晴らしい！"
+                rankLabel.text = NSLocalizedString("commentEighth", comment: "")
                 godImageView.image = UIImage(named: "")
                 score80AudioPlayer.play()
             case 90:
-                rankLabel.text = "パーフェクトまであと1問！"
+                rankLabel.text = NSLocalizedString("commentNinth", comment: "")
                 godImageView.image = UIImage(named: "")
                 score90AudioPlayer.play()
             default:
-                rankLabel.text = "神レベル！"
+                rankLabel.text = NSLocalizedString("commentTenth", comment: "")
                 godImageView.image = UIImage(named: "godImg.jpg")
                 score100AudioPlayer.play()
                 

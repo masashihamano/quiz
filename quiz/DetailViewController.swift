@@ -34,6 +34,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         //wikiがタップされた時の音
         wikiSound()
         
+        
         print("getGodName:\(getGodName)")
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
@@ -45,6 +46,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換
         print(detailInfo["description"] as! String)
+        print(detailInfo["english"] as! String)
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
@@ -57,12 +59,10 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         navigationItem.title = getGodName
         
         //説明、画像の表示
+//        detailTextView.text = String(format: NSLocalizedString("key1", comment: ""), 1)
+       
         detailTextView.text = detailInfo["description"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
-        
-        
-//        let wikiTextView =  UITextField(frame: CGRect(x: 20, y: 100, width: 300, height: 40))
-//        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.center
     
         wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         

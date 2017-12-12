@@ -5,3 +5,15 @@
   Created by 濱野将士 on 2017/12/12.
   Copyright © 2017年 Masashi Hamano. All rights reserved.
 */
+"question" = "私の名前は何でしょう?";
+"commentZero" = "問題外です";
+"commentFirst" = "残念でした";
+"commentSecond" = "修行が足りない";
+"commentThird" = "まだまだです";
+"commentFourth" = "もっとがんばりましょう";
+"commentFifth" = "もう少し頑張りましょう";
+"commentSixth" = "及第点です";
+"commentSeventh" = "おめでとう！";
+"commentEighth" = "素晴らしい！";
+"commentNinth" = "パーフェクトまであと1問！";
+"commentTenth" = "神レベル！";

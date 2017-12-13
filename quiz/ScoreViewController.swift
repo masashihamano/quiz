@@ -69,13 +69,13 @@ class ScoreViewController: UIViewController {
             let goddic:NSDictionary = data as! NSDictionary
 //            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
             
-            let scoreinfo:NSDictionary = ["name":key,"score90":goddic["score90"] as Any,"score80":goddic["score80"] as Any,"score70":goddic["score70"] as Any,"score60":goddic["score60"] as Any,"score50":goddic["score50"] as Any,"score40":goddic["score40"] as Any,"score30":goddic["score30"] as Any,"score20":goddic["score20"] as Any,"score10":goddic["score10"] as Any,"image":goddic["image"]!]
+            let scoreinfo:NSDictionary = ["name":key,"score100":goddic["score100"] as Any,"score90":goddic["score90"] as Any,"score80":goddic["score80"] as Any,"score70":goddic["score70"] as Any,"score60":goddic["score60"] as Any,"score50":goddic["score50"] as Any,"score40":goddic["score40"] as Any,"score30":goddic["score30"] as Any,"score20":goddic["score20"] as Any,"score10":goddic["score10"] as Any,"score0":goddic["score0"] as Any,"image":goddic["image"]!]
 
             GodList.append(scoreinfo)
         }
 
             
-            
+        
 //        //今画面に表示したいデータの取得
 //        let scorelInfo = dic![scoregodname] as! NSDictionary
 
@@ -84,6 +84,7 @@ class ScoreViewController: UIViewController {
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(scoreInfo["image"] as! String)
         print(scoreInfo["name"] as! String)
+            print(scoreInfo["score100"] as! String)
             print(scoreInfo["score90"] as! String)
             print(scoreInfo["score80"] as! String)
             print(scoreInfo["score70"] as! String)
@@ -93,6 +94,7 @@ class ScoreViewController: UIViewController {
             print(scoreInfo["score30"] as! String)
             print(scoreInfo["score20"] as! String)
             print(scoreInfo["score10"] as! String)
+            print(scoreInfo["score0"] as! String)
 
             
             for(key,data) in dic!{
@@ -102,7 +104,10 @@ class ScoreViewController: UIViewController {
                 var _:NSDictionary = data as! NSDictionary
             }
 
+        
+            
         }
+        
         
         
         //ランクを表示するメソッド
@@ -111,45 +116,44 @@ class ScoreViewController: UIViewController {
             switch num {
             case 0:
                 rankLabel.text = NSLocalizedString("commentZero", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score0"] as! String)
                  score0AudioPlayer.play()
             case 10:
                 rankLabel.text = NSLocalizedString("commentFirst", comment: "")
-                
 //                godImageView.image = UIImage(named:scoreInfo["score10"] as! String)
-
                 score10AudioPlayer.play()
             case 20:
                 rankLabel.text = NSLocalizedString("commentSecond", comment: "")
+//                godImageView.image = UIImage(named:scoreInfo["score20"] as! String)
                 godImageView.image = UIImage(named: "Nandin.jpg")
                 score20AudioPlayer.play()
             case 30:
                 rankLabel.text = NSLocalizedString("commentThird", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score30"] as! String)
                 score30AudioPlayer.play()
             case 40:
                 rankLabel.text = NSLocalizedString("commentFourth", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score40"] as! String)
                 score40AudioPlayer.play()
             case 50:
                 rankLabel.text = NSLocalizedString("commentFifth", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score50"] as! String)
                 score50AudioPlayer.play()
             case 60:
                 rankLabel.text = NSLocalizedString("commentSixth", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score60"] as! String)
                 score60AudioPlayer.play()
             case 70:
                 rankLabel.text = NSLocalizedString("commentSeventh", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score70"] as! String)
                 score70AudioPlayer.play()
             case 80:
                 rankLabel.text = NSLocalizedString("commentEighth", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score80"] as! String)
                 score80AudioPlayer.play()
             case 90:
                 rankLabel.text = NSLocalizedString("commentNinth", comment: "")
-                godImageView.image = UIImage(named: "")
+//                godImageView.image = UIImage(named:scoreInfo["score90"] as! String)
                 score90AudioPlayer.play()
             default:
                 rankLabel.text = NSLocalizedString("commentTenth", comment: "")
@@ -157,9 +161,9 @@ class ScoreViewController: UIViewController {
                 score100AudioPlayer.play()
                 
             }
+            
         
         }
-    
             
         //ボタン押した時の音
         restartSound()
@@ -192,9 +196,10 @@ class ScoreViewController: UIViewController {
         scoreTitleLabel.layer.cornerRadius = 10.0
         scoreTitleLabel.layer.masksToBounds = true
         scoreTitleLabel.font = UIFont.boldSystemFont(ofSize: 62)
-        
+            
     }
-
+    
+    
     
     @IBAction func restartBtn(_ sender: UIButton) {
 //        performSegue(withIdentifier: "showTitle", sender: nil)

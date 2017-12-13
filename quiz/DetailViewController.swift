@@ -59,9 +59,12 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         navigationItem.title = getGodName
         
         //説明、画像の表示
-//        detailTextView.text = String(format: NSLocalizedString("key1", comment: ""), 1)
+        detailTextView.text = detailInfo[NSLocalizedString("descKey",comment: "")] as! String
        
-        detailTextView.text = detailInfo["description"] as! String
+        
+        
+        
+//        detailTextView.text = detailInfo["description"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
     
         wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
@@ -92,7 +95,11 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     
     func setupTextView() {
         
-        let text = "詳細はwikipediaへ"
+        let text = NSLocalizedString("wikiText", comment: "")
+
+        
+        
+//        rankLabel.text = NSLocalizedString("commentFirst", comment: "")
         
         wikiTextView.delegate = self
         wikiTextView.isSelectable = true
@@ -131,7 +138,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         // 文字の大きさ
         detailTextView.font = UIFont.systemFont(ofSize: CGFloat(16))
         detailTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(36))
+        wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(30))
 //        wikiTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
         // 文字の中央寄せ

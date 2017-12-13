@@ -469,15 +469,13 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
   
     //点数ごとにscore画面変える
 
-    //多言語化対応 → xlifeやらない？、NSLocalizedStrings書く前まで
+    //多言語化対応
     
     //アイコン作成（1024×1024）
         //説明文
         //キーワード10個ぐらい
         //スクリーンショット5.5inch、12.9inch
     
-   //ipad対応
- 
     
     
     

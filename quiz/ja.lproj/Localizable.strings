@@ -6,6 +6,7 @@
   Copyright © 2017年 Masashi Hamano. All rights reserved.
 */
 "question" = "私の名前は何でしょう?";
+
 "commentZero" = "問題外です";
 "commentFirst" = "残念でした";
 "commentSecond" = "修行が足りない";
@@ -17,3 +18,8 @@
 "commentEighth" = "素晴らしい！";
 "commentNinth" = "パーフェクトまであと1問！";
 "commentTenth" = "神レベル！";
+
+"wikiText" = "詳細はwikipediaへ";
+"descKey" = "description";
+
+"name" = "";

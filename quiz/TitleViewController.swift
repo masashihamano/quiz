@@ -57,7 +57,7 @@ class TitleViewController: UIViewController {
         myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
     //タイトル画面イメージ
-        RandomQuestions()
+        RandomTitle()
 //        titleImageView.image = UIImage(named: "title.jpg")
         titleImageView.layer.borderColor = UIColor.white.cgColor
         titleImageView.layer.borderWidth = 2
@@ -106,7 +106,7 @@ class TitleViewController: UIViewController {
     }
 
     
-    func RandomQuestions(){
+    func RandomTitle(){
         var RandomNumber:Int = Int(arc4random() % 35)
         RandomNumber += 1
         

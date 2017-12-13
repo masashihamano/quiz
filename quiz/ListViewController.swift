@@ -40,13 +40,23 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         for(key,data) in dic!{
             print(data)
             print(key)
-//        var godinfo:NSDictionary = ["name":key]
+            
+            
         var goddic:NSDictionary = data as! NSDictionary
         var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
+            
+            
+            
+            
+//             var goddic:NSDictionary = data[NSLocalizedString("namekey" ,comment: "")] as! NSDictionary
+//        var godinfo:NSDictionary = name:key[NSLocalizedString("namekey" ,comment: ""),"image":goddic["image"]]
+            
             
             GodList.append(godinfo)
         }
     
+        
+        
     }
     
     //行数の決定 /// セルの個数を指定するデリゲートメソッド（必須）
@@ -74,6 +84,12 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         //文字を表示
         cell.listLabel.text = godinfo["name"] as? String
+        
+//        cell.listLabel.text = godinfo[NSLocalizedString("name",comment: "")] as? String
+        
+        //        NSLocalizedString("wikiText", comment: "")
+        //        detailTextView.text = detailInfo[NSLocalizedString("descKey",comment: "")] as! String
+        
         //文字色、矢印
         cell.listLabel.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator

@@ -6,9 +6,10 @@
   Copyright © 2017年 Masashi Hamano. All rights reserved.
 */
 "question" = "What is my name?";
+
 "commentZero" = "Out of the question.";
 "commentFirst" = "That's too bad.";
-"commentSecond" = "Learn harder.";
+"commentSecond" = "Study harder.";
 "commentThird" = "Lack of learning.";
 "commentFourth" = "Not there yet.";
 "commentFifth" = "Believe in yourself.";
@@ -18,6 +19,6 @@
 "commentNinth" = "Amazing!";
 "commentTenth" = "Congratulations!";
 
-"wikiText" = "Click wikipedia for details";
+"wikiText" = "Click wikipedia for details.";
 "descKey" = "english";
 "name" = "";

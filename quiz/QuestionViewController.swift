@@ -11,7 +11,6 @@ import AVFoundation
 
 
 class questionViewController: UIViewController, UINavigationBarDelegate, UITextViewDelegate {
-
     
     @IBOutlet weak var QuestionLabel: UILabel!
     @IBOutlet weak var QuestionImage: UIImageView!
@@ -23,7 +22,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     @IBOutlet weak var resultImage: UIImageView!
     @IBOutlet weak var Next: UIButton!
-    
 
     //プロパティリストから読み込んだデータを格納する配列、問題の内容を入れておくメンバ変数
     var GodList:[NSDictionary] = []
@@ -55,7 +53,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
     //時間制限バーを表示
         timebar()
     //非表示にする
@@ -72,7 +69,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     //アウトレットでnextボタンの画像を設定
         Next.setImage(UIImage(named: "next,png"), for: .normal)
     //問題文の文字設定
-        QuestionLabel.font = UIFont.boldSystemFont(ofSize: 27)
+        QuestionLabel.font = UIFont.boldSystemFont(ofSize: 23)
         QuestionLabel.layer.cornerRadius = 5.0
         QuestionLabel.layer.masksToBounds = true
     //問題画像の枠
@@ -132,9 +129,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         //正解の神様の名前取得
         var correctGod = GodList[RandomNumber] as! NSDictionary
         
-//        GodList.remove(at: RandomNumber)
+        //正解の神様を4択から除外
         GodList.remove(at: RandomNumber)
-        
         
         var QList:[NSDictionary] = []
         
@@ -143,9 +139,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                 print(god["name"] as! String)
                  QList.append(god)
             }
-           
         }
-//        var QList = GodList
 
             var selectBtn = [answerBtn1,answerBtn2,answerBtn3,answerBtn4]
             for i in 0...3{
@@ -165,7 +159,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
         }
         
-        
         //正解とボタンを一致させる
         var correctNumber:Int = Int(arc4random() % 4)
         correctNumber += 1
@@ -182,7 +175,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else{
         }
-        
     }
     
     //セグエを呼び出したときに呼ばれるメソッド
@@ -193,8 +185,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             let ScoreViewController = segue.destination as! ScoreViewController
             //遷移先のコントローラーに渡したい変数を格納（型を合わせる）
             ScoreViewController.correctProblemNumber = correctProblemNumber
-            
-            
             
         }
     }
@@ -339,18 +329,17 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
             Hide()
             timebar()
             nextAudioPlayer.play()
-            
         }
     }
     
 //////タイマー関連ここから////////
     
     func timebar() {
-        // 制限時間バーの高さ・幅
-        let barHeight = scHei*0.01
+        // タイムバーの高さ・幅
+        let barHeight = scHei*0.015
         let barWidth = scWid*0.87
         
-        // 制限時間バーのX(横)座標・Y(縦)座標・終端のX座標
+        // タイムバーのX(横)座標・Y(縦)座標・終端のX座標
         let barXPosition = scWid*0.11
         let barYPosition = scHei*0.0375
         let barXPositionEnd = barXPosition + barWidth
@@ -364,7 +353,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         // バーに色を付ける
         barImageView.backgroundColor = .green
         
-        //　ラベル枠の枠線太さと色
+        //　バーの枠線太さと色
         barImageView.layer.borderColor = UIColor.white.cgColor
         barImageView.layer.borderWidth = 2
         
@@ -372,8 +361,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         self.view.addSubview(barImageView)
         
         // バーをアニメーションさせる
-        // 5秒かけてバーを左側から等速で減少させる
-        UIView.animate(withDuration: 5, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
+        // 10秒かけてバーを左側から等速で減少させる
+        UIView.animate(withDuration: 10, delay: 0.0, options : UIViewAnimationOptions.curveLinear, animations: {() -> Void  in
             
         // アニメーション終了後の座標とサイズを指定
         self.barImageView.frame = CGRect(x: barXPositionEnd, y: barYPosition, width: 0, height: barHeight)
@@ -386,7 +375,6 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                     self.resultImage.image = UIImage(named: "no.png")
                     self.resultImage.alpha = 0.9
                     self.UnHide()
-//                              self.resultImage.isHidden = false
                     self.view.bringSubview(toFront: self.resultImage)
                     self.noAudioPlayer.play()
                     self.allAnswerBtnDisabled()
@@ -414,7 +402,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
 //////タイマー関連ここまで////////
     
-    //Nextボタンの表示させる
+    //Nextボタンを表示させる
     func nextBtn(){
         let nextImg = Next.setImage(UIImage(named: "next.png"), for: .normal)
     }
@@ -430,7 +418,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        yesAudioPlayer.volume = 0.2
+        yesAudioPlayer.volume = 0.05
         yesAudioPlayer.prepareToPlay()
     }
     
@@ -445,6 +433,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
+        noAudioPlayer.volume = 0.2
         noAudioPlayer.prepareToPlay()
     }
     
@@ -459,27 +448,15 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
+        nextAudioPlayer.volume = 0.2
         nextAudioPlayer.prepareToPlay()
     }
     
     
     
-    
-    
-  
-    //点数ごとにscore画面変える
-
-    //多言語化対応
-    
-    //アイコン作成（1024×1024）
-        //説明文
-        //キーワード10個ぐらい
-        //スクリーンショット5.5inch、12.9inch
-    
-    
-    
-    
-    
+    //scoreランダム表示
+    //version up →　ヒンドゥー語、name多言語化
+    //多言語化対応 → name
     
     /*
      // MARK: - Navigation

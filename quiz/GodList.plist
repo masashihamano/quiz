@@ -20,8 +20,8 @@ My forehead has a third eye. The trigone spear has.</string>
 		<string>Shiva.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B4%E3%82%A1</string>
-		<key>score90</key>
-		<string>Shiva.jpg</string>
+		<key>score</key>
+		<string>s100</string>
 	</dict>
 	<key>ブラフマー（Brahma）</key>
 	<dict>
@@ -41,8 +41,8 @@ God of white mustache with four heads.</string>
 		<string>Brahma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%A9%E3%83%95%E3%83%9E%E3%83%BC</string>
-		<key>score90</key>
-		<string>Brahma.jpg</string>
+		<key>score</key>
+		<string>s100</string>
 	</dict>
 	<key>ドゥルガー（Durga）</key>
 	<dict>
@@ -62,8 +62,8 @@ I am on a tiger or a lion. Have a great deal of weapons in ten arms.</string>
 		<string>Durga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A5%E3%83%AB%E3%82%AC%E3%83%BC</string>
-		<key>score70</key>
-		<string>Durga.jpg</string>
+		<key>score</key>
+		<string>s80</string>
 	</dict>
 	<key>ガネーシャ（Ganesa）</key>
 	<dict>
@@ -83,8 +83,8 @@ My head is an elephant and my body is human. One of the tusks is missing with a 
 		<string>Ganesa.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A3</string>
-		<key>score50</key>
-		<string>Ganesa.jpg</string>
+		<key>score</key>
+		<string>s70</string>
 	</dict>
 	<key>ラクシュミー（Lakshmi）</key>
 	<dict>
@@ -104,8 +104,8 @@ Have lotus flowers in 4 arms.</string>
 		<string>Lakshmi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%BC</string>
-		<key>score70</key>
-		<string>Lakshmi.jpg</string>
+		<key>score</key>
+		<string>s90</string>
 	</dict>
 	<key>ナンディン（Nandin）</key>
 	<dict>
@@ -125,8 +125,8 @@ Milky white bull.</string>
 		<string>Nandin.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3</string>
-		<key>score20</key>
-		<string>Nandin.jpg</string>
+		<key>score</key>
+		<string>s10</string>
 	</dict>
 	<key>スカンダ（Skanda）</key>
 	<dict>
@@ -146,8 +146,8 @@ I carry a spear and make a peacock a mountain beast.</string>
 		<string>Skanda.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%80</string>
-		<key>score50</key>
-		<string>Skanda.jpg</string>
+		<key>score</key>
+		<string>s70</string>
 	</dict>
 	<key>パールヴァティ（Parvathi）</key>
 	<dict>
@@ -167,8 +167,8 @@ It is drawn with Shiva.</string>
 		<string>Parvathi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%AB%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
-		<key>score70</key>
-		<string>Parvathi.jpg</string>
+		<key>score</key>
+		<string>s90</string>
 	</dict>
 	<key>ヴィシュヌ（Vishnu）</key>
 	<dict>
@@ -188,8 +188,8 @@ Have symbolic weapons (chakras, clubs, holly shells, lotus flowers) in 4 hands.<
 		<string>Vishnu.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%82%B7%E3%83%A5%E3%83%8C</string>
-		<key>score60</key>
-		<string>Vishnu.jpg</string>
+		<key>score</key>
+		<string>s100</string>
 	</dict>
 	<key>アグニ（Agni）</key>
 	<dict>
@@ -209,8 +209,8 @@ I wear a flaming clothes on the red body, three heads and arms.</string>
 		<string>Agni.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B0%E3%83%8B</string>
-		<key>score80</key>
-		<string>Agni.jpg</string>
+		<key>score</key>
+		<string>s50</string>
 	</dict>
 	<key>ダーキニー（Dakini）</key>
 	<dict>
@@ -230,8 +230,8 @@ I am wearing a skull necklace and a cup.</string>
 		<string>Dakini.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E8%8D%BC%E6%9E%B3%E5%B0%BC%E5%A4%A9</string>
-		<key>score40</key>
-		<string>Dakini.jpg</string>
+		<key>score</key>
+		<string>s20</string>
 	</dict>
 	<key>ハヌマーン（Hanuman）</key>
 	<dict>
@@ -251,8 +251,8 @@ Son Goku model of the West Journey.</string>
 		<string>Hanuman.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8C%E3%83%9E%E3%83%BC%E3%83%B3</string>
-		<key>score40</key>
-		<string>Hanuman.jpg</string>
+		<key>score</key>
+		<string>s20</string>
 	</dict>
 	<key>インドラ（Indra）</key>
 	<dict>
@@ -272,8 +272,8 @@ Has a weapon (Vajra) and is on a white statue (Eyravata).</string>
 		<string>Indra.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E3%83%A9</string>
-		<key>score80</key>
-		<string>Indra.jpg</string>
+		<key>score</key>
+		<string>s50</string>
 	</dict>
 	<key>ジャガンナート（Jagannatha）</key>
 	<dict>
@@ -293,8 +293,8 @@ When we pray &quot;say it,&quot; then say &quot;potatoes!&quot;</string>
 		<string>Jagannatha.gif</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%82%AC%E3%83%B3%E3%83%8A%E3%83%BC%E3%83%88</string>
-		<key>score30</key>
-		<string>Jagannatha.gif</string>
+		<key>score</key>
+		<string>s20</string>
 	</dict>
 	<key>カーリー（Kali）</key>
 	<dict>
@@ -314,8 +314,8 @@ While holding a head, she is dancing on Shiva.</string>
 		<string>Kali.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%AA%E3%83%BC</string>
-		<key>score70</key>
-		<string>Kali.jpg</string>
+		<key>score</key>
+		<string>s80</string>
 	</dict>
 	<key>カーマ（Kama）</key>
 	<dict>
@@ -335,8 +335,8 @@ Take a parrot and have a sugarcane bow and a flower arrow.</string>
 		<string>Kama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%9E_(%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99)</string>
-		<key>score80</key>
-		<string>Kama.jpg</string>
+		<key>score</key>
+		<string>s70</string>
 	</dict>
 	<key>クリシュナ（Krsna）</key>
 	<dict>
@@ -356,8 +356,8 @@ I have a crown and a whistle with peacock feathers.</string>
 		<string>Krsna.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B7%E3%83%A5%E3%83%8A</string>
-		<key>score60</key>
-		<string>Krsna.jpg</string>
+		<key>score</key>
+		<string>s40</string>
 	</dict>
 	<key>ミーナクシー（Minakshi）</key>
 	<dict>
@@ -377,8 +377,8 @@ Fish goddess having a fish eye.</string>
 		<string>Minakshi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://en.wikipedia.org/wiki/Meenakshi</string>
-		<key>score70</key>
-		<string>Minakshi.jpg</string>
+		<key>score</key>
+		<string>s80</string>
 	</dict>
 	<key>ナーガ（Naga）</key>
 	<dict>
@@ -398,8 +398,8 @@ Indian snake God.</string>
 		<string>Naga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%BC%E3%82%AC</string>
-		<key>score10</key>
-		<string>Naga.jpg</string>
+		<key>score</key>
+		<string>s0</string>
 	</dict>
 	<key>ラーマ（Rama）</key>
 	<dict>
@@ -419,8 +419,8 @@ The prince who has a bow and arrow.</string>
 		<string>Rama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%9E</string>
-		<key>score60</key>
-		<string>Rama.jpg</string>
+		<key>score</key>
+		<string>s30</string>
 	</dict>
 	<key>サラスヴァティ（Sarasvati）</key>
 	<dict>
@@ -440,8 +440,8 @@ I have a musical instrument (Vina) and I am on a lotus flower.</string>
 		<string>Sarasvati.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%A9%E3%82%B9%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
-		<key>score70</key>
-		<string>Sarasvati.jpg</string>
+		<key>score</key>
+		<string>s90</string>
 	</dict>
 	<key>マツヤ（Matsya）</key>
 	<dict>
@@ -461,8 +461,8 @@ Lower body is fish.</string>
 		<string>Matsya.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%84%E3%83%A4</string>
-		<key>score60</key>
-		<string>Matsya.jpg</string>
+		<key>score</key>
+		<string>s40</string>
 	</dict>
 	<key>クールマ（Kurma）</key>
 	<dict>
@@ -482,8 +482,8 @@ The lower part of the turtle.</string>
 		<string>Kurma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%BC%E3%83%AB%E3%83%9E</string>
-		<key>score60</key>
-		<string>Kurma.jpg</string>
+		<key>score</key>
+		<string>s40</string>
 	</dict>
 	<key>ガンガー（Ganga）</key>
 	<dict>
@@ -503,8 +503,8 @@ Vehicles (Vahana) are crocodile Cumbila.</string>
 		<string>Ganga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%82%AC%E3%83%BC</string>
-		<key>score30</key>
-		<string>Ganga.jpg</string>
+		<key>score</key>
+		<string>s20</string>
 	</dict>
 	<key>ヴァラーハ（Varaha）</key>
 	<dict>
@@ -524,8 +524,8 @@ The face of a boar.</string>
 		<string>Varaha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%A9%E3%83%BC%E3%83%8F</string>
-		<key>score60</key>
-		<string>Varaha.jpg</string>
+		<key>score</key>
+		<string>s30</string>
 	</dict>
 	<key>ナラシンハ（Nrisimha）</key>
 	<dict>
@@ -545,8 +545,8 @@ People lions. Head is Lion.</string>
 		<string>Nrisimha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%A9%E3%82%B7%E3%83%B3%E3%83%8F</string>
-		<key>score60</key>
-		<string>Nrisimha.jpg</string>
+		<key>score</key>
+		<string>s40</string>
 	</dict>
 	<key>ヴァーマナ（Vamana）</key>
 	<dict>
@@ -566,8 +566,8 @@ Boy&apos;s monk.</string>
 		<string>Vamana.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%9E%E3%83%8A</string>
-		<key>score60</key>
-		<string>Vamana.jpg</string>
+		<key>score</key>
+		<string>s30</string>
 	</dict>
 	<key>パラシュラーマ（Parasurama）</key>
 	<dict>
@@ -587,8 +587,8 @@ Axes with axes.</string>
 		<string>Parasurama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://en.wikipedia.org/wiki/Parashurama</string>
-		<key>score60</key>
-		<string>Parasurama.jpg</string>
+		<key>score</key>
+		<string>s30</string>
 	</dict>
 	<key>ブッダ（Budha）</key>
 	<dict>
@@ -608,8 +608,8 @@ A person who opened the highest rank of Buddhism &quot;enlightenment of the Budd
 		<string>Budha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%87%88%E8%BF%A6</string>
-		<key>score60</key>
-		<string>Budha.jpg</string>
+		<key>score</key>
+		<string>s30</string>
 	</dict>
 	<key>ヤマ（Yama）</key>
 	<dict>
@@ -629,8 +629,8 @@ I&apos;m on a buffalo with blue skin.</string>
 		<string>Yama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E9%96%BB%E9%AD%94</string>
-		<key>  score80</key>
-		<string>Yama.jpg</string>
+		<key>score</key>
+		<string>s50</string>
 	</dict>
 	<key>スーリヤ（Surya）</key>
 	<dict>
@@ -648,8 +648,8 @@ I&apos;m on a horse carriage with 7 horses.</string>
 		<string>Surya.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%BC%E3%83%AA%E3%83%A4</string>
-		<key>score80</key>
-		<string>Surya.jpg</string>
+		<key>score</key>
+		<string>s60</string>
 	</dict>
 	<key>ヴァルナ（Varuṇa）</key>
 	<dict>
@@ -667,8 +667,8 @@ Makara (a monster fish appearing in the Indian mythology: a nose like an elephan
 		<string>Varuna.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%AB%E3%83%8A_(%E7%A5%9E)</string>
-		<key>score80</key>
-		<string>Varuna.jpg</string>
+		<key>score</key>
+		<string>s60</string>
 	</dict>
 	<key>ヴァーユ（Vayu）</key>
 	<dict>
@@ -686,8 +686,8 @@ A deer, or a two-headed red praise, rides a tank.</string>
 		<string>Vayu.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%A6</string>
-		<key>score80</key>
-		<string>Vayu.jpg</string>
+		<key>score</key>
+		<string>s50</string>
 	</dict>
 	<key>クベーラ（Kubera）</key>
 	<dict>
@@ -707,8 +707,8 @@ It is drawn in a conspicuous appearance of thumbs.</string>
 		<string>Kubera.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%99%E3%83%BC%E3%83%A9</string>
-		<key>score80</key>
-		<string>Kubera.jpg</string>
+		<key>score</key>
+		<string>s60</string>
 	</dict>
 	<key>ソーマ（Soma）</key>
 	<dict>
@@ -726,8 +726,8 @@ I am on a carriage.</string>
 		<string>Soma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%9E</string>
-		<key>score80</key>
-		<string>Soma.jpg</string>
+		<key>score</key>
+		<string>s60</string>
 	</dict>
 </dict>
 </plist>

@@ -41,22 +41,11 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
             print(data)
             print(key)
             
-            
         var goddic:NSDictionary = data as! NSDictionary
         var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
             
-            
-            
-            
-//             var goddic:NSDictionary = data[NSLocalizedString("namekey" ,comment: "")] as! NSDictionary
-//        var godinfo:NSDictionary = name:key[NSLocalizedString("namekey" ,comment: ""),"image":goddic["image"]]
-            
-            
             GodList.append(godinfo)
         }
-    
-        
-        
     }
     
     //行数の決定 /// セルの個数を指定するデリゲートメソッド（必須）
@@ -84,32 +73,21 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         //文字を表示
         cell.listLabel.text = godinfo["name"] as? String
-        
-//        cell.listLabel.text = godinfo[NSLocalizedString("name",comment: "")] as? String
-        
-        //        NSLocalizedString("wikiText", comment: "")
-        //        detailTextView.text = detailInfo[NSLocalizedString("descKey",comment: "")] as! String
-        
-        //文字色、矢印
+        //文字色、矢印、大きさ
         cell.listLabel.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
+        cell.listLabel.font = UIFont.boldSystemFont(ofSize: 15)
         
-        cell.listLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        
-
         return cell
 
-        
     }
     
     //セルがタップされたとき
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
             cellAudioPlayer.play()
             
             //タップされた行の名前を保存
             var godinfo = GodList[indexPath.row] as! NSDictionary
-            
             godName = godinfo["name"]  as! String
     
             //セグエのidentifierを指定して、画面移動
@@ -125,7 +103,6 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         // 次の画面のプロパティに選択された名前を設定
         secondinfo.getGodName = godName
-
     }
     
     
@@ -139,20 +116,15 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-//        restartAudioPlayer.volume = 0.1
+        cellAudioPlayer.volume = 0.8
         cellAudioPlayer.prepareToPlay()
     }
-    
-    
     
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-
-    
-//    cell.imageView!.image = UIImage(named:godinfo["image"] as! String)
     
     
     /*

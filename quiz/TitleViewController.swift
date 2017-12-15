@@ -43,7 +43,6 @@ class TitleViewController: UIViewController {
     //選択された名前を保存するメンバ変数
     var godName = ""
     
-    
     //スタート音の変数
     var startAudioPlayer: AVAudioPlayer! = nil
     
@@ -57,8 +56,8 @@ class TitleViewController: UIViewController {
         myImageView.image = UIImage(named: "background.jpg")
         myImageView.alpha = 0.1
     //タイトル画面イメージ
-        RandomTitle()
-//        titleImageView.image = UIImage(named: "title.jpg")
+//        RandomTitle()
+        titleImageView.image = UIImage(named: "title.jpg")
         titleImageView.layer.borderColor = UIColor.white.cgColor
         titleImageView.layer.borderWidth = 2
         titleImageView.layer.cornerRadius = 10.0
@@ -75,13 +74,9 @@ class TitleViewController: UIViewController {
         //contentsのサイズに合わせてobujectのサイズを変える
         titleLabel.sizeToFit()
 
-    
-        
     }
  
-    
     @IBAction func startBtn(_ sender: Any) {
-//       performSegue(withIdentifier: "showQuestion", sender: nil)
         startAudioPlayer.play()
     }
     
@@ -96,6 +91,7 @@ class TitleViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
+            startAudioPlayer.volume = 0.2
             startAudioPlayer.prepareToPlay()
     }
     
@@ -106,43 +102,42 @@ class TitleViewController: UIViewController {
     }
 
     
-    func RandomTitle(){
-        var RandomNumber:Int = Int(arc4random() % 35)
-        RandomNumber += 1
-        
-        //ファイルパスを取得(神様が格納されているプロパティリスト)
-        let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
-        // プロパティリストからデータを取得（Dictionary型）
-        let dic = NSDictionary(contentsOfFile: filePath!)
-    
-        //画像ファイル名を格納する配列を作成
-        for(key,data) in dic!{
-            print(data)
-            print(key)
-            
-            let goddic:NSDictionary = data as! NSDictionary
-            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
-            
-            GodList.append(godinfo)
-        }
-        
-        //今画面に表示したいデータの取得
-        var detailInfo = GodList[RandomNumber]
-        
-        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
-        print(detailInfo["image"] as! String)
-        print(detailInfo["name"] as! String)
-        
-        for(key,data) in dic!{
-            print(data)
-            print(key)
-            
-            var _:NSDictionary = data as! NSDictionary
-        }
-        
-        titleImageView.image = UIImage(named:detailInfo["image"] as! String)
-        
-    }
+//    func RandomTitle(){
+//        var RandomNumber:Int = Int(arc4random() % 35)
+//        RandomNumber += 1
+//
+//        //ファイルパスを取得
+//        let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
+//        let dic = NSDictionary(contentsOfFile: filePath!)
+//
+//        //画像ファイル名を格納する配列を作成
+//        for(key,data) in dic!{
+//            print(data)
+//            print(key)
+//
+//            let goddic:NSDictionary = data as! NSDictionary
+//            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
+//
+//            GodList.append(godinfo)
+//        }
+//
+//        //今画面に表示したいデータの取得
+//        var detailInfo = GodList[RandomNumber]
+//
+//        //ダウンキャスト変換
+//        print(detailInfo["image"] as! String)
+//        print(detailInfo["name"] as! String)
+//
+//        for(key,data) in dic!{
+//            print(data)
+//            print(key)
+//
+//            var _:NSDictionary = data as! NSDictionary
+//        }
+//
+//        titleImageView.image = UIImage(named:detailInfo["image"] as! String)
+//
+//    }
 
 }
 

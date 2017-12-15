@@ -31,10 +31,14 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.detailTextView.delegate = self
+        self.wikiTextView.delegate = self
+        
         //wikiがタップされた時の音
         wikiSound()
         
-        
+        //前の画面からの情報
         print("getGodName:\(getGodName)")
         
         //ファイルパスを取得(エリア名が格納されているプロパティリスト)
@@ -52,39 +56,38 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         wikiurl = detailInfo["wikipedia"] as! String
         
-        
+        //wikipediaのlinkラベルをセット
         setupTextView()
         
         //タイトルをナビゲーションバーの真ん中に表示
         navigationItem.title = getGodName
+        //ナビゲーションバーのフォント、サイズ
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 18)!]
         
         //説明、画像の表示
         detailTextView.text = detailInfo[NSLocalizedString("descKey",comment: "")] as! String
        
-        
-        
-        
-//        detailTextView.text = detailInfo["description"] as! String
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
-    
-        wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         
+        wikiTextView.isSelectable = true
+    
+//        wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         
     }
 
-    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-        if let textView = object as? UITextView {
-            var topCorrect = (textView.bounds.size.height - textView.contentSize.height * textView.zoomScale) / 2
-            topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
-            textView.contentInset.top = topCorrect
-        }
-    }
     
-    deinit {
-        wikiTextView.removeObserver(self, forKeyPath: "contentSize")
-    }
-    
-    
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        if let textView = object as? UITextView {
+//            var topCorrect = (textView.bounds.size.height - textView.contentSize.height * textView.zoomScale) / 2
+//            topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
+//            textView.contentInset.top = topCorrect
+//        }
+//    }
+//
+//    deinit {
+//        wikiTextView.removeObserver(self, forKeyPath: "contentSize")
+//    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -92,14 +95,10 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     }
 
     
-    
+    //wikipediaへのテキストリンクを作成
     func setupTextView() {
         
         let text = NSLocalizedString("wikiText", comment: "")
-
-        
-        
-//        rankLabel.text = NSLocalizedString("commentFirst", comment: "")
         
         wikiTextView.delegate = self
         wikiTextView.isSelectable = true
@@ -116,7 +115,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         attributedString.addAttribute(
             NSAttributedStringKey.link,
-//            value: detailInfo["wikipwdia"] as! String,
             value: wikiurl,
             range: range)
     
@@ -138,19 +136,15 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         // 文字の大きさ
         detailTextView.font = UIFont.systemFont(ofSize: CGFloat(16))
         detailTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
-        wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(30))
+        wikiTextView.font = UIFont.systemFont(ofSize: CGFloat(25))
 //        wikiTextView.font = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
         
         // 文字の中央寄せ
         wikiTextView.textAlignment = NSTextAlignment.center
-        
-      
-//        wikiTextView.contentVerticalAlignment = UIControlContentVerticalAlignment.Center
-        
-        
+    
     }
     
-    // この Delegate の実装しない場合はデフォルトで URL を Safari で開く。
+    // このDelegateの実装しない場合はデフォルトでURLをSafariで開く。
     func wikiTextView(_ wikiTextView: UITextView,
                   shouldInteractWith URL: URL,
                   in characterRange: NSRange,
@@ -158,12 +152,10 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         wikiAudioPlayer.play()  //音ならない
         
-        // UIApplication.shared.open(URL)
         let controller = SFSafariViewController(url: URL)
         self.present(controller, animated: true)
         
         return false
-    
     }
     
     func wikiSound() {
@@ -176,14 +168,26 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        restartAudioPlayer.volume = 0.1
+        //        wikiAudioPlayer.volume = 0.1
         wikiAudioPlayer.prepareToPlay()
     }
     
     
+    func textViewShouldReturn(textView: UITextView) -> Bool {
+        if textView == self.detailTextView {
+            print("detailTextView")
+        } else {
+            print("wikiTextView")
+        }
     
-    
-    
+        // テキストの入力内容をコンソール表示
+        print(textView.text)
+        // キーボードを非表示
+        self.view.endEditing(true)
+        
+        return false
+    }
+
     
     /*
     // MARK: - Navigation

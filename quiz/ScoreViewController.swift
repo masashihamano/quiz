@@ -20,6 +20,8 @@ class ScoreViewController: UIViewController {
     @IBOutlet weak var godImageView: UIImageView!
     
     
+//    var scoregodname = ""
+    
     //プロパティリストから読み込んだデータを格納する配列
     var GodList:[NSDictionary] = []
 
@@ -41,130 +43,12 @@ class ScoreViewController: UIViewController {
     var score80AudioPlayer: AVAudioPlayer! = nil
     var score90AudioPlayer: AVAudioPlayer! = nil
     var score100AudioPlayer: AVAudioPlayer! = nil
-    
-    
   
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-//        print("correctProblemNumber:\(correctProblemNumber)")
-        
-        
-        func scoreList(){
-            var scoregodname:Int = Int(arc4random()) % GodList.count
-            scoregodname += 1
-
-        //ファイルパスを取得(神様が格納されているプロパティリスト)
-        let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
-        // プロパティリストからデータを取得（Dictionary型）
-        let dic = NSDictionary(contentsOfFile: filePath!)
-
-        //画像ファイル名を格納する配列を作成
-        for(key,data) in dic!{
-            print(data)
-            print(key)
-
-            let goddic:NSDictionary = data as! NSDictionary
-//            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
-            
-            let scoreinfo:NSDictionary = ["name":key,"score100":goddic["score100"] as Any,"score90":goddic["score90"] as Any,"score80":goddic["score80"] as Any,"score70":goddic["score70"] as Any,"score60":goddic["score60"] as Any,"score50":goddic["score50"] as Any,"score40":goddic["score40"] as Any,"score30":goddic["score30"] as Any,"score20":goddic["score20"] as Any,"score10":goddic["score10"] as Any,"score0":goddic["score0"] as Any,"image":goddic["image"]!]
-
-            GodList.append(scoreinfo)
-        }
-
-            
-        
-//        //今画面に表示したいデータの取得
-//        let scorelInfo = dic![scoregodname] as! NSDictionary
-
-        let scoreInfo = GodList[scoregodname] as! NSDictionary
-            
-        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
-        print(scoreInfo["image"] as! String)
-        print(scoreInfo["name"] as! String)
-            print(scoreInfo["score100"] as! String)
-            print(scoreInfo["score90"] as! String)
-            print(scoreInfo["score80"] as! String)
-            print(scoreInfo["score70"] as! String)
-            print(scoreInfo["score60"] as! String)
-            print(scoreInfo["score50"] as! String)
-            print(scoreInfo["score40"] as! String)
-            print(scoreInfo["score30"] as! String)
-            print(scoreInfo["score20"] as! String)
-            print(scoreInfo["score10"] as! String)
-            print(scoreInfo["score0"] as! String)
-
-            
-            for(key,data) in dic!{
-                print(data)
-                print(key)
-
-                var _:NSDictionary = data as! NSDictionary
-            }
-
-        
-            
-        }
-        
-        
-        
-        //ランクを表示するメソッド
-        func showRank(num: Int) {
-            var text: String
-            switch num {
-            case 0:
-                rankLabel.text = NSLocalizedString("commentZero", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score0"] as! String)
-                 score0AudioPlayer.play()
-            case 10:
-                rankLabel.text = NSLocalizedString("commentFirst", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score10"] as! String)
-                score10AudioPlayer.play()
-            case 20:
-                rankLabel.text = NSLocalizedString("commentSecond", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score20"] as! String)
-                godImageView.image = UIImage(named: "Nandin.jpg")
-                score20AudioPlayer.play()
-            case 30:
-                rankLabel.text = NSLocalizedString("commentThird", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score30"] as! String)
-                score30AudioPlayer.play()
-            case 40:
-                rankLabel.text = NSLocalizedString("commentFourth", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score40"] as! String)
-                score40AudioPlayer.play()
-            case 50:
-                rankLabel.text = NSLocalizedString("commentFifth", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score50"] as! String)
-                score50AudioPlayer.play()
-            case 60:
-                rankLabel.text = NSLocalizedString("commentSixth", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score60"] as! String)
-                score60AudioPlayer.play()
-            case 70:
-                rankLabel.text = NSLocalizedString("commentSeventh", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score70"] as! String)
-                score70AudioPlayer.play()
-            case 80:
-                rankLabel.text = NSLocalizedString("commentEighth", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score80"] as! String)
-                score80AudioPlayer.play()
-            case 90:
-                rankLabel.text = NSLocalizedString("commentNinth", comment: "")
-//                godImageView.image = UIImage(named:scoreInfo["score90"] as! String)
-                score90AudioPlayer.play()
-            default:
-                rankLabel.text = NSLocalizedString("commentTenth", comment: "")
-                godImageView.image = UIImage(named: "godImg.jpg")
-                score100AudioPlayer.play()
-                
-            }
-            
-        
-        }
-            
+    
         //ボタン押した時の音
         restartSound()
         
@@ -200,12 +84,9 @@ class ScoreViewController: UIViewController {
     }
     
     
-    
     @IBAction func restartBtn(_ sender: UIButton) {
-//        performSegue(withIdentifier: "showTitle", sender: nil)
         restartAudioPlayer.play()
     }
-    
     
     func restartSound() {
         // サウンドファイルのパスを生成
@@ -217,10 +98,9 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        restartAudioPlayer.volume = 0.1
+        restartAudioPlayer.volume = 0.05
         restartAudioPlayer.prepareToPlay()
     }
-    
     
     func score0Sound() {
         // サウンドファイルのパスを生成
@@ -232,7 +112,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-//        listAudioPlayer.volume = 0.5
+        score0AudioPlayer.volume = 0.2
         score0AudioPlayer.prepareToPlay()
     }
     
@@ -246,7 +126,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score10AudioPlayer.volume = 0.1
         score10AudioPlayer.prepareToPlay()
     }
     
@@ -260,7 +140,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score20AudioPlayer.volume = 0.1
         score20AudioPlayer.prepareToPlay()
     }
     
@@ -274,7 +154,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score30AudioPlayer.volume = 0.1
         score30AudioPlayer.prepareToPlay()
     }
     
@@ -288,7 +168,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score40AudioPlayer.volume = 0.1
         score40AudioPlayer.prepareToPlay()
     }
     
@@ -302,7 +182,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score50AudioPlayer.volume = 0.1
         score50AudioPlayer.prepareToPlay()
     }
     
@@ -316,7 +196,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score60AudioPlayer.volume = 0.1
         score60AudioPlayer.prepareToPlay()
     }
     
@@ -330,7 +210,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score70AudioPlayer.volume = 0.1
         score70AudioPlayer.prepareToPlay()
     }
     
@@ -344,7 +224,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score80AudioPlayer.volume = 0.1
         score80AudioPlayer.prepareToPlay()
     }
     
@@ -358,7 +238,7 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+        score90AudioPlayer.volume = 0.1
         score90AudioPlayer.prepareToPlay()
     }
     
@@ -372,16 +252,182 @@ class ScoreViewController: UIViewController {
         }catch{
             print("AVAudioPlayerインスタンス作成失敗")
         }
-        //        listAudioPlayer.volume = 0.5
+            score100AudioPlayer.volume = 0.1
             score100AudioPlayer.prepareToPlay()
     }
     
+    
+    func rankDisplay(num: Int){
+//        var scoregodname:Int = Int(arc4random()) % GodList.count
+//        scoregodname += 1
+
+        //ファイルパスを取得(神様が格納されているプロパティリスト)
+        let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
+        // プロパティリストからデータを取得（Dictionary型）
+        let dic = NSDictionary(contentsOfFile: filePath!)
+
+        //画像ファイル名を格納する配列を作成
+        for(key,data) in dic!{
+            print(data)
+            print(key)
+
+            let goddic:NSDictionary = data as! NSDictionary
+            let scoreinfo:NSDictionary = ["name":key,"score":goddic["score"],"image":goddic["image"]!]
+
+//            GodList.append(scoreinfo)
+            GodList.append(data as! NSDictionary)
+
+        }
+
+        
+        
+        
+        var RandomNumber:Int = Int(arc4random() % 35)
+        
+        //リストと画像を一致させる。
+        
+        
+        for god in GodList {
+            
+            let scoreGodDisplay = Int(arc4random()) % GodList.count
+            let score = GodList[scoreGodDisplay]
+            
+            if num == 0 {
+                if (god["score"] as! String) == "s0" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+              
+            }else  if num == 10 {
+                if (god["score"] as! String) == "s10" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else  if num == 20 {
+                if (god["score"] as! String) == "s20" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else  if num == 30 {
+                if (god["score"] as! String) == "s30" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+            
+            }else if num == 40 {
+                if (god["score"] as! String) == "s40" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+
+            }else if num == 50 {
+                if (god["score"] as! String) == "s50" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+              
+            }else if num == 60 {
+                if (god["score"] as! String) == "s60" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else if num == 70 {
+                if (god["score"] as! String) == "s70" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else if num == 80 {
+                if (god["score"] as! String) == "s80" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else if num == 90 {
+                if (god["score"] as! String) == "s90" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }
+                
+            }else if num == 100 {
+                if (god["score"] as! String) == "s100" {
+                    godImageView.image = UIImage(named:god["image"] as! String)
+                }else{
+                }
+            }
+
+        }
+    
+    
+
+                //今画面に表示したいデータの取得
+//        let scoreInfo = GodList[scoregodname] as! NSDictionary
+//
+//        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
+//        print(scoreInfo["image"] as! String)
+//        print(scoreInfo["name"] as! String)
+//        print(scoreInfo["score"] as! String)
+
+//        scoregodname = scoreInfo["score"] as! String
+
+        for(key,data) in dic!{
+            print(data)
+            print(key)
+
+            var _:NSDictionary = data as! NSDictionary
+        }
+
+    }
+    
+    //ランクを表示するメソッド
+    func showRank(num: Int) {
+        var text: String
+        switch num {
+        case 0:
+            rankLabel.text = NSLocalizedString("commentZero", comment: "")
+            rankDisplay(num:num)
+            score0AudioPlayer.play()
+        case 10:
+            rankLabel.text = NSLocalizedString("commentFirst", comment: "")
+            rankDisplay(num:num)
+            score10AudioPlayer.play()
+        case 20:
+            rankLabel.text = NSLocalizedString("commentSecond", comment: "")
+            rankDisplay(num:num)
+            godImageView.image = UIImage(named: "Nandin.jpg")
+            score20AudioPlayer.play()
+        case 30:
+            rankLabel.text = NSLocalizedString("commentThird", comment: "")
+            rankDisplay(num:num)
+            score30AudioPlayer.play()
+        case 40:
+            rankLabel.text = NSLocalizedString("commentFourth", comment: "")
+            rankDisplay(num:num)
+            score40AudioPlayer.play()
+        case 50:
+            rankLabel.text = NSLocalizedString("commentFifth", comment: "")
+            rankDisplay(num:num)
+            score50AudioPlayer.play()
+        case 60:
+            rankLabel.text = NSLocalizedString("commentSixth", comment: "")
+            rankDisplay(num:num)
+            score60AudioPlayer.play()
+        case 70:
+            rankLabel.text = NSLocalizedString("commentSeventh", comment: "")
+            rankDisplay(num:num)
+            score70AudioPlayer.play()
+        case 80:
+            rankLabel.text = NSLocalizedString("commentEighth", comment: "")
+            rankDisplay(num:num)
+            score80AudioPlayer.play()
+        case 90:
+            rankLabel.text = NSLocalizedString("commentNinth", comment: "")
+            rankDisplay(num:num)
+            score90AudioPlayer.play()
+        default:
+            rankLabel.text = NSLocalizedString("commentTenth", comment: "")
+            rankDisplay(num:num)
+            score100AudioPlayer.play()
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
     }
-    
 
     /*
     // MARK: - Navigation

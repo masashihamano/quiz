@@ -71,6 +71,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         
         wikiTextView.isSelectable = true
     
+        
 //        wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         
     }

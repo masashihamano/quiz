@@ -20,5 +20,8 @@
 "commentTenth" = "Congratulations!";
 
 "wikiText" = "Click wikipedia for details.";
+"wikiLink" = "en-wiki";
 "descKey" = "english";
+"name" = "en-name";
+
 "name" = "";

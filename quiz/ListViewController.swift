@@ -42,7 +42,13 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
             print(key)
             
         var goddic:NSDictionary = data as! NSDictionary
-        var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
+        var godinfo:NSDictionary = ["name":goddic[NSLocalizedString("name",comment: "")],"image":goddic["image"]]
+            
+//        var godinfo:NSDictionary = ["name":key,"image":goddic["image"]]
+        
+            
+            
+            
             
             GodList.append(godinfo)
         }
@@ -61,8 +67,10 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         
         //表示したい文字・画像の設定
                 var godinfo = GodList[indexPath.row] as! NSDictionary
-                print(godinfo["name"] as! String)
+//                print(godinfo["name"] as! String)
+                print(godinfo[NSLocalizedString("name",comment: "")] as! String)
                 print(godinfo["image"] as! String)
+        
         
         //画像を表示
         cell.listImageView.image = UIImage(named:godinfo["image"] as! String)
@@ -72,7 +80,10 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
         cell.listImageView.layer.masksToBounds = true
         
         //文字を表示
-        cell.listLabel.text = godinfo["name"] as? String
+        cell.listLabel.text = godinfo[NSLocalizedString("name",comment: "")] as? String
+        
+//例      detailTextView.text = detailInfo[NSLocalizedString("descKey",comment: "")] as! String
+//        cell.listLabel.text = godinfo["name"] as? String
         //文字色、矢印、大きさ
         cell.listLabel.textColor = UIColor.orange
         cell.accessoryType = .disclosureIndicator
@@ -88,7 +99,9 @@ class ListViewController: UIViewController,UITableViewDataSource,UITableViewDele
             
             //タップされた行の名前を保存
             var godinfo = GodList[indexPath.row] as! NSDictionary
-            godName = godinfo["name"]  as! String
+            godName = godinfo[NSLocalizedString("name",comment: "")]  as! String
+            
+//            godName = godinfo["name"]  as! String
     
             //セグエのidentifierを指定して、画面移動
             performSegue(withIdentifier: "showDetail",sender: nil)

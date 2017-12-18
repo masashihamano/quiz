@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  quiz
+
+  Created by 濱野将士 on 2017/12/12.
+  Copyright © 2017年 Masashi Hamano. All rights reserved.
+*/
+"question" = "मेरा नाम क्या है?";
+
+"commentZero" = "सवाल से बाहर";
+"commentFirst" = "यह बहुत बुरा है";
+"commentSecond" = "कठिन अध्ययन करें";
+"commentThird" = "सीखने की कमी";
+"commentFourth" = "अभी तक नहीं है";
+"commentFifth" = "अपने आप में विश्वास करो";
+"commentSixth" = "आप यह कर सकते हैं!";
+"commentSeventh" = "अच्छा है!";
+"commentEighth" = "वाह!";
+"commentNinth" = "कमाल!";
+"commentTenth" = "बधाई!";
+
+"wikiText" = "विवरण के लिए wikipedia पर क्लिक करें";
+"wikiLink" = "hi-wiki";
+"descKey" = "hindi";
+"name" = "hi-name";

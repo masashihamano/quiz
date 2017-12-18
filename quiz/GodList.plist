@@ -16,12 +16,28 @@
 Shiva&apos;s wife is Pearl Vaty, the child in the meantime is Ganesha.
 &lt;Features&gt;
 My forehead has a third eye. The trigone spear has.</string>
+		<key>hindi</key>
+		<string>【शिव】
+तीन प्रमुख देवताओं में से एक के द्वारा &quot;विनाश के भगवान&quot; यह दुनिया के विनाश और उत्थान / प्रजनन के लिए जिम्मेदार है। यह मिथकों जैसे &quot;स्वर्ग और पृथ्वी का सृजन&quot;, &quot;प्रकृति से लाभ&quot; और &quot;दुश्मन को हराने&quot; जैसी अक्सर बात की जाती है।
+शिव की पत्नी पर्ल वैटी है, इस बीच में बच्चा गणेश है।
+&lt;विशेषताएं&gt;
+मेरे माथे की तीसरी आंख है त्रिकोणीय भाला है।</string>
 		<key>image</key>
 		<string>Shiva.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B7%E3%83%B4%E3%82%A1</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Shiva</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B6%E0%A4%BF%E0%A4%B5</string>
 		<key>score</key>
 		<string>s100</string>
+		<key>ja-name</key>
+		<string>シヴァ（Shiva）</string>
+		<key>en-name</key>
+		<string>Shiva</string>
+		<key>hi-name</key>
+		<string>शिव</string>
 	</dict>
 	<key>ブラフマー（Brahma）</key>
 	<dict>
@@ -37,12 +53,28 @@ A god who is one of the three major gods, who is responsible for &quot;creation 
 My wife is Sarasuba.
 &lt;Features&gt;
 God of white mustache with four heads.</string>
+		<key>hindi</key>
+		<string>【ब्रह्मा】
+एक देवता जो तीन प्रमुख देवताओं में से एक है, जो &quot;दुनिया का सृजन&quot; के लिए जिम्मेदार है। यह दुनिया के निर्माण और अगले विनाश के बाद फिर से सृजन का काम है। ब्रह्मा उन लोगों से लाभ उठायेंगे जिन्होंने हिंदू शास्त्रों के साथ तपस्या की है।
+मेरी पत्नी सरसबा है
+&lt;विशेषताएं&gt;
+चार मुंडों के साथ सफेद मूंछों के देवता</string>
 		<key>image</key>
 		<string>Brahma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%96%E3%83%A9%E3%83%95%E3%83%9E%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Brahma</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AC%E0%A5%8D%E0%A4%B0%E0%A4%B9%E0%A5%8D%E0%A4%AE%E0%A4%BE</string>
 		<key>score</key>
 		<string>s100</string>
+		<key>ja-name</key>
+		<string>ブラフマー（Brahma）</string>
+		<key>en-name</key>
+		<string>Brahma</string>
+		<key>hi-name</key>
+		<string>ब्रह्मा</string>
 	</dict>
 	<key>ドゥルガー（Durga）</key>
 	<dict>
@@ -58,12 +90,28 @@ The goddess of Hinduism. That name means &quot;Person who is difficult to approa
 Incarnation of Pearl Verty.
 &lt;Features&gt;
 I am on a tiger or a lion. Have a great deal of weapons in ten arms.</string>
+		<key>hindi</key>
+		<string>【दुर्गा】
+हिंदू धर्म की देवी उस नाम का अर्थ है &quot;व्यक्ति जो दृष्टिकोण करना मुश्किल है&quot; उपस्थिति सुंदर और सुंदर है, लेकिन वास्तव में युद्ध की देवी है
+पर्ल वर्टी का अवतार
+&lt;विशेषताएं&gt;
+मैं एक शेर या शेर पर हूँ दस हथियारों में बहुत सारे हथियार हों।</string>
 		<key>image</key>
 		<string>Durga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%89%E3%82%A5%E3%83%AB%E3%82%AC%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Durga</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%A6%E0%A5%81%E0%A4%B0%E0%A5%8D%E0%A4%97%E0%A4%BE</string>
 		<key>score</key>
 		<string>s80</string>
+		<key>ja-name</key>
+		<string>ドゥルガー（Durga）</string>
+		<key>en-name</key>
+		<string>Durga</string>
+		<key>hi-name</key>
+		<string>दुर्गा</string>
 	</dict>
 	<key>ガネーシャ（Ganesa）</key>
 	<dict>
@@ -79,12 +127,28 @@ God of wisdom · academic · business. God who removes all obstacles on the way 
 My father is Shiva, my mother is Pearl Verty.
 &lt;Features&gt;
 My head is an elephant and my body is human. One of the tusks is missing with a thump. The vehicle is a rat.</string>
+		<key>hindi</key>
+		<string>【गणेश】
+ज्ञान के भगवान · शैक्षणिक · व्यापार भगवान जिस तरह से व्यवसायी कदम और सांसारिक सफलता हासिल करने के रास्ते पर सभी बाधाओं को दूर करता है
+मेरे पिता शिव हैं, मेरी मां पर्ल वर्टी है।
+&lt;विशेषताएं&gt;
+मेरा सिर एक हाथी है और मेरा शरीर मानव है दांतों में से एक एक मुंह से गायब है वाहन एक चूहा है</string>
 		<key>image</key>
 		<string>Ganesa.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%8D%E3%83%BC%E3%82%B7%E3%83%A3</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Ganesha</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%97%E0%A4%A3%E0%A5%87%E0%A4%B6</string>
 		<key>score</key>
 		<string>s70</string>
+		<key>ja-name</key>
+		<string>ガネーシャ（Ganesa）</string>
+		<key>en-name</key>
+		<string>Ganesa</string>
+		<key>hi-name</key>
+		<string>गणेश</string>
 	</dict>
 	<key>ラクシュミー（Lakshmi）</key>
 	<dict>
@@ -100,12 +164,28 @@ The goddess of beauty and wealth. It was born from the bubble of the sea which t
 Vishnu&apos;s wife.
 &lt;Features&gt;
 Have lotus flowers in 4 arms.</string>
+		<key>hindi</key>
+		<string>【लक्ष्मी】
+सुंदरता और धन की देवी यह समुद्र के बुलबुले से पैदा हुआ था जिसे दुनिया ने ईश्वर और शैतान &quot;इमुरीता&quot; अमर औषधि बनाने के लिए बनाया था।
+विष्णु की पत्नी
+&lt;विशेषताएं&gt;
+कमल के फूलों में 4 हथियार हों।</string>
 		<key>image</key>
 		<string>Lakshmi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%82%AF%E3%82%B7%E3%83%A5%E3%83%9F%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Lakshmi</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B2%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%8D%E0%A4%AE%E0%A5%80</string>
 		<key>score</key>
 		<string>s90</string>
+		<key>ja-name</key>
+		<string>ラクシュミー（Lakshmi）</string>
+		<key>en-name</key>
+		<string>Lakshmi</string>
+		<key>hi-name</key>
+		<string>लक्ष्मी</string>
 	</dict>
 	<key>ナンディン（Nandin）</key>
 	<dict>
@@ -121,12 +201,28 @@ The guardian of all quadrupeds. When Shiva dance, she plays the role of playing 
 A bull that is regarded as a vehicle of Shiva.
 &lt;Features&gt;
 Milky white bull.</string>
+		<key>hindi</key>
+		<string>【नन्दी】
+सभी चौगुनी के संरक्षक जब शिव नृत्य करते हैं, तो वह उस के लिए संगीत खेलने की भूमिका निभाता है।
+एक बैल जिसे शिव के वाहन के रूप में माना जाता है
+&lt;विशेषताएं&gt;
+दूधिया सफेद बैल</string>
 		<key>image</key>
 		<string>Nandin.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%B3%E3%83%87%E3%82%A3%E3%83%B3</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Nandi_(bull)</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%A8%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%80</string>
 		<key>score</key>
 		<string>s10</string>
+		<key>ja-name</key>
+		<string>ナンディン（Nandin）</string>
+		<key>en-name</key>
+		<string>Nandin</string>
+		<key>hi-name</key>
+		<string>नन्दी</string>
 	</dict>
 	<key>スカンダ（Skanda）</key>
 	<dict>
@@ -142,12 +238,28 @@ God of battle. Mr. Idaithi. Also called Murugan (Murugan). Mountain child god bo
 Siva&apos;s son, Ghanesha and brothers.
 &lt;Features&gt;
 I carry a spear and make a peacock a mountain beast.</string>
+		<key>hindi</key>
+		<string>【कंद】
+युद्ध के भगवान श्री इदाथी मुरुगन (मुरुगन) भी कहा जाता है माउंटेन बालक भगवान बेजोड़ शक्ति का दावा।
+शिव के बेटे, घनशे और भाई
+&lt;विशेषताएं&gt;
+मैं एक भाला लेता हूं और एक मोर एक पहाड़ जानवर बनाऊंगा।</string>
 		<key>image</key>
 		<string>Skanda.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%82%AB%E3%83%B3%E3%83%80</string>
+		<key>en-wiki</key>
+		<string>https://nl.wikipedia.org/wiki/Murugan</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%A4%E0%A4%BF%E0%A4%95%E0%A5%87%E0%A4%AF</string>
 		<key>score</key>
 		<string>s70</string>
+		<key>ja-name</key>
+		<string>スカンダ（Skanda）</string>
+		<key>en-name</key>
+		<string>Skanda</string>
+		<key>hi-name</key>
+		<string>कंद</string>
 	</dict>
 	<key>パールヴァティ（Parvathi）</key>
 	<dict>
@@ -163,12 +275,28 @@ Satie (Shiva&apos;s first wife) is reincarnated. My sister, Ganga, the goddess o
 Shiva&apos;s wife. Academic god Ganesha and military god Scanda&apos;s mother.
 &lt;Features&gt;
 It is drawn with Shiva.</string>
+		<key>hindi</key>
+		<string>【पार्वती】
+सत्य (शिव की पहली पत्नी) पुनर्जन्म है। मेरी बहन, गंगा, गंगा नदी की देवी, हिमालय में पर्वत देवता हिमा मत की बेटी।
+शिव की पत्नी शैक्षणिक भगवान गणेश और सैन्य देवता स्कन्दा की मां
+&lt;विशेषताएं&gt;
+यह शिव के साथ खींचा गया है</string>
 		<key>image</key>
 		<string>Parvathi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%91%E3%83%BC%E3%83%AB%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Parvati</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A4%BE%E0%A4%B0%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80</string>
 		<key>score</key>
 		<string>s90</string>
+		<key>ja-name</key>
+		<string>パールヴァティ（Parvathi）</string>
+		<key>en-name</key>
+		<string>Parvathi</string>
+		<key>hi-name</key>
+		<string>पार्वती</string>
 	</dict>
 	<key>ヴィシュヌ（Vishnu）</key>
 	<dict>
@@ -184,12 +312,28 @@ God of love and sacrifice by one of the three major gods. It has 10 incarnations
 Wife is Lakshmi
 &lt;Features&gt;
 Have symbolic weapons (chakras, clubs, holly shells, lotus flowers) in 4 hands.</string>
+		<key>hindi</key>
+		<string>【विष्णु】
+तीन प्रमुख देवताओं में से एक के द्वारा प्यार और बलिदान के भगवान इसमें कुरमास, मत्सुया, वरमान, नारसिंह, राम, परशुराम, कृष्ण, बुद्ध जैसे 10 अवतार हैं।
+पत्नी लक्ष्मी है
+&lt;विशेषताएं&gt;
+4 हाथों में प्रतीकात्मक हथियार (चक्र, क्लब, हॉली गोले, कमल फूल)</string>
 		<key>image</key>
 		<string>Vishnu.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A3%E3%82%B7%E3%83%A5%E3%83%8C</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Vishnu</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B5%E0%A4%BF%E0%A4%B7%E0%A5%8D%E0%A4%A3%E0%A5%81</string>
 		<key>score</key>
 		<string>s100</string>
+		<key>ja-name</key>
+		<string>ヴィシュヌ（Vishnu）</string>
+		<key>en-name</key>
+		<string>Vishnu</string>
+		<key>hi-name</key>
+		<string>विष्णु</string>
 	</dict>
 	<key>アグニ（Agni）</key>
 	<dict>
@@ -205,12 +349,28 @@ The god of fire of the fire of Indian mythology. The blazing fire will rise up t
 As a bridge between the worlds of the gods and the human world, God is indispensable for shrines.
 &lt;Features&gt;
 I wear a flaming clothes on the red body, three heads and arms.</string>
+		<key>hindi</key>
+		<string>【अग्नि】
+भारतीय पौराणिक कथाओं के आग की आग का देवता धधकती आग स्वर्ग तक बढ़ जाएगी, और अन्य देवताओं के लिए प्रसाद और इच्छाएं एक साथ वितरित की जाएंगी।
+देवताओं और मानव दुनिया की दुनिया के बीच एक पुल के रूप में, देवस्थानों के लिए अपरिहार्य है।
+&lt;विशेषताएं&gt;
+मैं लाल शरीर, तीन सिर और हथियारों पर एक ज्वलंत कपड़े पहनता हूं।</string>
 		<key>image</key>
 		<string>Agni.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%A2%E3%82%B0%E3%83%8B</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Agni</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%85%E0%A4%97%E0%A5%8D%E0%A4%A8%E0%A4%BF_%E0%A4%A6%E0%A5%87%E0%A4%B5</string>
 		<key>score</key>
 		<string>s50</string>
+		<key>ja-name</key>
+		<string>アグニ（Agni）</string>
+		<key>en-name</key>
+		<string>Agni</string>
+		<key>hi-name</key>
+		<string>अग्नि</string>
 	</dict>
 	<key>ダーキニー（Dakini）</key>
 	<dict>
@@ -226,12 +386,28 @@ Goddess giving wisdom. In Japan, as a Dakini Tian, the master god of Inari like 
 A witch of India, a great goddess and blood-hungry follower of Curly
 &lt;Features&gt;
 I am wearing a skull necklace and a cup.</string>
+		<key>hindi</key>
+		<string>【डाकिनी】
+देवी ज्ञान देते हैं। जापान में, एक दकिनी तिआन के रूप में, इंदिरा के स्वामी देवता की तरह एक लोमड़ी की सवारी करते हुए देवी की तरह।
+भारत की एक चुड़ैल, एक महान देवी और कुरली के रक्त भूखे अनुयायी
+&lt;विशेषताएं&gt;
+मैं एक खोपड़ी का हार और एक कप पहन रहा हूँ।</string>
 		<key>image</key>
 		<string>Dakini.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E8%8D%BC%E6%9E%B3%E5%B0%BC%E5%A4%A9</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Dakini</string>
+		<key>hi-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Dakini</string>
 		<key>score</key>
 		<string>s20</string>
+		<key>ja-name</key>
+		<string>ダーキニー（Dakini）</string>
+		<key>en-name</key>
+		<string>Dakini</string>
+		<key>hi-name</key>
+		<string>डाकिनी</string>
 	</dict>
 	<key>ハヌマーン（Hanuman）</key>
 	<dict>
@@ -247,12 +423,28 @@ A child of Fujin Valle and former wife of Monkey King Anjaaner. It&apos;s quick 
 In the epic &quot;Ramayana&quot; which is also a Hindu scripture, we will cooperate and fight to save Rama &apos;s wife Sieta.
 &lt;Features&gt;
 Son Goku model of the West Journey.</string>
+		<key>hindi</key>
+		<string>【हनुमान】
+फूजीन वैले का एक बच्चा और बंदर राजा अंजनेर की पूर्व पत्नी। आकार और आकार बदलने में तेज़ और आसान है।
+महाकाव्य &quot;रामायण&quot; में जो एक हिंदू शास्त्र भी है, हम सहयोग करेंगे और राम की पत्नी सेटा को बचाने के लिए लड़ेंगे।
+&lt;विशेषताएं&gt;
+पश्चिम यात्रा के पुत्र गोकू मॉडल</string>
 		<key>image</key>
 		<string>Hanuman.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8F%E3%83%8C%E3%83%9E%E3%83%BC%E3%83%B3</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Hanuman</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B9%E0%A4%A8%E0%A5%81%E0%A4%AE%E0%A4%BE%E0%A4%A8</string>
 		<key>score</key>
 		<string>s20</string>
+		<key>ja-name</key>
+		<string>ハヌマーン（Hanuman）</string>
+		<key>en-name</key>
+		<string>Hanuman</string>
+		<key>hi-name</key>
+		<string>हनुमान</string>
 	</dict>
 	<key>インドラ（Indra）</key>
 	<dict>
@@ -268,12 +460,28 @@ Raikage god who manipulates thunder. God of battle appearing from Indian ancient
 Originally God who Arians brought to India, but as Hinduism develops, Indra&apos;s role replaces Shiva.
 &lt;Features&gt;
 Has a weapon (Vajra) and is on a white statue (Eyravata).</string>
+		<key>hindi</key>
+		<string>【इंद्र】
+युद्ध के भगवान, भारतीय प्राचीन ग्रंथ &quot;ऋग वेद&quot; से प्रकट हुए रियाज देवता।
+मूल रूप से भगवान जो एरियन भारत आए थे, लेकिन हिंदू धर्म के विकास के रूप में, इंद्र की भूमिका शिव की जगह है
+&lt;विशेषताएं&gt;
+एक हथियार (वजरा) है और एक सफेद मूर्ति (आइरवेटा) पर है।</string>
 		<key>image</key>
 		<string>Indra.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%A4%E3%83%B3%E3%83%89%E3%83%A9</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Indra</string>
+		<key>hi-wiki</key>
+		<string>https://ne.wikipedia.org/wiki/%E0%A4%87%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A5%8D%E0%A4%B0</string>
 		<key>score</key>
 		<string>s50</string>
+		<key>ja-name</key>
+		<string>インドラ（Indra）</string>
+		<key>en-name</key>
+		<string>Indra</string>
+		<key>hi-name</key>
+		<string>इंद्र</string>
 	</dict>
 	<key>ジャガンナート（Jagannatha）</key>
 	<dict>
@@ -289,12 +497,28 @@ God absorbed by Hinduism as one of the incarnations of Vishnu
 Originally an indigenous god. One of the four great sacred places in India God of the seaside town of East India&apos;s Puri.
 &lt;Features&gt;
 When we pray &quot;say it,&quot; then say &quot;potatoes!&quot;</string>
+		<key>hindi</key>
+		<string>【जगन्नाथ】
+भगवान विष्णु के अवतारों में से एक के रूप में हिंदू धर्म द्वारा अवशोषित
+मूलतः एक स्वदेशी देवता। ईस्ट इंडिया के पुरी के समुद्र तटीय शहर के भारत भगवान के चार महान पवित्र स्थानों में से एक
+&lt;विशेषताएं&gt;
+जब हम प्रार्थना करते हैं &quot;यह कहते हैं,&quot; तो &quot;आलू&quot; कहें!</string>
 		<key>image</key>
 		<string>Jagannatha.gif</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B8%E3%83%A3%E3%82%AC%E3%83%B3%E3%83%8A%E3%83%BC%E3%83%88</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Jagannath</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%9C%E0%A4%97%E0%A4%A8%E0%A5%8D%E0%A4%A8%E0%A4%BE%E0%A4%A5</string>
 		<key>score</key>
 		<string>s20</string>
+		<key>ja-name</key>
+		<string>ジャガンナート（Jagannatha）</string>
+		<key>en-name</key>
+		<string>Jagannatha</string>
+		<key>hi-name</key>
+		<string>जगन्नाथ</string>
 	</dict>
 	<key>カーリー（Kali）</key>
 	<dict>
@@ -310,12 +534,28 @@ The goddess of the battle that prefers blood, alcohol and slaughter of Indian my
 She is one of Shiva&apos;s wives, also known as Curly Ma (black mother), and is regarded as a furious phase of Paarwati.
 &lt;Features&gt;
 While holding a head, she is dancing on Shiva.</string>
+		<key>hindi</key>
+		<string>【काली】
+लड़ाई की देवी जो भारतीय मिथक की खून, शराब और वध को पसंद करती है।
+वह शिव की पत्नियों में से एक है, जिसे कर्ली मा (काली मां) भी कहा जाता है, और इसे पारवती का उग्र चरण माना जाता है।
+&lt;विशेषताएं&gt;
+सिर रखने के दौरान, वह शिव पर नृत्य कर रही हैं।</string>
 		<key>image</key>
 		<string>Kali.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%AA%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Kali</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A4%BE%E0%A4%B2%E0%A5%80</string>
 		<key>score</key>
 		<string>s80</string>
+		<key>ja-name</key>
+		<string>カーリー（Kali）</string>
+		<key>en-name</key>
+		<string>Kali</string>
+		<key>hi-name</key>
+		<string>काली</string>
 	</dict>
 	<key>カーマ（Kama）</key>
 	<dict>
@@ -331,12 +571,28 @@ God of love in Hinduism. Kama originally means &quot;love&quot;, also called Mam
 It is the son of Dharma (Justice) and Slada (faith), but there is also the theory that it will be the son of Brahma.
 &lt;Features&gt;
 Take a parrot and have a sugarcane bow and a flower arrow.</string>
+		<key>hindi</key>
+		<string>【कामदेव】
+हिंदू धर्म में प्रेम का भगवान। कामा का मूल अर्थ है &quot;प्रेम&quot;, जिसे ममता, कैंडलपा, मरा आदि भी कहा जाता है।
+यह धर्म (न्याय) और स्लाव (विश्वास) का पुत्र है, लेकिन यह भी सिद्धांत है कि यह ब्रह्मा का पुत्र होगा।
+&lt;विशेषताएं&gt;
+एक तोते लो और एक गन्ना धनुष और एक फूल तीर है।</string>
 		<key>image</key>
 		<string>Kama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AB%E3%83%BC%E3%83%9E_(%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99)</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Kamadeva</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A4%BE%E0%A4%AE%E0%A4%A6%E0%A5%87%E0%A4%B5</string>
 		<key>score</key>
 		<string>s70</string>
+		<key>ja-name</key>
+		<string>カーマ（Kama）</string>
+		<key>en-name</key>
+		<string>Kama</string>
+		<key>hi-name</key>
+		<string>कामदेव</string>
 	</dict>
 	<key>クリシュナ（Krsna）</key>
 	<dict>
@@ -352,12 +608,28 @@ A hero that appears in the Indian myth. I was born to destroy evil kanza.
 The eighth incarnation of the Vishnu God (Avatara). Handsome, God of crying girl.
 &lt;Features&gt;
 I have a crown and a whistle with peacock feathers.</string>
+		<key>hindi</key>
+		<string>【कृष्ण】
+मैं बोर हूं कि बुराई कन्जा को नष्ट करने के लिए।
+विष्णु भगवान (अवतर) का आठवां अवतार। सुंदर लड़की, रोते हुए भगवान का।
+&lt;विशेषताएं&gt;
+मेरे पास मुकुट और मोर पंख वाला एक सीटी है</string>
 		<key>image</key>
 		<string>Krsna.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%AA%E3%82%B7%E3%83%A5%E3%83%8A</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Krishna</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A5%83%E0%A4%B7%E0%A5%8D%E0%A4%A3</string>
 		<key>score</key>
 		<string>s40</string>
+		<key>ja-name</key>
+		<string>クリシュナ（Krsna）</string>
+		<key>en-name</key>
+		<string>Krsna</string>
+		<key>hi-name</key>
+		<string>कृष्</string>
 	</dict>
 	<key>ミーナクシー（Minakshi）</key>
 	<dict>
@@ -373,12 +645,28 @@ Goddess who defends Madurai in South India. It is also a god of the sea and it i
 One of Shiva&apos;s wife.
 &lt;Features&gt;
 Fish goddess having a fish eye.</string>
+		<key>hindi</key>
+		<string>【मीनाक्षी】
+देवी जो दक्षिण भारत में मदुरै की रक्षा करता है। यह समुद्र का देवता भी है और समुद्र तट पर जाने से पहले प्रार्थना करना बेहतर है।
+शिव की पत्नी में से एक
+&lt;विशेषताएं&gt;
+मछली देवी को एक मछली की आँख होती है</string>
 		<key>image</key>
 		<string>Minakshi.jpg</string>
 		<key>wikipedia</key>
 		<string>https://en.wikipedia.org/wiki/Meenakshi</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Meenakshi</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A5%80%E0%A4%A8%E0%A4%BE%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%80_%E0%A4%B8%E0%A5%81%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%B0%E0%A5%87%E0%A4%B6%E0%A5%8D%E0%A4%B5%E0%A4%B0_%E0%A4%AE%E0%A4%A8%E0%A5%8D%E0%A4%A6%E0%A4%BF%E0%A4%B0</string>
 		<key>score</key>
 		<string>s80</string>
+		<key>ja-name</key>
+		<string>ミーナクシー（Minakshi）</string>
+		<key>en-name</key>
+		<string>Minakshi</string>
+		<key>hi-name</key>
+		<string>मीनाक्षी</string>
 	</dict>
 	<key>ナーガ（Naga）</key>
 	<dict>
@@ -394,12 +682,28 @@ The man is Naga. The woman is called Nagy. An important existence that has been 
 Symbol of vitality and fertility.
 &lt;Features&gt;
 Indian snake God.</string>
+		<key>hindi</key>
+		<string>【नागा】
+यह व्यक्ति नागा है। स्त्री को नागी कहा जाता है। हिंदू धर्म की शुरुआत के बाद से संकेत के देवता के रूप में एक महत्वपूर्ण अस्तित्व माना गया है।
+जीवन शक्ति और उर्वरता का प्रतीक
+&lt;विशेषताएं&gt;
+भारतीय सर्प भगवान</string>
 		<key>image</key>
 		<string>Naga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%BC%E3%82%AC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/N%C4%81ga</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%A8%E0%A4%BE%E0%A4%97_%E0%A4%AA%E0%A4%82%E0%A4%9A%E0%A4%AE%E0%A5%80</string>
 		<key>score</key>
 		<string>s0</string>
+		<key>ja-name</key>
+		<string>ナーガ（Naga）</string>
+		<key>en-name</key>
+		<string>Naga</string>
+		<key>hi-name</key>
+		<string>नागा</string>
 	</dict>
 	<key>ラーマ（Rama）</key>
 	<dict>
@@ -415,12 +719,28 @@ Indian snake God.</string>
 The main character of the epic &quot;Ramayana&quot;. &quot;Ramayana&quot; is a story fought by Prince Rama to recover the wife Sieta who was kidnapped by the devil.
 &lt;Features&gt;
 The prince who has a bow and arrow.</string>
+		<key>hindi</key>
+		<string>【राम】
+यह आंकड़ा है कि विष्णु एक इंसान के रूप में पुनर्जन्म हुआ था। अवतार (अवतार) में से एक।
+महाकाव्य &quot;रामायण&quot; का मुख्य चरित्र। &quot;रामायण&quot; एक कहानी है जो राजकुमार राम से लड़ती है, जो कि पत्नी सिय्टा को पुनर्प्राप्त करने के लिए है, जिसे शैतान ने अपहरण कर लिया था।
+&lt;विशेषताएं&gt;
+राजकुमार के पास एक धनुष और तीर है</string>
 		<key>image</key>
 		<string>Rama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%A9%E3%83%BC%E3%83%9E</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Rama</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B0%E0%A4%BE%E0%A4%AE</string>
 		<key>score</key>
 		<string>s30</string>
+		<key>ja-name</key>
+		<string>ラーマ（Rama）</string>
+		<key>en-name</key>
+		<string>Rama</string>
+		<key>hi-name</key>
+		<string>राम</string>
 	</dict>
 	<key>サラスヴァティ（Sarasvati）</key>
 	<dict>
@@ -436,12 +756,28 @@ The prince who has a bow and arrow.</string>
 Brahma&apos;s wife. Mr. Benten, one of the Seven Lucky Gods in Japan.
 &lt;Features&gt;
 I have a musical instrument (Vina) and I am on a lotus flower.</string>
+		<key>hindi</key>
+		<string>【सरस्वती】
+हिंदू देवी, जो शिक्षाविदों जैसे ज्ञान को नियंत्रित करते हैं। वाटरसाइड पर बैठे, हंस, मोर का पालन करते हैं, जो अक्सर वेना खेलने के रूप में चित्रित होते हैं।
+ब्रह्मा की पत्नी श्री बेन्टेन, जापान में सात लकी देवताओं में से एक।
+&lt;विशेषताएं&gt;
+मेरे पास एक संगीत वाद्य (वीना) है और मैं कमल के फूल पर हूं।</string>
 		<key>image</key>
 		<string>Sarasvati.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B5%E3%83%A9%E3%82%B9%E3%83%B4%E3%82%A1%E3%83%86%E3%82%A3%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Saraswati</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80_%E0%A4%A6%E0%A5%87%E0%A4%B5%E0%A5%80</string>
 		<key>score</key>
 		<string>s90</string>
+		<key>ja-name</key>
+		<string>サラスヴァティ（Sarasvati）</string>
+		<key>en-name</key>
+		<string>Sarasvati</string>
+		<key>hi-name</key>
+		<string>सरस्वती</string>
 	</dict>
 	<key>マツヤ（Matsya）</key>
 	<dict>
@@ -457,12 +793,28 @@ The first avatar of God Vishnu (incarnation)
 Matsuya made a prophecy of the great flood, prepared a ship carrying species of plants around the world, and prevented the destruction of mankind.
 &lt;Features&gt;
 Lower body is fish.</string>
+		<key>hindi</key>
+		<string>【मत्स्य】
+भगवान विष्णु का पहला अवतार (अवतार)
+मात्सुया ने महान बाढ़ की एक भविष्यवाणी की, दुनिया भर के पौधों की प्रजातियों को लेकर एक जहाज तैयार किया, और मानव जाति के विनाश के साथ।
+&lt;विशेषताएं&gt;
+लोअर बॉडी मछली है</string>
 		<key>image</key>
 		<string>Matsya.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%9E%E3%83%84%E3%83%A4</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Matsya</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AE%E0%A4%B9%E0%A4%BE%E0%A4%AE%E0%A5%83%E0%A4%A4%E0%A5%8D%E0%A4%AF%E0%A5%81%E0%A4%9E%E0%A5%8D%E0%A4%9C%E0%A4%AF_%E0%A4%AE%E0%A4%A8%E0%A5%8D%E0%A4%A4%E0%A5%8D%E0%A4%B0#%E0%A4%AE%E0%A4%82%E0%A4%A4%E0%A5%8D%E0%A4%B0</string>
 		<key>score</key>
 		<string>s40</string>
+		<key>ja-name</key>
+		<string>マツヤ（Matsya）</string>
+		<key>en-name</key>
+		<string>Matsya</string>
+		<key>hi-name</key>
+		<string>मत्</string>
 	</dict>
 	<key>クールマ（Kurma）</key>
 	<dict>
@@ -478,12 +830,28 @@ Lower body is fish.</string>
 Appeared in a story where gods and devils cooperate to acquire immortal spirits. At that time, he played the role of supporting the Mandara mountain on the seabed.
 &lt;Features&gt;
 The lower part of the turtle.</string>
+		<key>hindi</key>
+		<string>【कुर्म】
+विष्णु भगवान (अवतर) का दूसरा अवतार
+जाहिरा तौर पर एक कहानी है जहां देवताओं और शैतान अमर आत्माओं का अधिग्रहण करने में सहयोग करते हैं। उस समय, उन्होंने समुद्र तट पर मंडरा पर्वत का समर्थन करने की भूमिका निभाई।
+&lt;विशेषताएं&gt;
+कछुए का निचला हिस्सा</string>
 		<key>image</key>
 		<string>Kurma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%BC%E3%83%AB%E3%83%9E</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Kurma</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AE_%E0%A4%85%E0%A4%B5%E0%A4%A4%E0%A4%BE%E0%A4%B0</string>
 		<key>score</key>
 		<string>s40</string>
+		<key>ja-name</key>
+		<string>クールマ（Kurma）</string>
+		<key>en-name</key>
+		<string>Coolma</string>
+		<key>hi-name</key>
+		<string>कुर्म</string>
 	</dict>
 	<key>ガンガー（Ganga）</key>
 	<dict>
@@ -499,12 +867,28 @@ The lower part of the turtle.</string>
 The Ganges river (Ganga) is still the object of the Hindu faith as the &quot;holy river&quot;, and it is believed that all the sins can be cleansed by bathing with the water of this river.
 &lt;Features&gt;
 Vehicles (Vahana) are crocodile Cumbila.</string>
+		<key>hindi</key>
+		<string>【गंगा】
+देवी जिसने गंगा नदी को समर्पित किया
+गंगा नदी (गंगा) अभी भी &quot;पवित्र नदी&quot; के रूप में हिंदू धर्म का उद्देश्य है, और यह माना जाता है कि सभी पापों को इस नदी के पानी से स्नान करके शुद्ध किया जा सकता है।
+&lt;विशेषताएं&gt;
+वाहन (वाहना) मगरमच्छ कंबिला हैं</string>
 		<key>image</key>
 		<string>Ganga.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AC%E3%83%B3%E3%82%AC%E3%83%BC</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Ganges_in_Hinduism</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%97%E0%A4%82%E0%A4%97%E0%A4%BE_%E0%A4%A6%E0%A5%87%E0%A4%B5%E0%A5%80</string>
 		<key>score</key>
 		<string>s20</string>
+		<key>ja-name</key>
+		<string>ガンガー（Ganga）</string>
+		<key>en-name</key>
+		<string>Ganga</string>
+		<key>hi-name</key>
+		<string>गंगा</string>
 	</dict>
 	<key>ヴァラーハ（Varaha）</key>
 	<dict>
@@ -520,12 +904,28 @@ The third incarnation of Vishnu God (Avatara)
 It was sent to destroy the terrible King of the Dithya king Hiraniyakusha who sunk the earth (Pretty V) to the bottom of the ocean, winning after 1000 years of fighting.
 &lt;Features&gt;
 The face of a boar.</string>
+		<key>hindi</key>
+		<string>【वराह】
+विष्णु भगवान (अवतर) का तीसरा अवतार
+दीया राजा हिरायनाकुशा के भयानक राजा को नष्ट करने के लिए भेजा गया जो 1000 साल के युद्ध के बाद जीतने वाले महासागर के नीचे पृथ्वी (सुंदर वी) को डूब गया।
+&lt;विशेषताएं&gt;
+एक सूअर का चेहरा</string>
 		<key>image</key>
 		<string>Varaha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%A9%E3%83%BC%E3%83%8F</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Varaha</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B5%E0%A4%B0%E0%A4%BE%E0%A4%B9%E0%A4%BE%E0%A4%B5%E0%A4%A4%E0%A4%BE%E0%A4%B0</string>
 		<key>score</key>
 		<string>s30</string>
+		<key>ja-name</key>
+		<string>ヴァラーハ（Varaha）</string>
+		<key>en-name</key>
+		<string>Varaha</string>
+		<key>hi-name</key>
+		<string>वराह</string>
 	</dict>
 	<key>ナラシンハ（Nrisimha）</key>
 	<dict>
@@ -541,12 +941,28 @@ The fourth incarnation of the Vishnu God (Avatara). Also referred to as Nrisimha
 It is said that the brahma had a penance, and had torn the Hiraniyakaship who got a real invulnerable body.
 &lt;Features&gt;
 People lions. Head is Lion.</string>
+		<key>hindi</key>
+		<string>【नरसिंह】
+विष्णु भगवान (अवतर) का चौथा अवतार। इसके अलावा नरसिंह (नृसिंह) के रूप में भी जाना जाता है।
+ऐसा कहा जाता है कि ब्रह्मा की तपस्या थी, और हिरायनायकशिप को फटे हुए थे, जो एक वास्तविक अभेद्य शरीर मिला।
+&lt;विशेषताएं&gt;
+शेर लोग हैं शेर</string>
 		<key>image</key>
 		<string>Nrisimha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%8A%E3%83%A9%E3%82%B7%E3%83%B3%E3%83%8F</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Narasimha</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%A8%E0%A4%B0%E0%A4%B8%E0%A4%BF%E0%A4%82%E0%A4%B9</string>
 		<key>score</key>
 		<string>s40</string>
+		<key>ja-name</key>
+		<string>ナラシンハ（Nrisimha）</string>
+		<key>en-name</key>
+		<string>Narisimha</string>
+		<key>hi-name</key>
+		<string>नरसिंह</string>
 	</dict>
 	<key>ヴァーマナ（Vamana）</key>
 	<dict>
@@ -562,12 +978,28 @@ The fifth incarnation of Vishnu God (Avatara)
 Demon King Requested land as much as 3 steps to Bali, giant immediately after that, walked in &quot;Heaven · Sky · Earth&quot; with three steps, and recaptured the three worlds.
 &lt;Features&gt;
 Boy&apos;s monk.</string>
+		<key>hindi</key>
+		<string>【वामन】
+विष्णु भगवान (अवतर) का पांचवां अवतार
+दानव किंग ने बाली के लिए 3 कदम के रूप में भूमि की मांग की थी, इसके तुरंत बाद विशाल, &quot;स्वर्ग · स्काई · पृथ्वी &apos;में तीन चरणों में चले गए, और तीनों दुनिया को पुनः कब्जा कर लिया।
+&lt;विशेषताएं&gt;
+लड़के के भिक्षु</string>
 		<key>image</key>
 		<string>Vamana.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%9E%E3%83%8A</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Vamana</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B5%E0%A4%BE%E0%A4%AE%E0%A4%A8%E0%A4%BE%E0%A4%B5%E0%A4%A4%E0%A4%BE%E0%A4%B0</string>
 		<key>score</key>
 		<string>s30</string>
+		<key>ja-name</key>
+		<string>ヴァーマナ（Vamana）</string>
+		<key>en-name</key>
+		<string>Vamana</string>
+		<key>hi-name</key>
+		<string>वामन</string>
 	</dict>
 	<key>パラシュラーマ（Parasurama）</key>
 	<dict>
@@ -583,12 +1015,28 @@ The seventh incarnation of God Vishnu (Avatara). Also called Kshatriya · killer
 Born in the days when Kushatriya (warrior) was wrestling, destroyed evil Kushatriya, he created a society that was the supreme brahmin (monk).
 &lt;Features&gt;
 Axes with axes.</string>
+		<key>hindi</key>
+		<string>【परशुराम】
+भगवान विष्णु (अवतर) का सातवां अवतार। क्षत्रिय हत्यारा भी कहा जाता है।
+उन दिनों में जन्मे जब कुश्ती (योद्धा) कुश्ती थी, कुश्ती की कुष्ठा नष्ट कर दी, उन्होंने एक ऐसा समाज बनाया जो श्रेष्ठ ब्राह्मण था (भिक्षु)।
+&lt;विशेषताएं&gt;
+कुल्हाड़ियों के साथ अक्ष</string>
 		<key>image</key>
 		<string>Parasurama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://en.wikipedia.org/wiki/Parashurama</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Parashurama</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AA%E0%A4%B0%E0%A4%B6%E0%A5%81%E0%A4%B0%E0%A4%BE%E0%A4%AE</string>
 		<key>score</key>
 		<string>s30</string>
+		<key>ja-name</key>
+		<string>パラシュラーマ（Parasurama）</string>
+		<key>en-name</key>
+		<string>Parasurama</string>
+		<key>hi-name</key>
+		<string>परशुराम</string>
 	</dict>
 	<key>ブッダ（Budha）</key>
 	<dict>
@@ -604,12 +1052,28 @@ The 9th Incarnation of the Vishnu God (Avatara)
 In order to keep the Veda sacred book away from the evil one, it is said to have appeared to disseminate Buddhism, which is a false religion, to confuse people.
 &lt;Features&gt;
 A person who opened the highest rank of Buddhism &quot;enlightenment of the Buddha&quot;</string>
+		<key>hindi</key>
+		<string>【बुद्ध】
+विष्णु भगवान (अवतर) का 9 वां अवतार
+वेद पवित्र पुस्तक को बुराई से दूर रखने के लिए, लोगों को भ्रमित करने के लिए बौद्ध धर्म का प्रसार करना है, जो कि एक झूठे धर्म है, इसे प्रसारित करना है।
+&lt;विशेषताएं&gt;
+एक व्यक्ति जो बौद्ध धर्म के उच्चतम रैंक को खोला &quot;बुद्ध के ज्ञान&quot;</string>
 		<key>image</key>
 		<string>Budha.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%92%E3%83%B3%E3%83%89%E3%82%A5%E3%83%BC%E6%95%99%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E9%87%88%E8%BF%A6</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Gautama_Buddha_in_Hinduism</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%97%E0%A5%8C%E0%A4%A4%E0%A4%AE_%E0%A4%AC%E0%A5%81%E0%A4%A6%E0%A5%8D%E0%A4%A7</string>
 		<key>score</key>
 		<string>s30</string>
+		<key>ja-name</key>
+		<string>ブッダ（Budha）</string>
+		<key>en-name</key>
+		<string>Buddha</string>
+		<key>hi-name</key>
+		<string>बुद्ध</string>
 	</dict>
 	<key>ヤマ（Yama）</key>
 	<dict>
@@ -625,12 +1089,28 @@ In Buddhism it is &quot;Enma Great&quot;.
 He is the first deceased person, brings the person who dies to the place of judgment, and is working to judge the work of his life.
 &lt;Features&gt;
 I&apos;m on a buffalo with blue skin.</string>
+		<key>hindi</key>
+		<string>【यम】
+बौद्ध धर्म में यह &quot;एन्मा ग्रेट&quot; है
+वह सबसे पहले मृतक व्यक्ति है, जो व्यक्ति को न्याय के स्थान पर मरता है, और अपने जीवन के काम का न्याय करने के लिए काम कर रहा है।
+&lt;विशेषताएं&gt;
+मैं नीली त्वचा के साथ एक भैंस पर हूँ</string>
 		<key>image</key>
 		<string>Yama.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E9%96%BB%E9%AD%94</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Yama_(Hinduism)</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%AF%E0%A4%AE%E0%A4%B0%E0%A4%BE%E0%A4%9C</string>
 		<key>score</key>
 		<string>s50</string>
+		<key>ja-name</key>
+		<string>ヤマ（Yama）</string>
+		<key>en-name</key>
+		<string>Yama</string>
+		<key>hi-name</key>
+		<string>यम</string>
 	</dict>
 	<key>スーリヤ（Surya）</key>
 	<dict>
@@ -644,12 +1124,27 @@ I&apos;m on a buffalo with blue skin.</string>
 The sun god transmitted to the Indian myth. Both the son of Sky God Diyus and the son of fighting spirit Indra. It is also said to have been born from the eyes of the original giant Purusha.
 &lt;Features&gt;
 I&apos;m on a horse carriage with 7 horses.</string>
+		<key>hindi</key>
+		<string>【सूर्य】
+सूर्य देवता भारतीय मिथक के लिए प्रेषित होता है। स्काई भगवान डाययूस के पुत्र और इंद्र की लड़ाई लड़ने का बेटा। यह भी मूल विशाल पुरुष की आंखों से पैदा हुआ है।
+&lt;विशेषताएं&gt;
+मैं घोड़े की गाड़ी पर 7 घोड़ों के साथ रहा हूँ</string>
 		<key>image</key>
 		<string>Surya.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%B9%E3%83%BC%E3%83%AA%E3%83%A4</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Surya</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B8%E0%A5%82%E0%A4%B0%E0%A5%8D%E0%A4%AF_%E0%A4%A6%E0%A5%87%E0%A4%B5%E0%A4%A4%E0%A4%BE</string>
 		<key>score</key>
 		<string>s60</string>
+		<key>ja-name</key>
+		<string>スーリヤ（Surya）</string>
+		<key>en-name</key>
+		<string>Surya</string>
+		<key>hi-name</key>
+		<string>सूर्य</string>
 	</dict>
 	<key>ヴァルナ（Varuṇa）</key>
 	<dict>
@@ -663,12 +1158,27 @@ I&apos;m on a horse carriage with 7 horses.</string>
 Water God in Indian mythology. It is also the supreme god who is in line with Mitra, God who represented the ancient Asura, Arititiya gods.
 &lt;Features&gt;
 Makara (a monster fish appearing in the Indian mythology: a nose like an elephant, with a coiling tail)</string>
+		<key>hindi</key>
+		<string>【वार्ना】
+भारतीय पौराणिक कथाओं में जल देवता। यह सर्वोच्च भगवान भी है जो मित्रा के समान है, जो कि प्राचीन असुर, अरिटित्या देवताओं का प्रतिनिधित्व करता है।
+&lt;विशेषताएं&gt;
+मकरारा (भारतीय पौराणिक कथाओं में दिखाई देने वाली एक राक्षस मछली: हाथी की तरह एक नाक, कोयला पूंछ के साथ)</string>
 		<key>image</key>
 		<string>Varuna.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%AB%E3%83%8A_(%E7%A5%9E)</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Varna_(Hinduism)</string>
+		<key>hi-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Varna_(Hinduism)</string>
 		<key>score</key>
 		<string>s60</string>
+		<key>ja-name</key>
+		<string>ヴァルナ（Varuṇa）</string>
+		<key>en-name</key>
+		<string>Varna</string>
+		<key>hi-name</key>
+		<string>वार्ना</string>
 	</dict>
 	<key>ヴァーユ（Vayu）</key>
 	<dict>
@@ -682,12 +1192,27 @@ Makara (a monster fish appearing in the Indian mythology: a nose like an elephan
 Fujinami who deified the wind meaning &quot;atmosphere, wind&quot;. In Buddhism it is a pillar of the twelve angels and a guardian of northwest. The hero Bima of &quot;Mahabharata&quot; and Hanuman of &quot;Ramayana&quot; are the sons of Valle.
 &lt;Features&gt;
 A deer, or a two-headed red praise, rides a tank.</string>
+		<key>hindi</key>
+		<string>【वायु】
+पवन का अर्थ &quot;वायुमंडल, पवन&quot; का अर्थ है। बौद्ध धर्म में यह बारा स्वर्गदूतों का एक स्तंभ और उत्तर-पश्चिम के संरक्षक है। &quot;महाभारत&quot; का नायक विमा और &quot;रामायण&quot; के हनुमान वाले के पुत्र हैं।
+&lt;विशेषताएं&gt;
+एक हिरण, या दो प्रमुख लाल प्रशंसा, एक टैंक की सवारी</string>
 		<key>image</key>
 		<string>Vayu.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%83%B4%E3%82%A1%E3%83%BC%E3%83%A6</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Vayu</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%B5%E0%A4%BE%E0%A4%AF%E0%A5%81_%E0%A4%A6%E0%A5%87%E0%A4%B5</string>
 		<key>score</key>
 		<string>s50</string>
+		<key>ja-name</key>
+		<string>ヴァーユ（Vayu）</string>
+		<key>en-name</key>
+		<string>Vayu</string>
+		<key>hi-name</key>
+		<string>वायु</string>
 	</dict>
 	<key>クベーラ（Kubera）</key>
 	<dict>
@@ -703,12 +1228,28 @@ God of wealth and treasure in Indian myth. In Buddhism, &quot;Bishamonten&quot; 
 One thousand years of training was favored by Brahma God and became a god.
 &lt;Features&gt;
 It is drawn in a conspicuous appearance of thumbs.</string>
+		<key>hindi</key>
+		<string>【कुबेर】
+भारतीय मिथक में धन और खजाने के देवता। बौद्ध धर्म में, &quot;बिश्मोंटन&quot; का अर्थ है।
+ब्रह्मा भगवान ने एक हज़ार साल का प्रशिक्षण दिया और भगवान बन गया।
+&lt;विशेषताएं&gt;
+यह अंगूठे के एक विशिष्ट रूप में तैयार किया गया है।</string>
 		<key>image</key>
 		<string>Kubera.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%AF%E3%83%99%E3%83%BC%E3%83%A9</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Kubera</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%95%E0%A5%81%E0%A4%AC%E0%A5%87%E0%A4%B0</string>
 		<key>score</key>
 		<string>s60</string>
+		<key>ja-name</key>
+		<string>クベーラ（Kubera）</string>
+		<key>en-name</key>
+		<string>Kubera</string>
+		<key>hi-name</key>
+		<string>कुबेर</string>
 	</dict>
 	<key>ソーマ（Soma）</key>
 	<dict>
@@ -722,12 +1263,27 @@ It is drawn in a conspicuous appearance of thumbs.</string>
 God of the Moon. &quot;Soma&quot; of sake said to be immortal and immortal if you drink is the origin of life. It is equated with the Moon God Chandra.
 &lt;Features&gt;
 I am on a carriage.</string>
+		<key>hindi</key>
+		<string>【सोमा】
+चंद्रमा के भगवान चंद्रमा देवता चंद्रमा के साथ बराबर है, क्योंकि &quot;सोमा&quot; को आप अमर और अमर कहा जाता है यदि आप पीते हैं तो जीवन का जन्म होता है।
+&lt;विशेषताएं&gt;
+मैं एक गाड़ी पर हूँ</string>
 		<key>image</key>
 		<string>Soma.jpg</string>
 		<key>wikipedia</key>
 		<string>https://ja.wikipedia.org/wiki/%E3%82%BD%E3%83%BC%E3%83%9E</string>
+		<key>en-wiki</key>
+		<string>https://en.wikipedia.org/wiki/Soma_(drink)</string>
+		<key>hi-wiki</key>
+		<string>https://hi.wikipedia.org/wiki/%E0%A4%A6%E0%A5%87%E0%A4%B5%E0%A4%A4%E0%A4%BE</string>
 		<key>score</key>
 		<string>s60</string>
+		<key>ja-name</key>
+		<string>ソーマ（Soma）</string>
+		<key>en-name</key>
+		<string>Soma</string>
+		<key>hi-name</key>
+		<string>सोमा</string>
 	</dict>
 </dict>
 </plist>

@@ -175,6 +175,9 @@
 		B615A1F31FDEC24B002C92E4 /* Lakshmi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lakshmi.jpg; sourceTree = "<group>"; };
 		B6197A4D1FDEA8C300522E3D /* Parvathi.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Parvathi.jpg; sourceTree = "<group>"; };
 		B63316131FDF6A3700C71F1B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B63FD3CE1FE754D600A1A447 /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Main.strings"; sourceTree = "<group>"; };
+		B63FD3CF1FE754D600A1A447 /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		B63FD3D01FE754D600A1A447 /* hi-IN */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "hi-IN"; path = "hi-IN.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		B64AE8641FDD446B008043C4 /* Yama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Yama.jpg; sourceTree = "<group>"; };
 		B64AE8681FDD48E2008043C4 /* Varuna.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Varuna.jpg; sourceTree = "<group>"; };
 		B64AE86A1FDD5019008043C4 /* Vayu.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Vayu.jpg; sourceTree = "<group>"; };
@@ -454,6 +457,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"hi-IN",
 			);
 			mainGroup = B6109E931FB87585007B0776;
 			productRefGroup = B6109E9D1FB87585007B0776 /* Products */;
@@ -608,6 +612,7 @@
 			children = (
 				B6109EA41FB87585007B0776 /* Base */,
 				B614058B1FDEE61B00ADA725 /* ja */,
+				B63FD3CE1FE754D600A1A447 /* hi-IN */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -617,6 +622,7 @@
 			children = (
 				B6109EA91FB87585007B0776 /* Base */,
 				B614058C1FDEE61B00ADA725 /* ja */,
+				B63FD3CF1FE754D600A1A447 /* hi-IN */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 			children = (
 				B61405901FDEEAD600ADA725 /* ja */,
 				B63316131FDF6A3700C71F1B /* Base */,
+				B63FD3D01FE754D600A1A447 /* hi-IN */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
@@ -749,7 +756,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RSQ27U8C;
 				INFOPLIST_FILE = quiz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.masashi.hamano.quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -765,7 +772,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P4RSQ27U8C;
 				INFOPLIST_FILE = quiz/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.gmail.masashi.hamano.quiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";

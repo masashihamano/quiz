@@ -47,6 +47,7 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         let dic = NSDictionary(contentsOfFile: filePath!)
         //今画面に表示したいデータの取得
         let detailInfo = dic![getGodName] as! NSDictionary
+//        let detailInfo = dic![getGodName] as! NSDictionary
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換
         print(detailInfo["description"] as! String)
@@ -54,7 +55,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
-        wikiurl = detailInfo["wikipedia"] as! String
+        wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
+        
         
         //wikipediaのlinkラベルをセット
         setupTextView()
@@ -174,20 +176,20 @@ class DetailViewController: UIViewController, UITextViewDelegate {
     }
     
     
-    func textViewShouldReturn(textView: UITextView) -> Bool {
-        if textView == self.detailTextView {
-            print("detailTextView")
-        } else {
-            print("wikiTextView")
-        }
-    
-        // テキストの入力内容をコンソール表示
-        print(textView.text)
-        // キーボードを非表示
-        self.view.endEditing(true)
-        
-        return false
-    }
+//    func textViewShouldReturn(textView: UITextView) -> Bool {
+//        if textView == self.detailTextView {
+//            print("detailTextView")
+//        } else {
+//            print("wikiTextView")
+//        }
+//
+//        // テキストの入力内容をコンソール表示
+//        print(textView.text)
+//        // キーボードを非表示
+//        self.view.endEditing(true)
+//
+//        return false
+//    }
 
     
     /*

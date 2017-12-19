@@ -106,9 +106,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                         print(key)
             
             let goddic:NSDictionary = data as! NSDictionary
-//            let godinfo:NSDictionary = ["name":key,"image":goddic["image"]!]
-            let godinfo:NSDictionary = ["name":goddic["name"] as Any,"image":goddic["image"]!]
-            
+            var godinfo:NSDictionary = ["name":goddic[NSLocalizedString("name",comment: "")],"image":goddic["image"]]
             
             
                         GodList.append(godinfo)
@@ -119,12 +117,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
 
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
         print(detailInfo["image"] as! String)
-//        print(detailInfo["name"] as! String)
-        print(detailInfo[NSLocalizedString("name",comment: "")] as! String)
-  
-        
-//例え            wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
-        
+        print(detailInfo["name"] as! String)
+
         
         for(key,data) in dic!{
             print(data)
@@ -144,9 +138,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         
         for god in GodList {
             if correctGod != god {
-                print(god[NSLocalizedString("name",comment: "")] as! String)
-                
-//例え            wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
+                print(god["name" as! String])
                 
                  QList.append(god)
             }
@@ -162,13 +154,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
                 print(incorrectRandomNumber, 2)
                 print(incorrectRandomNumber, 3)
                 print(incorrectRandomNumber, 4)
-//            print(detailInfo["name"] as! String)
-//            selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
-            print(detailInfo[NSLocalizedString("name",comment: "")] as! String)
-            selectBtn[i]?.setTitle(detailInfo[NSLocalizedString("name",comment: "")] as? String, for: UIControlState())
-                
-//例え            wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
-                
+            print(detailInfo["name"] as! String)
+            selectBtn[i]?.setTitle(detailInfo["name"] as? String, for: UIControlState())
                 
                 //オブジェクトを削除、1回使用した選択肢を削除する
                 QList.remove(object: detailInfo)
@@ -182,22 +169,16 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
         QuestionImage.image = UIImage(named:detailInfo["image"] as! String)
         
         if CorrectAnswer == "1" {
-            answerBtn1.setTitle(detailInfo[NSLocalizedString("name",comment: "")] as? String, for: UIControlState())
-//            answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            answerBtn1.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else if CorrectAnswer == "2"{
-            answerBtn2.setTitle(detailInfo[NSLocalizedString("name",comment: "")] as? String, for: UIControlState())
-//            answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            answerBtn2.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else if CorrectAnswer == "3"{
-            answerBtn3.setTitle(detailInfo[NSLocalizedString("name",comment: "")] as? String, for: UIControlState())
-//            answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            answerBtn3.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else if CorrectAnswer == "4"{
-            answerBtn4.setTitle(detailInfo[NSLocalizedString("name",comment: "")] as? String, for: UIControlState())
-//            answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
+            answerBtn4.setTitle(detailInfo["name"] as? String, for: UIControlState())
         }else{
         }
     }
-    
-//例え     wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
     
     
     //セグエを呼び出したときに呼ばれるメソッド

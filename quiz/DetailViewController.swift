@@ -47,22 +47,24 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         let dic = NSDictionary(contentsOfFile: filePath!)
         //今画面に表示したいデータの取得
         let detailInfo = dic![getGodName] as! NSDictionary
-//        let detailInfo = dic![getGodName] as! NSDictionary
+    
         
         //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換
         print(detailInfo["description"] as! String)
         print(detailInfo["english"] as! String)
+        print(detailInfo["hindi"] as! String)
         print(detailInfo["image"] as! String)
         print(detailInfo["wikipedia"] as! String)
         
         wikiurl = detailInfo[NSLocalizedString("wikiLink",comment: "")] as! String
         
-        
         //wikipediaのlinkラベルをセット
         setupTextView()
         
         //タイトルをナビゲーションバーの真ん中に表示
-        navigationItem.title = getGodName
+        navigationItem.title = detailInfo[NSLocalizedString("name",comment: "")] as! String
+        
+        
         //ナビゲーションバーのフォント、サイズ
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.font: UIFont(name: "AppleSDGothicNeo-Bold", size: 18)!]
         
@@ -72,24 +74,8 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         detailImageView.image = UIImage(named:detailInfo["image"] as! String)
         
         wikiTextView.isSelectable = true
-    
-        
-//        wikiTextView.addObserver(self, forKeyPath: "contentSize", options: .new, context: nil)
         
     }
-
-    
-//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
-//        if let textView = object as? UITextView {
-//            var topCorrect = (textView.bounds.size.height - textView.contentSize.height * textView.zoomScale) / 2
-//            topCorrect = topCorrect < 0.0 ? 0.0 : topCorrect;
-//            textView.contentInset.top = topCorrect
-//        }
-//    }
-//
-//    deinit {
-//        wikiTextView.removeObserver(self, forKeyPath: "contentSize")
-//    }
 
     
     override func didReceiveMemoryWarning() {
@@ -175,21 +161,6 @@ class DetailViewController: UIViewController, UITextViewDelegate {
         wikiAudioPlayer.prepareToPlay()
     }
     
-    
-//    func textViewShouldReturn(textView: UITextView) -> Bool {
-//        if textView == self.detailTextView {
-//            print("detailTextView")
-//        } else {
-//            print("wikiTextView")
-//        }
-//
-//        // テキストの入力内容をコンソール表示
-//        print(textView.text)
-//        // キーボードを非表示
-//        self.view.endEditing(true)
-//
-//        return false
-//    }
 
     
     /*

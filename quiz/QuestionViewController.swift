@@ -457,9 +457,8 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     }
     
     
-    
     //scoreランダム表示
-    //多言語化対応 → name
+    
     
     
     /*

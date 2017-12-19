@@ -80,7 +80,13 @@ class ScoreViewController: UIViewController {
         scoreTitleLabel.layer.cornerRadius = 10.0
         scoreTitleLabel.layer.masksToBounds = true
         scoreTitleLabel.font = UIFont.boldSystemFont(ofSize: 62)
-            
+        
+        //表示画像
+        godImageView.layer.borderColor = UIColor.white.cgColor
+        godImageView.layer.borderWidth = 2
+        godImageView.layer.cornerRadius = 10.0
+        godImageView.layer.masksToBounds = true
+        
     }
     
     
@@ -387,7 +393,6 @@ class ScoreViewController: UIViewController {
         case 20:
             rankLabel.text = NSLocalizedString("commentSecond", comment: "")
             rankDisplay(num:num)
-            godImageView.image = UIImage(named: "Nandin.jpg")
             score20AudioPlayer.play()
         case 30:
             rankLabel.text = NSLocalizedString("commentThird", comment: "")

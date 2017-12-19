@@ -607,6 +607,7 @@ QUESTION</string>
         <image name="list.png" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="UHz-Ez-ETe"/>
         <segue reference="iPk-xK-Anh"/>
     </inferredMetricsTieBreakers>
 </document>

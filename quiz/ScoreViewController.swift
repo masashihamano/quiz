@@ -264,8 +264,6 @@ class ScoreViewController: UIViewController {
     
     
     func rankDisplay(num: Int){
-//        var scoregodname:Int = Int(arc4random()) % GodList.count
-//        scoregodname += 1
 
         //ファイルパスを取得(神様が格納されているプロパティリスト)
         let filePath = Bundle.main.path(forResource:"GodList", ofType:"plist")
@@ -280,94 +278,107 @@ class ScoreViewController: UIViewController {
             let goddic:NSDictionary = data as! NSDictionary
             let scoreinfo:NSDictionary = ["name":key,"score":goddic["score"],"image":goddic["image"]!]
 
-//            GodList.append(scoreinfo)
             GodList.append(data as! NSDictionary)
 
         }
 
-        
-        
-        
-        var RandomNumber:Int = Int(arc4random() % 35)
+        //スコアの点数専用の配列を用意と表示する画像を
+        var s0arr:Array<Any> = []
+        var s10arr:Array<Any> = []
+        var s20arr:Array<Any> = []
+        var s30arr:Array<Any> = []
+        var s40arr:Array<Any> = []
+        var s50arr:Array<Any> = []
+        var s60arr:Array<Any> = []
+        var s70arr:Array<Any> = []
+        var s80arr:Array<Any> = []
+        var s90arr:Array<Any> = []
+        var s100arr:Array<Any> = []
         
         //リストと画像を一致させる。
-        
-        
         for god in GodList {
             
             let scoreGodDisplay = Int(arc4random()) % GodList.count
             let score = GodList[scoreGodDisplay]
             
-            if num == 0 {
-                if (god["score"] as! String) == "s0" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-              
-            }else  if num == 10 {
-                if (god["score"] as! String) == "s10" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else  if num == 20 {
-                if (god["score"] as! String) == "s20" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else  if num == 30 {
-                if (god["score"] as! String) == "s30" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
+//          s0専用の配列を用意し、s0のデータだけを格納する
             
-            }else if num == 40 {
-                if (god["score"] as! String) == "s40" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-
-            }else if num == 50 {
-                if (god["score"] as! String) == "s50" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-              
-            }else if num == 60 {
-                if (god["score"] as! String) == "s60" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else if num == 70 {
-                if (god["score"] as! String) == "s70" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else if num == 80 {
-                if (god["score"] as! String) == "s80" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else if num == 90 {
-                if (god["score"] as! String) == "s90" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }
-                
-            }else if num == 100 {
-                if (god["score"] as! String) == "s100" {
-                    godImageView.image = UIImage(named:god["image"] as! String)
-                }else{
-                }
+            //スコアのデータを格納
+            if (god["score"] as! String) == "s0" {
+                s0arr.append(god)
+            }else if (god["score"] as! String) == "s10" {
+                s10arr.append(god)
+            }else if (god["score"] as! String) == "s20" {
+                s20arr.append(god)
+            }else if (god["score"] as! String) == "s30" {
+                s30arr.append(god)
+            }else if (god["score"] as! String) == "s40" {
+                s40arr.append(god)
+            }else if (god["score"] as! String) == "s50" {
+                s50arr.append(god)
+            }else if (god["score"] as! String) == "s60" {
+                s60arr.append(god)
+            }else if (god["score"] as! String) == "s70" {
+                s70arr.append(god)
+            }else if (god["score"] as! String) == "s80" {
+                s80arr.append(god)
+            }else if (god["score"] as! String) == "s90" {
+                s90arr.append(god)
+            }else if (god["score"] as! String) == "s100" {
+                s100arr.append(god)
+            }else{
             }
-
         }
+        
     
-    
-
-                //今画面に表示したいデータの取得
-//        let scoreInfo = GodList[scoregodname] as! NSDictionary
-//
-//        //Dictionaryからキー指定で取り出すと必ずAny型になるのでダウンキャスト変換が必要
-//        print(scoreInfo["image"] as! String)
-//        print(scoreInfo["name"] as! String)
-//        print(scoreInfo["score"] as! String)
-
-//        scoregodname = scoreInfo["score"] as! String
+        if num == 0 {
+            let scoreGodDisplay = Int(arc4random()) % s0arr.count
+            let displaygod:NSDictionary = s0arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 10 {
+            let scoreGodDisplay = Int(arc4random()) % s10arr.count
+            let displaygod:NSDictionary = s10arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 20 {
+            let scoreGodDisplay = Int(arc4random()) % s20arr.count
+            let displaygod:NSDictionary = s20arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 30 {
+            let scoreGodDisplay = Int(arc4random()) % s30arr.count
+            let displaygod:NSDictionary = s30arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 40 {
+            let scoreGodDisplay = Int(arc4random()) % s40arr.count
+            let displaygod:NSDictionary = s40arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 50 {
+            let scoreGodDisplay = Int(arc4random()) % s50arr.count
+            let displaygod:NSDictionary = s50arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 60 {
+            let scoreGodDisplay = Int(arc4random()) % s60arr.count
+            let displaygod:NSDictionary = s60arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 70 {
+            let scoreGodDisplay = Int(arc4random()) % s70arr.count
+            let displaygod:NSDictionary = s70arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 80 {
+            let scoreGodDisplay = Int(arc4random()) % s80arr.count
+            let displaygod:NSDictionary = s80arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 90 {
+            let scoreGodDisplay = Int(arc4random()) % s90arr.count
+            let displaygod:NSDictionary = s90arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else if num == 100 {
+            let scoreGodDisplay = Int(arc4random()) % s100arr.count
+            let displaygod:NSDictionary = s100arr[scoreGodDisplay] as! NSDictionary
+            godImageView.image = UIImage(named:displaygod["image"] as! String)
+        }else{
+            
+        }
+        
 
         for(key,data) in dic!{
             print(data)

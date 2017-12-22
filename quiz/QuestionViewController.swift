@@ -458,7 +458,7 @@ class questionViewController: UIViewController, UINavigationBarDelegate, UITextV
     
     
     //scoreランダム表示
-    
+    //sourcetreeの使い方
     
     
     /*
